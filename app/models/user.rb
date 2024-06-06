@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :projects, dependent: :destroy
+  has_many :achievements, dependent: :destroy
+  has_many :trophies, through: :achievements
 end
