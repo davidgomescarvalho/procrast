@@ -23,5 +23,4 @@ Rails.application.routes.draw do
   resources :trophies, only: [:show, :edit, :update, :destroy]
 
   root to: "pages#home"
-
 end
