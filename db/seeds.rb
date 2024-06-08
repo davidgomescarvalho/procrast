@@ -22,7 +22,7 @@ user1 = User.create!(
   total_points: rand(0..10000),
   country: "France"
 )
-avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
+avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user1.avatar.attach(io: avatar, filename: "#{user1.first_name}.jpg", content_type: 'image/jpg')
 user1.save!
 
@@ -35,7 +35,7 @@ user2 = User.create!(
   total_points: rand(0..10000),
   country: "Anglais"
 )
-avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
+avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user2.avatar.attach(io: avatar, filename: "#{user2.first_name}.jpg", content_type: 'image/jpg')
 user2.save!
 
@@ -48,7 +48,7 @@ user3 = User.create!(
   total_points: rand(0..10_000),
   country: "Portugal"
 )
-avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
+avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user3.avatar.attach(io: avatar, filename: "#{user3.first_name}.jpg", content_type: 'image/jpg')
 user3.save!
 
@@ -61,7 +61,7 @@ user4 = User.create!(
   total_points: rand(0..10_000),
   country: "France"
 )
-avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
+avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user4.avatar.attach(io: avatar, filename: "#{user4.first_name}.jpg", content_type: 'image/jpg')
 user4.save!
 
@@ -74,7 +74,7 @@ user5 = User.create!(
   total_points: rand(0..10_000),
   country: "France"
 )
-avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
+avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user5.avatar.attach(io: avatar, filename: "#{user5.first_name}.jpg", content_type: 'image/jpg')
 user5.save!
 
@@ -87,7 +87,7 @@ user6 = User.create!(
   total_points: rand(0..10_000),
   country: "France"
 )
-avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
+avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user6.avatar.attach(io: avatar, filename: "#{user6.first_name}.jpg", content_type: 'image/jpg')
 user6.save!
 
@@ -100,7 +100,7 @@ user7 = User.create!(
   total_points: rand(0..10_000),
   country: "France"
 )
-avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
+avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user7.avatar.attach(io: avatar, filename: "#{user7.first_name}.jpg", content_type: 'image/jpg')
 user7.save!
 
@@ -209,5 +209,5 @@ puts "Created #{User.count} users."
 # puts "Seeded #{User.count} users, #{Instrument.count} instruments, and #{Booking.count} bookings."
 puts "Done seeding the database."
 
-# photo: Faker::Avatar.image(size: "50x50", format: "jpg")
+# photo: Faker::Avatar.image(size: "500x500", format: "jpg")
 # photo: Faker::LoremFlickr.image(size: "50x60", search_terms: ['instrument'])
