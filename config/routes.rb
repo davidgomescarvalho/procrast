@@ -16,11 +16,10 @@ Rails.application.routes.draw do
     resources :tasks, only: [:show, :edit, :update, :destroy]
   end
 
-  resources :tasks, only: [:show, :edit, :update, :destroy]
 
-  resources :achievements, only: [:show, :edit, :update, :destroy]
+  resources :achievements, only: [:index, :show ]
 
-  resources :trophies, only: [:show, :edit, :update, :destroy]
+  resources :trophies, only: [:show, :update]
 
   root to: "pages#home"
 end
