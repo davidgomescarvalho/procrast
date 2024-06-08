@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :trophies, only: [:index, :new, :create]
   end
 
-  resources :projects, only: [:show, :edit, :update, :destroy] do
+  resources :projects do
     resources :tasks, only: [:show, :edit, :update, :destroy]
   end
 
