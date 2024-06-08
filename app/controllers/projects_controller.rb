@@ -2,17 +2,16 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:index, :new, :create]
 
   def index
-    @projects = @user.projects
+    @projects = current_user.projects
   end
 
   def show
   end
 
   def new
-    @project = @user.projects.build
+    @project = current_user.projects.build
   end
 
   def create
@@ -42,16 +41,11 @@ class ProjectsController < ApplicationController
 
   private
 
-  def set_user
-    @user = User.find(params[:user_id])
-  end
-
   def set_project
     @project = Project.find(params[:id])
   end
 
   def project_params
-    params.require(:project).permit(:name, :description)
+    params.require(:project).permit(:title, :status, :user_id, end_date: [], start_date: [])
   end
 end
-
