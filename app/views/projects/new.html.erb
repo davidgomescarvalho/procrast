@@ -1,0 +1,36 @@
+<h1>New Project</h1>
+
+<%= simple_form_for @project do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+      <ul>
+        <% @project.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.input :title, label: "Title" %>
+  </div>
+
+  <div class="field">
+    <%= f.input :start_date, as: :date, label: "Start Date" %>
+  </div>
+
+  <div class="field">
+    <%= f.input :end_date, as: :date, label: "End Date" %>
+  </div>
+
+  <div class="field">
+    <%=collection_check_boxes Status, [[true, 'Yes'], [false, 'No']], :first, :last :status, label: "Status" as collection "" %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, "Create Project" %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', projects_path %>
