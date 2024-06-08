@@ -10,7 +10,6 @@ class User < ApplicationRecord
   has_many :trophies, through: :achievements
 
   validates :email, presence: true
-  validates :password, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :username, presence: true

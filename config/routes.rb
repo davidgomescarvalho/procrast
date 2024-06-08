@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    registrations: "users/registrations"
   }
   resources :users, only: [:show, :index] do
     resources :projects, only: [:index, :new, :create,:show]
