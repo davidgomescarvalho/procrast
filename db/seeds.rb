@@ -45,7 +45,7 @@ user3 = User.create!(
   password: 'password',
   first_name: "David",
   last_name: "Gomes Carvalho",
-  total_points: rand(0..10000),
+  total_points: rand(0..10_000),
   country: "Portugal"
 )
 avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
@@ -58,7 +58,7 @@ user4 = User.create!(
   password: 'password',
   first_name: "Wassim",
   last_name: "Badreddine ",
-  total_points: rand(0..10000),
+  total_points: rand(0..10_000),
   country: "France"
 )
 avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
@@ -71,7 +71,7 @@ user5 = User.create!(
   password: 'password',
   first_name: "Hugo",
   last_name: "Ferrier",
-  total_points: rand(0..10000),
+  total_points: rand(0..10_000),
   country: "France"
 )
 avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
@@ -84,7 +84,7 @@ user6 = User.create!(
   password: 'password',
   first_name: "Sebastien",
   last_name: "Saunier",
-  total_points: rand(0..10000),
+  total_points: rand(0..10_000),
   country: "France"
 )
 avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
@@ -97,7 +97,7 @@ user7 = User.create!(
   password: 'password',
   first_name: "Boris",
   last_name: "Paillard",
-  total_points: rand(0..10000),
+  total_points: rand(0..10_000),
   country: "France"
 )
 avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
