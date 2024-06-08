@@ -5,9 +5,13 @@
     <p>No projects found, start a project !</p>
     <% else %>
   <% @projects.each do |project| %>
-    <li><%= link_to project.name, project_path(project) %></li>
+    <li><%= link_to project.title, project_path(project) %></li>
   <% end %>
 <% end %>
 </ul>
 
-<%= link_to 'New Project', new_project_path(current_user) %>
+<% if user_signed_in? %>
+    <%= link_to 'New Project', new_project_path %>
+<% end %>
+
+
