@@ -2,10 +2,24 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
+  resources :users, only: [:show, :index] do
+    resources :projects, only: [:index, :new, :create]
+
+    resources :projects, only: [] do
+      resources :tasks, only: [:index, :new, :create]
+    end
+
+    resources :achievements, only: [:index, :new, :create]
+
+    resources :trophies, only: [:index, :new, :create]
+  end
 
   resources :projects do
-    resources :tasks
+    resources :tasks, only: [:show, :edit, :update, :destroy]
+
   end
+
+  resources :tasks, only: [:show, :edit, :update, :destroy]
 
   resources :achievements, only: [:index, :show ]
 
