@@ -1,3 +1,4 @@
+
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_project, only: [:show, :edit, :update, :destroy]
@@ -53,3 +54,4 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:name, :description)
   end
 end
+
