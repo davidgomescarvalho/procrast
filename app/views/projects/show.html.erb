@@ -18,3 +18,9 @@
 <% else %>
   <p>No tasks found for this project.</p>
 <% end %>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+
+<%= link_to 'Back', projects_path %>
+
+<%= link_to 'Add Task', new_project_task_path %>
