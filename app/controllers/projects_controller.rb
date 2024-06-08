@@ -1,8 +1,9 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:index, :new, :create]
+
   def index
-    @user = User.find(params[:user_id])
     @projects = @user.projects
   end
 
@@ -10,12 +11,10 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
     @project = @user.projects.build
   end
 
   def create
-    @user = User.find(params[:user_id])
     @project = @user.projects.build(project_params)
     if @project.save
       redirect_to user_project_path(@user, @project)
@@ -41,6 +40,10 @@ class ProjectsController < ApplicationController
   end
 
   private
+
+  def set_user
+    @user = User.find(params[:user_id])
+  end
 
   def set_project
     @project = Project.find(params[:id])
