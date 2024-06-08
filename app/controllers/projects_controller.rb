@@ -15,11 +15,12 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = @user.projects.build(project_params)
+    @project = current_user.projects.build(project_params)
     if @project.save
-      redirect_to user_project_path(@user, @project)
+      redirect_to user_project_path(@user, @project), notice: 'Your Instrument was successfully created.'
     else
-      render :new
+      flash[:alert] = @project.errors.full_messages.join(', ')
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -46,6 +47,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :status, :user_id, end_date: [], start_date: [])
+    params.require(:project).permit(:title, :user_id, :end_date, :start_date)
   end
 end
