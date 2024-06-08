@@ -25,7 +25,7 @@
   </div>
 
   <div class="field">
-    <%=collection_check_boxes Status, [[true, 'Yes'], [false, 'No']], :first, :last :status, label: "Status" as collection "" %>
+  <%= f.input :status, label: "Status", collection: ["Not started","In progress","Completed"] %>
   </div>
 
   <div class="actions">
