@@ -1,0 +1,13 @@
+<h1>Projects</h1>
+
+<%= link_to "New Project", new_project_path %>
+
+<ul>
+  <% @projects.each do |project| %>
+    <li class="project">
+      <h2><%= project.name %></h2>
+      <p><%= project.description %></p>
+      <p><%= project.created_at.strftime("%B %d, %Y") %></p>
+    </li>
+  <% end %>
+</ul>
