@@ -9,3 +9,10 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
