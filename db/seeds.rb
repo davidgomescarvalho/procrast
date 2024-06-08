@@ -12,22 +12,106 @@ puts "Creating users..."
 
 
 # Create a user
-10.times do
-  user = User.create!(
-    email: Faker::Internet.email,
-    username: Faker::Internet.username,
-    password: 'password',
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    total_points: rand(0..10000),
-    country: Faker::Address.country
-  )
-  avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
-  user.avatar.attach(io: avatar, filename: "#{user.first_name}.jpg", content_type: 'image/jpg')
-  user.save!
-end
+
+user1 = User.create!(
+  email: "michelle@mabelle.com",
+  username: "MicheMiche",
+  password: 'password',
+  first_name: "Michelle",
+  last_name: "Mabelle",
+  total_points: rand(0..10000),
+  country: "France"
+)
+avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
+user1.avatar.attach(io: avatar, filename: "#{user1.first_name}.jpg", content_type: 'image/jpg')
+user1.save!
+
+user2 = User.create!(
+  email: "bobmorane@contretoutchacal.com",
+  username: "BobbyMo",
+  password: 'password',
+  first_name: "Bob",
+  last_name: "Morane",
+  total_points: rand(0..10000),
+  country: "Anglais"
+)
+avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
+user2.avatar.attach(io: avatar, filename: "#{user2.first_name}.jpg", content_type: 'image/jpg')
+user2.save!
+
+user3 = User.create!(
+  email: "davidgomescarvalho@gmail.com",
+  username: "DavidTyson",
+  password: 'password',
+  first_name: "David",
+  last_name: "Gomes Carvalho",
+  total_points: rand(0..10000),
+  country: "Portugal"
+)
+avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
+user3.avatar.attach(io: avatar, filename: "#{user3.first_name}.jpg", content_type: 'image/jpg')
+user3.save!
+
+user4 = User.create!(
+  email: "wassim@coder.com",
+  username: "Coder.io",
+  password: 'password',
+  first_name: "Wassim",
+  last_name: "Badreddine ",
+  total_points: rand(0..10000),
+  country: "France"
+)
+avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
+user4.avatar.attach(io: avatar, filename: "#{user4.first_name}.jpg", content_type: 'image/jpg')
+user4.save!
+
+user5 = User.create!(
+  email: "hu.ferrier@gmail.com",
+  username: "Hufer02",
+  password: 'password',
+  first_name: "Hugo",
+  last_name: "Ferrier",
+  total_points: rand(0..10000),
+  country: "France"
+)
+avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
+user5.avatar.attach(io: avatar, filename: "#{user5.first_name}.jpg", content_type: 'image/jpg')
+user5.save!
+
+user6 = User.create!(
+  email: "seb@lewagon.com",
+  username: "Ssaunier",
+  password: 'password',
+  first_name: "Sebastien",
+  last_name: "Saunier",
+  total_points: rand(0..10000),
+  country: "France"
+)
+avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
+user6.avatar.attach(io: avatar, filename: "#{user6.first_name}.jpg", content_type: 'image/jpg')
+user6.save!
+
+user7 = User.create!(
+  email: "boris.paillard@gmail.com",
+  username: "Papillard",
+  password: 'password',
+  first_name: "Boris",
+  last_name: "Paillard",
+  total_points: rand(0..10000),
+  country: "France"
+)
+avatar = URI.open(Faker::Avatar.image(size: "50x50", format: "jpg"))
+user7.avatar.attach(io: avatar, filename: "#{user7.first_name}.jpg", content_type: 'image/jpg')
+user7.save!
 
 puts "Created #{User.count} users."
+
+
+
+
+
+
+
 
 # puts "Creating instruments..."
 
