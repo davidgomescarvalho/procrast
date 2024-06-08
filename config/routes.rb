@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   resources :users, only: [:show, :index] do
-    resources :projects, only: [:index, :new, :create]
+    resources :projects, only: [:index, :new, :create,:show]
 
     resources :projects, only: [] do
       resources :tasks, only: [:index, :new, :create]
