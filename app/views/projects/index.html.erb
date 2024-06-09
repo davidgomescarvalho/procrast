@@ -12,6 +12,5 @@
 
 <% if user_signed_in? %>
     <%= link_to 'New Project', new_project_path %>
+    <%= link_to "Calendar", calendar_project_path(current_user) %>
 <% end %>
-
-

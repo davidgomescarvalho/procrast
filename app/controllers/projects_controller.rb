@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
   def create
     @project = current_user.projects.build(project_params)
     if @project.save
-      redirect_to user_project_path(current_user, @project), notice: 'Your Instrument was successfully created.'
+      redirect_to user_project_path(current_user, @project), notice: 'Your Project was successfully created.'
     else
       flash[:alert] = @project.errors.full_messages.join(', ')
       render :new, status: :unprocessable_entity
@@ -42,6 +42,10 @@ class ProjectsController < ApplicationController
     redirect_to user_projects_path(@project.user)
   end
 
+  def calendar
+    @projects = current_user.projects.to_a
+  end
+
   private
 
   def set_project
@@ -49,6 +53,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :status, :end_date, :start_date)
+    params.require(:project).permit(:title, :status, :end_time, :start_time)
   end
 end

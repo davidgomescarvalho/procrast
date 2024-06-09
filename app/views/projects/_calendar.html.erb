@@ -1,0 +1,12 @@
+<%= month_calendar(events: projects) do |date, projects_on_date| %>
+  <div class="calendar-day">
+    <h4><%= date.day %></h4>
+    <% projects_on_date.each do |project| %>
+      <li>
+        <div class="calendar-event">
+          <%= link_to project.title, user_project_path(current_user, project) %><br>
+      </div>
+      </li>
+    <% end %>
+  </div>
+<% end %>
