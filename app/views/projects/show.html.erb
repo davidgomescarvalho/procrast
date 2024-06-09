@@ -1,12 +1,8 @@
 <h1><%= @project.title %></h1>
 
-<p><strong>Start date:</strong> <%= @project.start_date %></p>
+<p><strong>Start date:</strong> <%= @project.start_time %></p>
 
-<p><strong>End date:</strong> <%= @project.end_date %></p>
-
-<p><strong>Created at:</strong> <%= @project.created_at %></p>
-
-<p><strong>Updated at:</strong> <%= @project.updated_at %></p>
+<p><strong>End date:</strong> <%= @project.end_time %></p>
 
 <% if @project.tasks.any? %>
   <h2>Tasks:</h2>
