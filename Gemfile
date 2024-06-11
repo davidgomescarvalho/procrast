@@ -79,3 +79,5 @@ end
 gem 'faker'
 gem "cloudinary"
 gem "simple_calendar"
+gem 'merit'
+
