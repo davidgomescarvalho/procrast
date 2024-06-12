@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_11_183748) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_11_183734) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -88,20 +88,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_11_183748) do
     t.datetime "created_at"
   end
 
-  create_table "merit_score_points", force: :cascade do |t|
-    t.bigint "score_id"
-    t.bigint "num_points", default: 0
-    t.string "log"
-    t.datetime "created_at"
-    t.index ["score_id"], name: "index_merit_score_points_on_score_id"
-  end
-
-  create_table "merit_scores", force: :cascade do |t|
-    t.bigint "sash_id"
-    t.string "category", default: "default"
-    t.index ["sash_id"], name: "index_merit_scores_on_sash_id"
-  end
-
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.date "start_time"
@@ -148,8 +134,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_11_183748) do
     t.integer "total_points", null: false
     t.string "country", null: false
     t.string "avatar", default: "https://res.cloudinary.com/dq7l8216n/image/upload/v1633836824/avatars/default_avatar.png", null: false
-    t.integer "sash_id"
-    t.integer "level", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
