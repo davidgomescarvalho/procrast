@@ -18,7 +18,7 @@
       <a href="/" class="navbar__link"><i class="fa-solid fa-house"></i><span>Home</span></a>
     </li>
     <li class="navbar__item">
-      <a href="/" class="navbar__link"><i class="fa-regular fa-calendar"></i><span>Calendar</span></a>
+      <a href="/projects/:id/calendar" class="navbar__link"><i class="fa-regular fa-calendar"></i><span>Calendar</span></a>
     </li>
      <li class="navbar__item">
       <a href="/" class="navbar__link"><i class="fa-solid fa-message"></i><span>Messages</span></a>
@@ -39,11 +39,6 @@
 </nav>
 
   <div class="container mt-5">
-   <% if user_signed_in? %>
-        <%= link_to 'Logout', destroy_user_session_path, data: { "turbo-method": :delete } %>
-      <% else %>
-       <span></span>
-    <% end %>
     <%= yield %>
   </div>
   <script src='https://unpkg.com/feather-icons'></script><script src="../javascript/controllers/script.js"></script>
