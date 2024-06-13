@@ -1,7 +1,9 @@
 # Use this hook to configure merit parameters
 Merit.setup do |config|
   # Check rules on each request or in background
-  # config.checks_on_each_request = true
+  config.checks_on_each_request = true
+
+  config.orm = :active_record
 
   # Add application observers to get notifications when reputation changes.
   # config.add_observer 'MyObserverClassName'
@@ -16,14 +18,65 @@ Merit.setup do |config|
   # config.current_user_method = 'current_user'
 end
 
+
 # Create application badges (uses https://github.com/norman/ambry)
 Rails.application.reloader.to_prepare do
   Merit::Badge.create!(
     id: 1,
-    name: "year-member",
-    description: "Active member for a year",
+    name: "just-registered",
+    description: "Welcome to the community!",
     custom_fields: { difficulty: :silver }
   )
+
+  Merit::Badge.create!(
+    id: 2,
+    name: "best-unicorn",
+    description: "You're the best unicorn!",
+    custom_fields: { difficulty: :gold }
+  )
+
+  Merit::Badge.create!(
+    id: 3,
+    name: "first-project",
+    description: "You've created your first project!",
+    custom_fields: { difficulty: :bronze }
+  )
+
+  Merit::Badge.create!(
+    id: 4,
+    name: "prolific-project-creator",
+    description: "You've created 10 projects!",
+    custom_fields: { difficulty: :silver }
+  )
+
+  Merit::Badge.create!(
+    id: 5,
+    name: "master-project-creator",
+    description: "You've created 50 projects!",
+    custom_fields: { difficulty: :gold }
+  )
+
+  Merit::Badge.create!(
+    id: 6,
+    name: "first-project-completed",
+    description: "You've completed your first project!",
+    custom_fields: { difficulty: :bronze }
+  )
+
+  Merit::Badge.create!(
+    id: 7,
+    name: "prolific-project-completer",
+    description: "You've completed 10 projects!",
+    custom_fields: { difficulty: :silver }
+  )
+
+  Merit::Badge.create!(
+    id: 8,
+    name: "master-project-completer",
+    description: "You've completed 50 projects!",
+    custom_fields: { difficulty: :gold }
+  )
+
 end
 #   badge_id = 0
 #   [{
