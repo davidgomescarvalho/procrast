@@ -48,6 +48,8 @@ user3 = User.create!(
   total_points: rand(0..10_000),
   country: "Portugal"
 )
+
+
 avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user3.avatar.attach(io: avatar, filename: "#{user3.first_name}.jpg", content_type: 'image/jpg')
 user3.save!
@@ -106,7 +108,9 @@ user7.save!
 
 puts "Created #{User.count} users."
 
-
+User.all.each do |user|
+  user.add_badge(1)
+end
 
 
 

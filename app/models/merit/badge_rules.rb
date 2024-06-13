@@ -26,6 +26,36 @@ module Merit
       # Find badge by badge_id, badge_id takes presidence over badge
       grant_on 'users#create', badge_id: 1, badge: 'just-registered', to: :itself
 
+      # If it has 1 project, grant badge
+      grant_on 'projects#create', badge_id: 3, badge: 'first-project', to: :user do |project|
+        project.user.projects.count == 1
+      end
+
+      # If it has 10 projects, grant badge
+      grant_on 'projects#create', badge_id: 4, badge: 'prolific-project-creator', to: :user do |project|
+        project.user.projects.count == 10
+      end
+
+      # If it has 50 projects, grant badge
+      grant_on 'projects#create', badge_id: 5, badge: 'master-project-creator', to: :user do |project|
+        project.user.projects.count == 50
+      end
+
+      # If it has 1 project completed, grant badge
+      grant_on 'projects#complete', badge_id: 6, badge: 'first-project-completed', to: :user do |project|
+        project.user.projects.where(completed: true).count == 1
+      end
+
+      # If it has 10 projects completed, grant badge
+      grant_on 'projects#complete', badge_id: 7, badge: 'prolific-project-completer', to: :user do |project|
+        project.user.projects.where(completed: true).count == 10
+      end
+
+      # If it has 50 projects completed, grant badge
+      grant_on 'projects#complete', badge_id: 8, badge: 'master-project-completer', to: :user do |project|
+        project.user.projects.where(completed: true).count == 50
+      end
+
       # If it has 10 comments, grant commenter-10 badge
       # grant_on 'comments#create', badge: 'commenter', level: 10 do |comment|
       #   comment.user.comments.count == 10
