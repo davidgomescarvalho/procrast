@@ -18,6 +18,12 @@
       <a href="/" class="navbar__link"><i class="fa-solid fa-house"></i><span>Home</span></a>
     </li>
     <li class="navbar__item">
+      <a href="/" class="navbar__link"><i class="fa-regular fa-calendar"></i><span>Calendar</span></a>
+    </li>
+     <li class="navbar__item">
+      <a href="/" class="navbar__link"><i class="fa-solid fa-message"></i><span>Messages</span></a>
+    </li>
+    <li class="navbar__item">
       <a href="/projects" class="navbar__link"><i class="fa-solid fa-list"></i></i><span>Project List</span></a>
     </li>
     <li class="navbar__item">
@@ -27,9 +33,6 @@
       <%= link_to user_path(current_user), class: "navbar__link" do %>
         <i class="fa-solid fa-user"></i><span>Profile</span>
       <% end %>
-    </li>
-    <li class="navbar__item">
-      <a href="#" class="navbar__link"><i class="fa-solid fa-gear"></i></i><span>Settings</span></a>
     </li>
   </ul>
 
