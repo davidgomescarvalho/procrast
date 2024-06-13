@@ -1,0 +1,12 @@
+<% if current_user.notifications.any? %>
+  <% current_user.notifications.unread.each do |notification| %>
+    <div class="notification">
+      <%= notification.message %>
+      <%= link_to "Mark as Read", mark_as_read_notification_path(notification), method: :patch %>
+    </div>
+  <% end %>
+<% else %>
+  <div class="notification">
+    No new notifications
+  </div>
+<% end %>
