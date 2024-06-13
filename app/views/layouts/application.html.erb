@@ -8,63 +8,41 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
   </head>
 
   <body>
-   <div class="container mt-5">
-    <%= yield %>
-   </div>
-   <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">ProCrast</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-hello-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href= /projects/calendar_project_path(current_user)>
-            <i class="fa-regular fa-calendar" id="calendar-icon"></i>
-          </a>
-        </li>
-        <li class="nav-item dropup">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa-solid fa-list" id="list-icon"></i>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/projects">All my Projects</a></li>
-            <li><a class="dropdown-item" href="#">Achieved Projects</a></li>
-          </ul>
-        </li>
-        <% if current_page?(new_project_path) %>
-        <span></span>
-        <% else %>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="projects/new" >
-            <i class="fa-solid fa-plus" id="plus-icon"></i>
-          </a>
-        </li>
-        <% end %>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" >
-            <i class="fa-regular fa-user" id="user-icon"></i>
-          </a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
+<nav class="navbar">
+  <ul class="navbar__menu">
+    <li class="navbar__item">
+      <a href="/" class="navbar__link"><i class="fa-solid fa-house"></i><span>Home</span></a>
+    </li>
+    <li class="navbar__item">
+      <a href="/projects" class="navbar__link"><i class="fa-solid fa-list"></i></i><span>Project List</span></a>
+    </li>
+    <li class="navbar__item">
+      <a href="projects/new" class="navbar__link"><i class="fa-solid fa-plus"></i><span>New Project</span></a>
+    </li>
+    <li class="navbar__item">
+      <%= link_to user_path(current_user), class: "navbar__link" do %>
+        <i class="fa-solid fa-user"></i><span>Profile</span>
+      <% end %>
+    </li>
+    <li class="navbar__item">
+      <a href="#" class="navbar__link"><i class="fa-solid fa-gear"></i></i><span>Settings</span></a>
+    </li>
+  </ul>
+
 </nav>
-    <% if user_signed_in? %>
-        <%= link_to 'Profile', user_path(current_user) %> |
-        <%= link_to 'Projects', projects_path(current_user) %> |
+
+  <div class="container mt-5">
+   <% if user_signed_in? %>
         <%= link_to 'Logout', destroy_user_session_path, data: { "turbo-method": :delete } %>
       <% else %>
        <span></span>
     <% end %>
-
+    <%= yield %>
+  </div>
+  <script src='https://unpkg.com/feather-icons'></script><script src="../javascript/controllers/script.js"></script>
   </body>
 </html>
