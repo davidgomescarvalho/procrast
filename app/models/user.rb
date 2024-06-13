@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :projects, dependent: :destroy
   has_many :achievements, dependent: :destroy
   has_many :trophies, through: :achievements
+  has_many :notifications, dependent: :destroy
 
   validates :email, presence: true
   validates :first_name, presence: true

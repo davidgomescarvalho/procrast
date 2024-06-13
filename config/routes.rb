@@ -3,6 +3,12 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: "users/registrations"
   }
+  resources :notifications, only: [] do
+    member do
+      patch :mark_as_read
+    end
+  end
+
   resources :users, only: [:show, :index] do
     resources :projects, only: [:index, :new, :create,:show]
   end

@@ -1,4 +1,5 @@
 # Use this hook to configure merit parameters
+
 Merit.setup do |config|
   # Check rules on each request or in background
   config.checks_on_each_request = true
@@ -6,7 +7,7 @@ Merit.setup do |config|
   config.orm = :active_record
 
   # Add application observers to get notifications when reputation changes.
-  # config.add_observer 'MyObserverClassName'
+  config.add_observer "ReputationChangeObserver"
 
   # Define :user_model_name. This model will be used to grant badge if no
   # `:to` option is given. Default is 'User'.
@@ -25,7 +26,8 @@ Rails.application.reloader.to_prepare do
     id: 1,
     name: "just-registered",
     description: "Welcome to the community!",
-    custom_fields: { difficulty: :silver }
+    custom_fields: { difficulty: :silver },
+    custom_fields: { image: 'badges/just-registered.png'}
   )
 
   Merit::Badge.create!(
