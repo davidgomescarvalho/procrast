@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show]
 
   def show
-    @badges = @user.badges
   end
 
   private

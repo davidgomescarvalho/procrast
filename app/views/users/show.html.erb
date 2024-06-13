@@ -67,17 +67,4 @@
       </div>
     </div>
   </div>
-
-  <div>
-<h2>Badges</h2>
-<div class="badges">
-  <% @badges.each do |badge| %>
-    <div class="badge">
-      <img src="<%= asset_path(badge.custom_fields[:image]) %>" alt="<%= badge.name %>">
-      <p><%= badge.name %></p>
-      <p><%= badge.description %></p>
-    </div>
-  <% end %>
-</div>
-  </div>
 </div>
