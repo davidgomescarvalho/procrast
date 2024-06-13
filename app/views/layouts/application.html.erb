@@ -30,8 +30,10 @@
       <a href="projects/new" class="navbar__link"><i class="fa-solid fa-plus"></i><span>New Project</span></a>
     </li>
     <li class="navbar__item">
-      <%= link_to user_path(current_user), class: "navbar__link" do %>
+      <% if current_user %>
+        <%= link_to user_path(current_user), class: "navbar__link" do %>
         <i class="fa-solid fa-user"></i><span>Profile</span>
+        <% end %>
       <% end %>
     </li>
   </ul>
