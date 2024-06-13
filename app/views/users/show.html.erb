@@ -84,7 +84,9 @@
 
   <ul>
   <% current_user.badges.each do |badge| %>
-    <li><%= badge.name %></li>
+    <li><%= badge_image(badge) %></li>
+    <li class="badge-name"><%= badge.name.humanize %></li>
+    <li> <%= badge.description %> </li>
   <% end %>
 </ul>
 </div>
