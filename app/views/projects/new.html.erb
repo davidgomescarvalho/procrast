@@ -1,6 +1,6 @@
 <h1>New Project</h1>
 
-<%= simple_form_for @project do |f| %>
+<%= simple_form_for @project, html: { data: { controller: :datepicker } } do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -17,11 +17,11 @@
   </div>
 
   <div class="field">
-    <%= f.input :start_time, as: :date, label: "Start Date" %>
+   <%= f.input :start_time, as: :string, input_html: { data: { datepicker_target: "startDate" } , id: 'start_date' }, label: "Start Date" %>
   </div>
 
   <div class="field">
-    <%= f.input :end_time, as: :date, label: "End Date" %>
+      <%= f.input :end_time, as: :string, input_html: { data: { datepicker_target: "endDate" }, id: 'end_date' }, label: "End Date"  %>
   </div>
 
   <div class="field">
