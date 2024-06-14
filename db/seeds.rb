@@ -78,7 +78,9 @@ user5 = User.create!(
 )
 avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user5.avatar.attach(io: avatar, filename: "#{user5.first_name}.jpg", content_type: 'image/jpg')
+user5.add_badge(2)
 user5.save!
+
 
 user6 = User.create!(
   email: "seb@lewagon.com",
