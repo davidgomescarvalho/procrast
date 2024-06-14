@@ -15,19 +15,35 @@
 <nav class="navbar">
   <ul class="navbar__menu">
     <li class="navbar__item">
-      <a href="/" class="navbar__link"><i class="fa-solid fa-house"></i><span>Home</span></a>
+       <% if current_user %>
+        <%= link_to root_path(current_user), class: "navbar__link" do %>
+        <i class="fa-solid fa-house"></i><span>Home</span>
+        <% end %>
+      <% end %>
     </li>
     <li class="navbar__item">
-      <a href="/projects/:id/calendar" class="navbar__link"><i class="fa-regular fa-calendar"></i><span>Calendar</span></a>
+      <% if current_user %>
+        <%= link_to calendar_project_path(current_user), class: "navbar__link" do %>
+        <i class="fa-regular fa-calendar"></i><span>Calendar</span>
+        <% end %>
+      <% end %>
     </li>
      <li class="navbar__item">
       <a href="/" class="navbar__link"><i class="fa-solid fa-message"></i><span>Messages</span></a>
     </li>
     <li class="navbar__item">
-      <a href="/projects" class="navbar__link"><i class="fa-solid fa-list"></i></i><span>Project List</span></a>
+      <% if current_user %>
+        <%= link_to projects_path(current_user), class: "navbar__link" do %>
+        <i class="fa-solid fa-rectangle-list"></i><span> My Projects</span>
+        <% end %>
+      <% end %>
     </li>
     <li class="navbar__item">
-      <a href="projects/new" class="navbar__link"><i class="fa-solid fa-plus"></i><span>New Project</span></a>
+      <% if current_user %>
+        <%= link_to  new_project_path(current_user), class: "navbar__link" do %>
+        <i class="fa-solid fa-circle-plus"></i><span>New Project</span>
+        <% end %>
+      <% end %>
     </li>
     <li class="navbar__item">
       <% if current_user %>
