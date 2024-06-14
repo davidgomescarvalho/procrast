@@ -1,4 +1,4 @@
-<h1 class="header">Profile</h1>
+<h1 class="header text-align center">Profile</h1>
 <div class="logout">
   <% if user_signed_in? %>
       <%= link_to 'Logout', destroy_user_session_path, data: { "turbo-method": :delete } %>
@@ -6,102 +6,84 @@
     <span>logout</span>
   <% end %>
 </div>
-<div class="container">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-8 sm">
-        <div class="card" style="border-radius: 15px;">
-          <div class="card-body p-4">
-            <div class="d-flex">
-              <div class="flex-shrink-0">
-               <p>
-                  <% if @user.avatar.attached? %>
-                    <%= image_tag @user.avatar, size: "200x200", class: "rounded-circle shadow-4" %>
-                  <% else %>
-                    <p>No avatar uploaded</p>
-                  <% end %>
-                </p>
-              </div>
-              <div class="flex-grow-1 ms-3">
-                <h5 class="mb-1"> <%= @user.first_name %></h5>
-                <p class="mb-2 pb-1">
-                 @<%= @user.username %>
-                </p>
-                <div class="d-flex justify-content-start rounded-3 p-2 mb-2 bg-body-tertiary">
-                  <div>
-                    <p class="small text-muted mb-1">
-                     Xp
-                    </p>
-                    <p class="mb-0"> <%= @user.sash.points %></p>
-                  </div>
-                  <div class="px-3">
-                    <p class="small text-muted mb-1">
-                      Followers
-                    </p>
-                    <p class="mb-0">3</p>
-                  </div>
-                   <div class="px-3">
-                    <p class="small text-muted mb-1">
-                      Following
-                    </p>
-                    <p class="mb-0">3</p>
-                  </div>
-                   <div class="px-3">
-                    <p class="small text-muted mb-1">
-                      Projects done
-                    </p>
-                    <p class="mb-0">67</p>
-                  </div>
-                  <div>
-                    <p class="small text-muted mb-1">
-                     Trophies
-                    </p>
-                    <p class="mb-0"> <%= current_user.badges.count%> </p>
-                  </div>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card text-center">
+                <div class="card-body">
+                    <div class="profile">
+                            <p>
+                        <% if @user.avatar.attached? %>
+                          <%= image_tag @user.avatar, size: "200x200", class: "rounded-circle shadow-4" %>
+                        <% else %>
+                          <p>No avatar uploaded</p>
+                        <% end %>
+                      </p>
+                        <h2 class="card-title"><%= @user.first_name %></h2>
+                        <h5 class="card-title"> @<%= @user.username %></h5>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-6 col-md-4">
+                            <div class="stat">
+                                <h5 class="fw-bold">XP Points</h5>
+                                <p><%= @user.sash.points %></p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="stat">
+                                <h5 class="fw-bold">Projects Completed</h5>
+                                <p>25</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="stat mt-3 mt-md-0">
+                                <h5 class="fw-bold">Following</h5>
+                                <p>150</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="stat mt-3 mt-md-0">
+                                <h5 class="fw-bold">Followed</h5>
+                                <p>180</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="stat mt-3 mt-md-0">
+                                <h5 class="fw-bold">Badges</h5>
+                                <p><%= current_user.badges.count%></p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="stat mt-3 mt-md-0">
+                                <h5 class="fw-bold">Level</h5>
+                                <p><%= @user.level %></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="d-flex pt-1">
-                  <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-secondary me-1 flex-grow-1">
-                    Chat
-                  </button>
-                  <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary flex-grow-1">
-                    Follow
-                  </button>
-                </div>
+            </div>
+        </div>
+    </div>
+
+
+  <div class="row justify-content-center mt-5">
+          <div class="col-md-8 col-lg-6">
+              <div class="card">
+                  <div class="card-body">
+                      <h3 class="card-title text-center mb-4">Badges</h3>
+                      <div class="row g-2">
+                      <p>Level: <%= @user.level %> </p>
+                            <% current_user.badges.each do |badge| %>
+                              <div class="col-4 col-sm-3 col-md-2">
+                              <%= badge_image(badge) %>
+                              <%= badge.name.humanize %>
+                                <%= badge.description %>
+                              </div>
+                              <% end %>
+                      </div>
+                  </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
-
-<div class="container">
-  <div class="container h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-8 sm">
-        <div class="card" style="border-radius: 15px;">
-          <div class="card-body p-4">
-            <div class="d-flex">
-              <div class="flex-shrink-0">
-              <p>Level: <%= @user.level %> </p>
-              <p>Points: <%=@user.sash.points%></p>
-                <ul>
-                <% current_user.badges.each do |badge| %>
-                  <li><%= badge_image(badge) %></li>
-                  <li class="badge-name"><%= badge.name.humanize %></li>
-                  <li> <%= badge.description %> </li>
-                <% end %>
-              </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div>
-
-
-</div>
 </div>
