@@ -26,21 +26,21 @@ Rails.application.reloader.to_prepare do
     id: 1,
     name: "just-registered",
     description: "Welcome to the community!",
-    custom_fields: { difficulty: :silver, image: 'badges/just-registered.png'}
+    custom_fields: {image: 'badges/just-registered.png'}
   )
 
   Merit::Badge.create!(
     id: 2,
     name: "best-unicorn",
     description: "You're the best unicorn!",
-    custom_fields: { difficulty: :gold, image: 'badges/best-unicorn.png'}
+    custom_fields: {image: 'badges/best-unicorn.png'}
   )
 
   Merit::Badge.create!(
     id: 3,
     name: "first-project",
     description: "You've created your first project!",
-    custom_fields: { difficulty: :bronze }
+    custom_fields: {image: 'badges/first-project.png'}
   )
 
   Merit::Badge.create!(
