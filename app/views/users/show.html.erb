@@ -75,18 +75,33 @@
     </div>
   </div>
 
-<p>
-  Level: <%= @user.level %>
-</p>
-<p>
-  Points: <%=@user.sash.points%>
-</p>
+<div class="container">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-8 sm">
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body p-4">
+            <div class="d-flex">
+              <div class="flex-shrink-0">
+              <p>Level: <%= @user.level %> </p>
+              <p>Points: <%=@user.sash.points%></p>
+                <ul>
+                <% current_user.badges.each do |badge| %>
+                  <li><%= badge_image(badge) %></li>
+                  <li class="badge-name"><%= badge.name.humanize %></li>
+                  <li> <%= badge.description %> </li>
+                <% end %>
+              </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <ul>
-  <% current_user.badges.each do |badge| %>
-    <li><%= badge_image(badge) %></li>
-    <li class="badge-name"><%= badge.name.humanize %></li>
-    <li> <%= badge.description %> </li>
-  <% end %>
-</ul>
+<div>
+
+
+</div>
 </div>
