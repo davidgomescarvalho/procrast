@@ -39,20 +39,8 @@
                         </div>
                         <div class="col-6 col-md-4">
                             <div class="stat mt-3 mt-md-0">
-                                <h5 class="fw-bold">Following</h5>
-                                <p>150</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4">
-                            <div class="stat mt-3 mt-md-0">
-                                <h5 class="fw-bold">Followed</h5>
-                                <p>180</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4">
-                            <div class="stat mt-3 mt-md-0">
-                                <h5 class="fw-bold">Badges</h5>
-                                <p><%= current_user.badges.count%></p>
+                                <h5 class="fw-bold">Trophies</h5>
+                                <p><%= current_user.trophies.count%></p>
                             </div>
                         </div>
                         <div class="col-6 col-md-4">
@@ -69,23 +57,23 @@
 
 
   <div class="row justify-content-center mt-5">
-          <div class="col-md-8 col-lg-6">
-              <div class="card">
+    <div class="col-md-8 col-lg-6">
+        <div class="card">
                   <div class="card-body">
-                      <h3 class="card-title text-center mb-4">Badges</h3>
+                      <h3 class="card-title text-center mb-4">Trophies</h3>
                       <div class="row g-2">
                       <%=   image_tag "#{@user.player_level}.png" %>
                       <p>Level: <%= current_user.player_level %> </p>
-                            <% current_user.badges.each do |badge| %>
+                            <% current_user.trophies.each do |trophy| %>
                               <div class="col-4 col-sm-3 col-md-2">
-                              <%= badge_image(badge) %>
-                              <%= badge.name.humanize %>
-                                <%= badge.description %>
+                                <%= trophy.image %>
+                                <%= trophy.name.humanize %>
                               </div>
-                              <% end %>
-                      </div>
-                  </div>
+                            <% end %>
               </div>
-            </div>
+           </div>
+        </div>
+        <%= link_to "See all your trophies", trophies_path(current_user) %>
+    </div>
   </div>
 </div>

@@ -168,7 +168,7 @@ puts "Created #{User.count} users."
 #     instrument.photos.attach(io: photos, filename: "#{Instrument.last.title}.jpg", content_type: 'image/jpg')
 #   end
 #   # URI.open(Faker::LoremFlickr.image(size: "500x600", search_terms: ['instrument']))
-#   # Instrument.last.photos.attach(io: photos, filename: "#{Instrument.last.title}.jpg", content_type: 'image/jpg')
+#   # Instrument.last.photos.attach(io: photos, filename: "#{Instrument.last.title}.jpg", content_type:'image/jpg')
 #   instrument.save!
 #   puts "Seeded #{Instrument.count} instruments with #{instrument.photos.count} photos."
 # end
