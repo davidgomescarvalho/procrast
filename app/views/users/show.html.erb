@@ -74,6 +74,7 @@
                   <div class="card-body">
                       <h3 class="card-title text-center mb-4">Badges</h3>
                       <div class="row g-2">
+                      <%=   image_tag "#{@user.player_level}.png" %>
                       <p>Level: <%= current_user.player_level %> </p>
                             <% current_user.badges.each do |badge| %>
                               <div class="col-4 col-sm-3 col-md-2">

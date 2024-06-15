@@ -47,7 +47,6 @@ user3 = User.create!(
 
 avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user3.avatar.attach(io: avatar, filename: "#{user3.first_name}.jpg", content_type: 'image/jpg')
-user3.add_badge(2)
 user3.save!
 
 user4 = User.create!(
@@ -60,7 +59,6 @@ user4 = User.create!(
 )
 avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user4.avatar.attach(io: avatar, filename: "#{user4.first_name}.jpg", content_type: 'image/jpg')
-user4.add_badge(2)
 user4.save!
 
 user5 = User.create!(
@@ -73,7 +71,6 @@ user5 = User.create!(
 )
 avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user5.avatar.attach(io: avatar, filename: "#{user5.first_name}.jpg", content_type: 'image/jpg')
-user5.add_badge(2)
 user5.save!
 
 
@@ -103,9 +100,6 @@ user7.save!
 
 puts "Created #{User.count} users."
 
-User.all.each do |user|
-  user.add_badge(1)
-end
 
 # puts "Creating instruments..."
 

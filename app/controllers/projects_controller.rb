@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
   def create
     @project = current_user.projects.build(project_params)
     if @project.save
-      redirect_to user_project_path(current_user, @project), notice: 'Your Project was successfully created.'
+      redirect_to project_path(@project), notice: 'Your Project was successfully created.'
     else
       flash[:alert] = @project.errors.full_messages.join(', ')
       render :new, status: :unprocessable_entity
