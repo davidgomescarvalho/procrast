@@ -16,6 +16,7 @@ class Task < ApplicationRecord
     case project.tasks.count
     when 1
 
-    Trophy.create(points: 10)
+      Trophy.create(points: 10)
+    end
   end
 end
