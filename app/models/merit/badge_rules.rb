@@ -56,6 +56,68 @@ module Merit
         project.user.projects.where(completed: true).count == 50
       end
 
+      # If it has 1 project deleted, grant badge
+      grant_on 'projects#destroy', badge_id: 9, badge: 'first-project-deleted', to: :user do |project|
+        project.user.projects.where(deleted: true).count == 1
+      end
+
+      # If it has 10 projects deleted, grant badge
+      grant_on 'projects#destroy', badge_id: 10, badge: 'prolific-project-deleter', to: :user do |project|
+        project.user.projects.where(deleted: true).count == 10
+      end
+
+      # If it has 50 projects deleted, grant badge
+      grant_on 'projects#destroy', badge_id: 11, badge: 'master-project-deleter', to: :user do |project|
+        project.user.projects.where(deleted: true).count == 50
+      end
+
+      # If it has 1 task, grant badge
+      grant_on 'tasks#create', badge_id: 12, badge: 'first-task', to: :user do
+        task.user.tasks.count == 1
+      end
+
+      # If it has 10 tasks, grant badge
+      grant_on 'tasks#create', badge_id: 13, badge: 'prolific-task-creator', to: :user do
+        task.user.tasks.count == 10
+      end
+
+      # If it has 50 tasks, grant badge
+      grant_on 'tasks#create', badge_id: 14, badge: 'master-task-creator', to: :user do
+        task.user.tasks.count == 50
+      end
+
+      # If it has 1 task completed, grant badge
+      grant_on 'tasks#complete', badge_id: 15, badge: 'first-task-completed', to: :user do
+        task.user.tasks.where(completed: true).count == 1
+      end
+
+      # If it has 10 tasks completed, grant badge
+      grant_on 'tasks#complete', badge_id: 16, badge: 'prolific-task-completer', to: :user do
+        task.user.tasks.where(completed: true).count == 10
+      end
+
+      # If it has 50 tasks completed, grant badge
+      grant_on 'tasks#complete', badge_id: 17, badge: 'master-task-completer', to: :user do
+        task.user.tasks.where(completed: true).count == 50
+      end
+
+      # If it has 1 task deleted, grant badge
+      grant_on 'tasks#destroy', badge_id: 18, badge: 'first-task-deleted', to: :user do
+        task.user.tasks.where(deleted: true).count == 1
+      end
+
+      # If it has 10 tasks deleted, grant badge
+      grant_on 'tasks#destroy', badge_id: 19, badge: 'prolific-task-deleter', to: :user do
+        task.user.tasks.where(deleted: true).count == 10
+      end
+
+      # If it has 50 tasks deleted, grant badge
+      grant_on 'tasks#destroy', badge_id: 20, badge: 'master-task-deleter', to: :user do
+        task.user.tasks.where(deleted: true).count == 50
+      end
+
+      
+
       # If it has 10 comments, grant commenter-10 badge
       # grant_on 'comments#create', badge: 'commenter', level: 10 do |comment|
       #   comment.user.comments.count == 10
