@@ -18,6 +18,7 @@ class TasksController < ApplicationController
     @task.project = @project
 
     if @task.save
+      grant_trophy
       flash[:notice] = 'Task was successfully created.'
       redirect_to project_path(@project)
     else
@@ -54,5 +55,11 @@ class TasksController < ApplicationController
 
   def set_project
     @project = Project.find(params[:project_id])
+  end
+
+  def grant_trophy
+    if @project.tasks.count == 1
+      Trophy.create(points: 5)
+    end
   end
 end
