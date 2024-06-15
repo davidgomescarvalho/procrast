@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :set_project, only: :create
 
   def index
     @tasks = Task.all
@@ -14,10 +15,11 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
+    @task.project = @project
 
     if @task.save
       flash[:notice] = 'Task was successfully created.'
-      redirect_to tasks_path
+      redirect_to project_path(@project)
     else
       render :new
     end
@@ -46,7 +48,10 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :project_id)
+    params.require(:task).permit(:title, :start_date, :end_date)
   end
 
+  def set_project
+    @project = Project.find(params[:project_id])
+  end
 end

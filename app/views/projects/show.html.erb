@@ -8,23 +8,28 @@
   <h2>Tasks:</h2>
   <ul>
     <% @project.tasks.each do |task| %>
-      <li><%= task.name %></li>
+      <li><%= task.title %> | <%= task.start_date%> - <%= task.end_date %></li>
     <% end %>
   </ul>
 <% else %>
   <p>No tasks found for this project.</p>
 <% end %>
 
-<div data-toggle-target="togglableElement" class="d-none">
-  <%= simple_form_for([@project, @task]) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.button :submit, 'Create Task' %>
-  <% end %>
-</div>
 
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
-<%= link_to 'Add Task', new_project_tasks_path(current_user, @project) %>
+
+<div data-controller="toggle">
+  <button data-action="click->toggle#toggleElement">Add task</button>
+
+  <div data-toggle-target="togglableElement" class="d-none">
+    <%= simple_form_for([@project, @task]) do |f| %>
+      <%= f.input :title %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.button :submit, 'Create Task' %>
+    <% end %>
+  </div>
+
+</div>

@@ -18,6 +18,14 @@ module Merit
 
       # Updating a new project
       score 10, to: :user, on: 'tasks#create'
+
+      # Deleting a project
+      score -10, to: :user, on: 'projects#destroy'
+
+      # Creating a new task
+      score 1, to: :user, on: 'tasks#create'
+
+
     end
   end
 end
