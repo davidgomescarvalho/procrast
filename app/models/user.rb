@@ -4,7 +4,6 @@ class User < ApplicationRecord
   after_save :update_level_based_on_points
 
 
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -22,10 +21,6 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :country, presence: true
   validates :total_points, presence: true
-
-  def current_points
-    sash.try(:points) || 0
-  end
 
   def update_level_based_on_points
     current_points = self.current_points

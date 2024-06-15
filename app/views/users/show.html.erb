@@ -27,7 +27,8 @@
                         <div class="col-6 col-md-4">
                             <div class="stat">
                                 <h5 class="fw-bold">XP Points</h5>
-                                <p><%= @user.sash.points %></p>
+                                <%#= raise %>
+                                <p><%= current_user.points %></p>
                             </div>
                         </div>
                         <div class="col-6 col-md-4">
@@ -73,7 +74,7 @@
                   <div class="card-body">
                       <h3 class="card-title text-center mb-4">Badges</h3>
                       <div class="row g-2">
-                      <p>Level: <%= @user.level %> </p>
+                      <p>Level: <%= current_user.level %> </p>
                             <% current_user.badges.each do |badge| %>
                               <div class="col-4 col-sm-3 col-md-2">
                               <%= badge_image(badge) %>
