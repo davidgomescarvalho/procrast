@@ -12,6 +12,10 @@ class User < ApplicationRecord
   has_many :points, through: :achievements, :source => :trophy
   has_many :notifications, dependent: :destroy
 
+  validates :username, uniqueness: true
+  validates :email, uniqueness: true
+  validates :password, presence: true
+  validates :total_points, presence: true
   validates :email, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -19,7 +23,7 @@ class User < ApplicationRecord
   validates :country, presence: true
 
   def player_level
-    case points
+    case total_points
     when 0..100
       "Bronze"
     when 100..300

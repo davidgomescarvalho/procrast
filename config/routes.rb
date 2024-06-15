@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   resources :achievements, only: [:index, :show ]
 
-  resources :trophies, only: [:show, :update]
+  resources :trophies, only: [:show, :update, :index]
 
   root to: "pages#home"
 end
