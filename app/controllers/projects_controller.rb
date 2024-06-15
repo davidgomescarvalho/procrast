@@ -40,7 +40,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project.destroy
-    redirect_to user_projects_path(@project.user)
+    redirect_to projects_path
   end
 
   def calendar

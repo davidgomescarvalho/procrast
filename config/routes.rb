@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :index] do
-    resources :projects, only: [:index, :new, :create,:show]
+    # resources :projects, only: [:index, :new, :create,:show]
   end
 
   resources :projects do

@@ -28,6 +28,7 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
+    redirect_to project_path(@task.project)
   end
 
   def edit
