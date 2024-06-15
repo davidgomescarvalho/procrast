@@ -13,44 +13,11 @@ module Merit
     include Merit::PointRulesMethods
 
     def initialize
-      score 10, on: 'users#create', to: 'itself', category: 'project' do |project|
-        project.user.update_level_based_on_points
-      end
-
-      score 15, on: 'projects#create', to: :user, category: 'project' do |project|
-        project.user.update_level_based_on_points
-      end
-
       # Creating a new project
-      score 10, on: 'projects#create', to: :user, category: 'project' do |project|
-        project.user.update_level_based_on_points
-      end
+      score 20, to: :user, on: 'projects#create'
 
-      # Updating a project
-      score 5, on: 'projects#update', to: :user, category: 'project' do |project|
-        project.user.update_level_based_on_points
-      end
-
-      # Completing a project
-      score 15, on: 'projects#complete', to: :user, category: 'project' do |project|
-        project.user.update_level_based_on_points
-      end
-
-      # Losing points for deleting a project
-      score -5, on: 'projects#destroy', to: :user, category: 'project' do |project|
-        project.user.update_level_based_on_points
-      end
-
-      # Bonus points for reaching milestones
-      score 20, on: 'projects#create', to: :user, category: 'project' do |project|
-        project.user.projects.count == 10
-        project.user.update_level_based_on_points
-      end
-
-      score 50, on: 'projects#create', to: :user, category: 'project' do |project|
-        project.user.projects.count == 50
-        project.user.update_level_based_on_points
-      end
+      # Updating a new project
+      score 10, to: :user, on: 'tasks#create'
     end
   end
 end
