@@ -1,9 +1,5 @@
 class User < ApplicationRecord
   has_merit
-
-  after_save :update_level_based_on_points
-
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -20,12 +16,17 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :username, presence: true
   validates :country, presence: true
-  validates :total_points, presence: true
 
-  def update_level_based_on_points
-    current_points = self.current_points
-    new_level = LEVELS.reverse.find { |l| current_points >= l[:points_required] }[:level]
-
-    update_column(:level, new_level) if level != new_level
+  def player_level
+    case points
+    when 0..100
+      "bronze"
+    when 100..300
+      "silver"
+    when 300..500
+      "gold"
+    else
+      "platine"
+    end
   end
 end

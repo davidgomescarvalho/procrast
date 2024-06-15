@@ -58,7 +58,7 @@
                         <div class="col-6 col-md-4">
                             <div class="stat mt-3 mt-md-0">
                                 <h5 class="fw-bold">Level</h5>
-                                <p><%= @user.level %></p>
+                                <p><%= current_user.player_level %></p>
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                   <div class="card-body">
                       <h3 class="card-title text-center mb-4">Badges</h3>
                       <div class="row g-2">
-                      <p>Level: <%= current_user.level %> </p>
+                      <p>Level: <%= current_user.player_level %> </p>
                             <% current_user.badges.each do |badge| %>
                               <div class="col-4 col-sm-3 col-md-2">
                               <%= badge_image(badge) %>

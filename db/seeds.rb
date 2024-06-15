@@ -9,8 +9,6 @@ puts "Cleared the database."
 puts "Seeding the database..."
 puts "Creating users..."
 
-
-
 # Create a user
 
 user1 = User.create!(
@@ -19,7 +17,6 @@ user1 = User.create!(
   password: 'password',
   first_name: "Michelle",
   last_name: "Mabelle",
-  total_points: rand(0..10000),
   country: "France"
 )
 avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
@@ -32,7 +29,6 @@ user2 = User.create!(
   password: 'password',
   first_name: "Bob",
   last_name: "Morane",
-  total_points: rand(0..10000),
   country: "Anglais"
 )
 avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
@@ -45,13 +41,13 @@ user3 = User.create!(
   password: 'password',
   first_name: "David",
   last_name: "Gomes Carvalho",
-  total_points: rand(0..10_000),
   country: "Portugal"
 )
 
 
 avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user3.avatar.attach(io: avatar, filename: "#{user3.first_name}.jpg", content_type: 'image/jpg')
+user3.add_badge(2)
 user3.save!
 
 user4 = User.create!(
@@ -60,11 +56,11 @@ user4 = User.create!(
   password: 'password',
   first_name: "Wassim",
   last_name: "Badreddine ",
-  total_points: rand(0..10_000),
   country: "France"
 )
 avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user4.avatar.attach(io: avatar, filename: "#{user4.first_name}.jpg", content_type: 'image/jpg')
+user4.add_badge(2)
 user4.save!
 
 user5 = User.create!(
@@ -73,7 +69,6 @@ user5 = User.create!(
   password: 'password',
   first_name: "Hugo",
   last_name: "Ferrier",
-  total_points: rand(0..10_000),
   country: "France"
 )
 avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
@@ -88,7 +83,6 @@ user6 = User.create!(
   password: 'password',
   first_name: "Sebastien",
   last_name: "Saunier",
-  total_points: rand(0..10_000),
   country: "France"
 )
 avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
@@ -101,7 +95,6 @@ user7 = User.create!(
   password: 'password',
   first_name: "Boris",
   last_name: "Paillard",
-  total_points: rand(0..10_000),
   country: "France"
 )
 avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
@@ -113,11 +106,6 @@ puts "Created #{User.count} users."
 User.all.each do |user|
   user.add_badge(1)
 end
-
-
-
-
-
 
 # puts "Creating instruments..."
 
