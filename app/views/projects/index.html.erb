@@ -1,16 +1,17 @@
 <h1>All Projects</h1>
-
-<ul>
-<% if @projects.empty? %>
-    <p>No projects found, start a project !</p>
+<div class="new_container">
+  <ul>
+    <% if @projects.empty? %>
+      <p>No projects found, start a project !</p>
     <% else %>
-  <% @projects.each do |project| %>
-    <li><%= link_to project.title, project_path(project) %></li>
-    <%= link_to 'Delete', project_path(project), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
-  <% end %>
-<% end %>
-</ul>
+      <% @projects.each do |project| %>
+        <li><%= link_to project.title, project_path(project) %></li>
+        <%= link_to 'Delete', project_path(project), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+      <% end %>
+    <% end %>
+  </ul>
 
-<% if user_signed_in? %>
-    <%= link_to 'New Project', new_project_path %>
-<% end %>
+  <% if user_signed_in? %>
+      <%= link_to 'New Project', new_project_path %>
+  <% end %>
+</div>
