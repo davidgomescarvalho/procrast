@@ -6,6 +6,7 @@
     <% else %>
   <% @projects.each do |project| %>
     <li><%= link_to project.title, project_path(project) %></li>
+    <%= link_to 'Delete', project_path(project), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
   <% end %>
 <% end %>
 </ul>
