@@ -28,7 +28,7 @@ ul {
   position: fixed;
   top: 1rem;
   left: 1rem;
-  background: #f2d398;
+  background: #0a1045;
   border-radius: 10px;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.03);
   height: calc(100vh - 4rem);
@@ -40,7 +40,7 @@ ul {
   align-items: center;
   height: 3.5rem;
   width: 5.5rem;
-  color: #6a778e;
+  color: #00c2d1;
   transition: 250ms ease all;
 }
 .navbar__link span {
@@ -51,7 +51,7 @@ ul {
   opacity: 0;
   pointer-events: none;
   color: #4D1934;
-  background: #fff;
+  background: #f9e900;
   padding: 0.75rem;
   transition: 250ms ease all;
   border-radius: 17.5px;
@@ -75,7 +75,7 @@ ul {
   left: 1rem;
   width: 3.5rem;
   height: 3.5rem;
-  background: #4D1934;
+  background: #f9e900;
   border-radius: 17.5px;
   transition: 250ms cubic-bezier(1, 0.2, 0.1, 1.2) all;
 }
