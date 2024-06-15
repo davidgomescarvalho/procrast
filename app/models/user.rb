@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  has_merit
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -9,6 +8,8 @@ class User < ApplicationRecord
   has_many :projects, dependent: :destroy
   has_many :achievements, dependent: :destroy
   has_many :trophies, through: :achievements
+  has_many :tasks, through: :projects
+  has_many :points, through: :achievements, :source => :trophy
   has_many :notifications, dependent: :destroy
 
   validates :email, presence: true
@@ -20,13 +21,13 @@ class User < ApplicationRecord
   def player_level
     case points
     when 0..100
-      "bronze"
+      "Bronze"
     when 100..300
-      "silver"
+      "Silver"
     when 300..500
-      "gold"
+      "Gold"
     else
-      "platine"
+      "Platinum"
     end
   end
 end
