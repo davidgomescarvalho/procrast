@@ -3,7 +3,7 @@
     <h4><%= date.day %></h4>
     <% projects_on_date.each do |project| %>
         <div class="calendar-event">
-          <%= link_to project.title, user_project_path(current_user, project) %><br>
+          <%= link_to project.title, project_path(current_user) %><br>
       </div>
     <% end %>
   </div>
