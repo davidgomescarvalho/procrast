@@ -9,14 +9,16 @@ class Project < ApplicationRecord
   validates :end_time, presence: true
   validates :status, presence: true
 
-  after_create :update_user_points
+  after_create :update_user_points_plus
+  after_destroy :update_user_points_minus
 
   private
 
-  def update_user_points
-    case self.count += 1
-    when 1
-      user.increment!(:total_points, 10)
-    end
+  def update_user_points_plus
+    user.increment!(:total_points, 10)
+  end
+
+  def update_user_points_minus
+    user.decrement!(:total_points, 10)
   end
 end
