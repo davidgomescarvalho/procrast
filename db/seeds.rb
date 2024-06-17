@@ -99,8 +99,21 @@ user7.avatar.attach(io: avatar, filename: "#{user7.first_name}.jpg", content_typ
 user7.save!
 
 puts "Created #{User.count} users."
+puts "Creating Projects."
 
+date1 = Date.new(2024, 07, 8)
+date2 = Date.new(2024, 07, 14)
 
+project1 = Project.create!(
+  user: user3,
+  title: "First Project",
+  start_time: date1,
+  end_time: date2,
+  status: "Not started"
+)
+project1.save!
+
+puts "Created #{Project.count} projects."
 # puts "Creating instruments..."
 
 # # Create a post
