@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema[7.1].define(version: 2024_06_18_145320) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -159,6 +158,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_18_145320) do
     t.string "last_name", null: false
     t.string "country", null: false
     t.string "avatar", default: "https://res.cloudinary.com/dq7l8216n/image/upload/v1633836824/avatars/default_avatar.png", null: false
+    t.integer "sash_id"
     t.integer "total_points", default: 0
     t.integer "trophies_count", default: 0, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
