@@ -5,6 +5,7 @@
 <p><strong>End date:</strong> <%= @project.end_time %></p>
 
 <% if @project.tasks.any? %>
+<div class="container-fluid">
   <h2>Tasks:</h2>
   <ul>
     <% @project.tasks.each do |task| %>
@@ -15,9 +16,6 @@
 <% else %>
   <p>No tasks found for this project.</p>
 <% end %>
-
-
-
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
 
@@ -34,4 +32,5 @@
     <% end %>
   </div>
 
+</div>
 </div>

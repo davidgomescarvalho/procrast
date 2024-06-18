@@ -508,9 +508,58 @@ avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user7.avatar.attach(io: avatar, filename: "#{user7.first_name}.jpg", content_type: 'image/jpg')
 user7.save!
 
+
 puts "Created #{User.count} users with #{Project.count} projects and #{Task.count} tasks."
 
+date1 = Date.new(2024, 07, 8)
+date2 = Date.new(2024, 07, 14)
 
+project1 = Project.create!(
+  user: user3,
+  title: "First Project",
+  start_time: date1,
+  end_time: date2,
+  status: "Not started"
+)
+project1.save!
+
+date3 = Date.new(2024, 07, 15)
+date4 = Date.new(2024, 07, 16)
+
+project2 = Project.create!(
+  user: user3,
+  title: "Dishes",
+  start_time: date3,
+  end_time: date4,
+  status: "Not started"
+)
+project1.save!
+
+date5 = Date.new(2024, 07, 20)
+date6 = Date.new(2024, 07, 21)
+
+project3 = Project.create!(
+  user: user3,
+  title: "Buy Chairs",
+  start_time: date5,
+  end_time: date6,
+  status: "Not started"
+)
+project1.save!
+
+date7 = Date.new(2024, 07, 22)
+date8 = Date.new(2024, 07, 28)
+
+project1 = Project.create!(
+  user: user3,
+  title: "Oil painting",
+  start_time: date7,
+  end_time: date8,
+  status: "Not started"
+)
+project1.save!
+
+puts "Created #{Project.count} projects."
 # puts "Creating instruments..."
 
 # # Create a post
