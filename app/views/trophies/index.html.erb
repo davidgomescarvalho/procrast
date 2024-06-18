@@ -1,20 +1,21 @@
-<h1>Trophies</h1>
+<div class="row justify-content-center mt-2 rounded">
+    <div class="col-md-8 col-lg-6">
+        <div class="card">
+                  <div class="card-body">
+                      <h3 class="card-title text-center mb-4">Trophies</h3>
+                      <div class="row g-2">
+                            <% current_user.trophies.each do |trophy| %>
+                              <div class="col-4 col-sm-3 col-md-2">
+                              <%=  image_tag(trophy.image) %>
+                                <%= trophy.name.humanize %>
+                              </div>
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <% end %>
+                        </div>
+           </div>
+        </div>
+    </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Category</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @trophies.each do |trophy| %>
-      <tr>
-        <td><%= trophy.name %></td>
-        <td><%= trophy.description %></td>
-        <td><%= trophy.category %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
