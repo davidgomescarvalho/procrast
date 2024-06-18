@@ -3,16 +3,27 @@ require 'open-uri'
 
 # Clear existing data
 User.destroy_all
+Trophy.destroy_all
+Project.destroy_all
+Task.destroy_all
+
 puts "Cleared the database."
 
 # Seed the database
 puts "Seeding the database..."
 puts "Creating users..."
 
+
 status = ["Not started", "In progress"]
 Trophy.create!(
   name: "First Project",
-  description: "You've created your first project!"
+  description: "You've created your first project!",
+  image: "images/first-project.png"
+)
+
+Trophy.create!(
+  name: "Just getting started",
+  description: "You've just started your journey!"
 )
 
 Trophy.create!(
