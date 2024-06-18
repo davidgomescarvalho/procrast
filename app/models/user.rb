@@ -9,7 +9,6 @@ class User < ApplicationRecord
   has_many :achievements, dependent: :destroy
   has_many :trophies, through: :achievements
   has_many :tasks, through: :projects
-  has_many :points, through: :achievements, :source => :trophy
   has_many :notifications, dependent: :destroy
 
   validates :username, uniqueness: true
