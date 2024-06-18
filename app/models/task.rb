@@ -5,18 +5,20 @@ class Task < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
 
-  after_create :grant_trophy
-  after_destroy :grant_trophy
+  after_create :update_user_points_task_plus
+  after_destroy :update_user_points_task_minus
+
+  private
 
   def user
     project.user
   end
 
-  def grant_trophy
-    case project.tasks.count
-    when 1
+  def update_user_points_task_minus
+    user.decrement!(:total_points, 5)
+  end
 
-      Trophy.create(points: 10)
-    end
+  def update_user_points_task_plus
+    user.increment!(:total_points, 5)
   end
 end
