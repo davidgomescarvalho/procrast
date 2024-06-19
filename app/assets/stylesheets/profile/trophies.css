@@ -1,0 +1,18 @@
+.trophy-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+.trophy-name {
+  font-size: 0.8em;
+  color: #555;
+  margin: 0;
+}
+
+.trophy-description {
+  font-size: 1em;
+  color: #000;
+  margin: 0;
+}
