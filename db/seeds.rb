@@ -32,22 +32,57 @@ image = URI.open("https://game-icons.net/images/project_papper.png")
 trophy2.image.attach(io: image, filename: "#{trophy2.name}.png", content_type: 'image/png')
 
 trophy3 = Trophy.create!(
-  name: "5 Projects",
-  description: "You've created 5 projects!"
+  name: "You're on a roll!",
+  description: "You've completed 5 projects!"
 )
 image = URI.open("https://cdn12.picryl.com/photo/2016/12/31/medal-trophy-achievement-4260eb-1024.png")
 trophy3.image.attach(io: image, filename: "#{trophy3.name}.png", content_type: 'image/png')
 
 trophy4 = Trophy.create!(
-  name: "10 Projects",
-  description: "You've created 10 projects!"
+  name: "Reaching the stars",
+  description: "You've completed 10 projects!"
 )
 image = URI.open("https://3dbay.io/files/preview/961x961/11696528407dmrww8ggykz1ftjzrcojoonhsbca6nlbdp35ogsl4ukuzfpbrhwsbkvhb5pi0trmzsgo2aayxw33asayfwgkxaho4fvqslmh6aai.png")
 trophy4.image.attach(io: image, filename: "#{trophy4.name}.png", content_type: 'image/png')
 
+trophy5 = Trophy.create!(
+  name: "Rolling on tasks",
+  description: "You've completed 10 tasks"
+)
+image = URI.open("https://cdn-icons-png.freepik.com/256/8743/8743940.png?ga=GA1.1.1098352156.1718818190&semt=ais_hybrid")
+trophy5.image.attach(io: image, filename: "#{trophy5.name}.png", content_type: 'image/png')
+
+trophy6 = Trophy.create!(
+  name: "Can't stop won't stop",
+  description: "You've completed your first project!"
+)
+image = URI.open("https://game-icons.net/images/project_papper.png")
+trophy6.image.attach(io: image, filename: "#{trophy6.name}.png", content_type: 'image/png')
+
+trophy7 = Trophy.create!(
+  name: "I'm on fire!",
+  description: "You've completed a week-long project!"
+)
+
+image = URI.open("https://cdn-icons-png.freepik.com/256/14883/14883510.png")
+trophy7.image.attach(io: image, filename: "#{trophy7.name}.png", content_type: 'image/png')
+
+trophy8 = Trophy.create!(
+  name: "The king of projects",
+  description: "You've completed a month-long project!"
+)
+
+image = URI.open("https://3dbay.io/files/preview/961x961/11696528407dmrww8ggykz1ftjzrcojoonhsbca6nlbdp35ogsl4ukuzfpbrhwsbkvhb5pi0trmzsgo2aayxw33asayfwgkxaho4fvqslmh6aai.png")
+trophy8.image.attach(io: image, filename: "#{trophy8.name}.png", content_type: 'image/png')
 
 
+trophy9 = Trophy.create!(
+  name: "Wagonner",
+  description: "You've presented your app to the world!"
+)
 
+image = URI.open("https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png")
+trophy9.image.attach(io: image, filename: "#{trophy9.name}.png", content_type: 'image/png')
 
 
 
@@ -169,22 +204,22 @@ project1 = Project.create!(
 
 Task.create!(
   title: "Learn the basics of HTML",
-  start_date:"2024-07-14" ,
-  end_date:"2024-07-14" ,
+  start_date: "2024-07-14",
+  end_date: "2024-07-14" ,
   project: project1
 )
 
 Task.create!(
   title: "Learn the basics of CSS",
-  start_date:"2024-07-15" ,
-  end_date:"2024-07-15" ,
+  start_date: "2024-07-15",
+  end_date: "2024-07-15" ,
   project: project1
 )
 
 Task.create!(
   title: "Learn the basics of JavaScript",
-  start_date:"2024-07-16" ,
-  end_date:"2024-07-18" ,
+  start_date: "2024-07-16" ,
+  end_date: "2024-07-18" ,
   project: project1
 )
 
@@ -316,6 +351,17 @@ user3.avatar.attach(io: avatar, filename: "#{user3.first_name}.jpg", content_typ
 user3.save!
 
 
-puts "Created #{User.count} users with #{Project.count} projects, #{Task.count} tasks and #{Trophy.count} trophies ! LEZGOOO."
+User.all.each do |user|
+  user.trophies << trophy1
+  user.trophies << trophy2
+  user.trophies << trophy3
+  user.trophies << trophy4
+  user.trophies << trophy5
+  user.trophies << trophy6
+  user.trophies << trophy7
+  user.trophies << trophy8
+end
+
+puts "Created #{User.count} users with #{Project.count} projects, #{Task.count} tasks and #{Trophy.count} trophies !"
 
 puts "Done seeding the database."

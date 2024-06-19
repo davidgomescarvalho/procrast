@@ -1,3 +1,10 @@
 <h1>Your Project Calendar</h1>
 
 <%= render 'calendar', projects: @projects || [] %>
+
+
+<% if @projects.any? %>
+  <p> You have <%= @projects.count %> project this month! </p>
+<% else %>
+  <!-- Display nothing -->
+<% end %>

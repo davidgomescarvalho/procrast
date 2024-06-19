@@ -5,17 +5,16 @@
                       <h3 class="card-title text-center mb-4">Trophies</h3>
                       <div class="row g-2">
                             <% current_user.trophies.each do |trophy| %>
-                              <div class="col-4 col-sm-3 col-md-2">
-                              <%=  image_tag(trophy.image) %>
-                                <%= trophy.name.humanize %>
+                            <div class="card col-4 col-sm-3 col-md-2 border" style="width: 18rem;">
+                               <%=  image_tag(trophy.image, :class =>"trophy-img") %>
+                              <div class="card-body">
+                                <h5 class="card-title"><%= trophy.name.humanize %></h5>
+                                <p class="card-text"><%= trophy.description.humanize %></p>
                               </div>
-                            <div class="progress">
-                              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                             <% end %>
                         </div>
-           </div>
+                      </div>
         </div>
     </div>
 </div>
-
