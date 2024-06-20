@@ -64,9 +64,9 @@
                       <div class="row g-2">
                       <%=   image_tag "#{@user.player_level}.png" %>
                       <p>Level: <%= current_user.player_level %> </p>
-                            <% current_user.trophies.each do |trophy| %>
+                            <% @recent_trophies.each do |trophy| %>
                               <div class="col-4 col-sm-3 col-md-2">
-                                <%= trophy.image %>
+                               <%=  image_tag(trophy.image, :class =>"trophy-img") %>
                                 <%= trophy.name.humanize %>
                               </div>
                             <% end %>
