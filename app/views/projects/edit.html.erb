@@ -17,11 +17,11 @@
   </div>
 
   <div class="field">
-    <%= f.input :start_time, as: :date, label: "Start Date" %>
+    <%= f.input :start_time, as: :string, input_html: { data: { controller: "datepicker" } }, label: "Start Date" %>
   </div>
 
   <div class="field">
-    <%= f.input :end_time, as: :date, label: "End Date" %>
+    <%= f.input :end_time, as: :string, input_html: { data: { controller: "datepicker" } }, label: "End Date" %>
   </div>
 
   <div class="field">

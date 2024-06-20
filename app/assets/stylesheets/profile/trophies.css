@@ -1,8 +1,47 @@
+.container-card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+
+}
+
+.card-trophy-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+  width: 140px;
+  height: 140px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #F9E900;
+  transition: all 0.3s;
+}
+
+
 .trophy-img {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
-  margin-bottom: 5px;
+  flex-shrink: 0;
+}
+
+.card-trophy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+  width: 140px;
+  height: 140px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #F9E900;
+  transition: all 0.3s;
 }
 
 .trophy-name {
