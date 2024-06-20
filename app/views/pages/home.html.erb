@@ -1,13 +1,18 @@
 <div class="banner">
   <div class="container">
-    <h1>ProCrast</h1>
+    <%= cl_image_tag("procrast_title_or4wap", alt: "procrast", class: "img-responsive") %>
+    <%= cl_image_tag("logo_p_bmgfmy", alt: "logo-procrast", class: "img-responsive") %>
+  <div class="info">
     <p>Change your life by turning your procrastination in to creation</p>
-    <a class="btn btn-primary" href="/projects/new">Start Now</a>
+    <a class="btn btn-warning" href="/projects/new">Start Now</a>
+  </div>
   </div>
 </div>
 <% if user_signed_in?%>
     <span></span>
 <% else %>
-  <%= link_to 'Login', new_user_session_path %> |
-  <%= link_to 'Sign Up', new_user_registration_path %>
+<div class="container-login">
+  <%= link_to 'Login', new_user_session_path, class: "login-button" %>
+  <%= link_to 'Sign Up', new_user_registration_path, class: "login-button"%>
+</div>
 <% end %>
