@@ -1,20 +1,15 @@
-<div class="row justify-content-center mt-2 rounded">
-    <div class="col-md-8 col-lg-6">
-        <div class="card">
-                  <div class="card-body">
-                      <h3 class="card-title text-center mb-4">Trophies</h3>
-                      <div class="row g-2">
-                            <% current_user.trophies.each do |trophy| %>
-                            <div class="card col-4 col-sm-3 col-md-2 border" style="width: 18rem;">
-                               <%=  image_tag(trophy.image, :class =>"trophy-img") %>
-                              <div class="card-body">
-                                <h5 class="card-title"><%= trophy.name.humanize %></h5>
-                                <p class="card-text"><%= trophy.description.humanize %></p>
-                              </div>
-                            </div>
-                            <% end %>
-                        </div>
-                      </div>
-        </div>
-    </div>
+<h1>Trophies</h1>
+
+<div class="container-card">
+        <div class="row g-2">
+            <% current_user.trophies.each do |trophy| %>
+             <div class="card-trophy" style="width: 18rem;">
+                  <%=  image_tag(trophy.image, :class =>"trophy-img") %>
+                <div class="card-body">
+                <h5 class="card-title"><%= trophy.name.humanize %></h5>
+                <p class="card-text"><%= trophy.description.humanize %></p>
+              </div>
+            </div>
+          <% end %>
+   </div>
 </div>
