@@ -1,15 +1,12 @@
 <h1>Trophies</h1>
 
-<div class="container-card">
-        <div class="row g-2">
+<div class="container-card col-sm-6">
             <% current_user.trophies.each do |trophy| %>
-             <div class="card-trophy" style="width: 18rem;">
+             <div class="card-trophy">
                   <%=  image_tag(trophy.image, :class =>"trophy-img") %>
-                <div class="card-body">
-                <h5 class="card-title"><%= trophy.name.humanize %></h5>
-                <p class="card-text"><%= trophy.description.humanize %></p>
-              </div>
+                <h5 class="trophy-name"><%= trophy.name.humanize %></h5>
+                <p class="trophy-description">...</p>
+
             </div>
           <% end %>
-   </div>
 </div>
