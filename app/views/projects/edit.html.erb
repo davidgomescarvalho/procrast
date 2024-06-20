@@ -1,4 +1,5 @@
-<h1>New Project</h1>
+<h1 class="title-project-h1>New Project</h1>
+
 
 <%= simple_form_for @project do |f| %>
   <% if @project.errors.any? %>
@@ -17,11 +18,13 @@
   </div>
 
   <div class="field">
+
     <%= f.input :start_time, as: :string, input_html: { data: { controller: "datepicker" } }, label: "Start Date" %>
   </div>
 
   <div class="field">
     <%= f.input :end_time, as: :string, input_html: { data: { controller: "datepicker" } }, label: "End Date" %>
+
   </div>
 
   <div class="field">
