@@ -1,9 +1,6 @@
 class Project < ApplicationRecord
   belongs_to :user
   has_many :tasks, dependent: :destroy
-  scope :for_month, ->(month, year) {
-    where("extract(month from start_time) = ? AND extract(year from start_time) = ?", month, year)
-  }
   # must_not_overlap with other projects
   # must_not_overlap :start_time, :end_time, scope: :user_id
 

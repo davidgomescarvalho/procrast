@@ -2,9 +2,6 @@
 
 <%= render 'calendar', projects: @projects || [] %>
 
-
-<% if @projects.any? %>
-  <p> You have <%= @projects.count %> project this month! </p>
-<% else %>
-  <!-- Display nothing -->
-<% end %>
+<div class="d-flex justify-content-center">
+  <%= link_to "You have #{@projects.count} project this month !", projects_path, class:"btn btn-primary " %>
+</div>
