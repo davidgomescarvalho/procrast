@@ -13,9 +13,11 @@
 #container-ul {
   display: flex;
   flex-wrap: wrap;
-  padding: 1em;
   margin: 0;
   list-style-type: none;
+  padding-left: 0;
+  padding-right: 0;
+  justify-content: start;
 }
 
 #container-ul li {
