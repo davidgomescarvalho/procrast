@@ -346,6 +346,17 @@ Task.create!(
   project: project3
 )
 
+User.all.each do |user|
+  Project.create!(
+    title: "Present my app",
+    start_time: "2024-07-14",
+    end_time: "2024-07-24",
+    status: status.sample,
+    completed: false,
+    user: user
+  )
+end
+
 avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user3.avatar.attach(io: avatar, filename: "#{user3.first_name}.jpg", content_type: 'image/jpg')
 user3.save!

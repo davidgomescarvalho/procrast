@@ -11,15 +11,19 @@
     <link rel="icon" type="image/png" href="<%= asset_path('logo.png') %>">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
   </head>
   <body>
+
         <% if user_signed_in? %>
       <%= render 'shared/navbar'%>
         <% else %>
         <span></span>
         <% end %>
-    <%= yield %>
+    <div class="mt-5">
+      <%= yield %>
+    </div>
+
   <script src='https://unpkg.com/feather-icons'></script><script src="../javascript/controllers/script.js"></script>
   </body>
 </html>
