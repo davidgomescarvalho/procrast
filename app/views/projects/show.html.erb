@@ -1,10 +1,19 @@
-<h1 class="title-project-h1 my-3 mx-3"><%= @project.title %></h1>
-<div class="container">
-    <p><strong>Start date:</strong> <%= @project.start_time %></p>
+
+<div class="container-title">
+  <h1 class="title-project-h1"><%= @project.title %></h1>
+</div>
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Back', projects_path %>
+
+<p><strong>Start date:</strong> <%= @project.start_time %></p>
+
+<p><strong>End date: </strong> <%= @project.end_time %></p>
+
 
     <p><strong>End date: </strong> <%= @project.end_time %></p>
 </div>
 <% if @project.tasks.any? %>
+
 
 <div class="container-title">
     <h2>Tasks:</h2>
@@ -30,12 +39,16 @@
 
     <div data-toggle-target="togglableElement" class="d-none">
       <%= simple_form_for([@project, @task]) do |f| %>
+
       <div class="container py-2">
+
         <%= f.input :title %>
         <%= f.input :start_date %>
         <%= f.input :end_date %>
         <%= f.button :submit, 'Create Task' %>
+
         </div>
+
       <% end %>
     </div>
   </div>
