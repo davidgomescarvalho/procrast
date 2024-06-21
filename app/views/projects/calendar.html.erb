@@ -1,6 +1,16 @@
-<h1 class="title-project-h1>Your Project Calendar</h1>
+<h1 class="title-project-h1">Your Project Calendar</h1>
 
-<%= render 'calendar', projects: @projects || [] %>
+
+<%= month_calendar(events: @projects) do |date, projects_on_date| %>
+  <div class="day">
+    <h4><%= date.day %></h4>
+    <% projects_on_date.each do |project| %>
+        <div class="event">
+          <%= link_to project.title, project_path(project.id) %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
 <div class="d-flex justify-content-center">
   <%= link_to "You have #{@projects.count} project this month !", projects_path, class:"btn btn-primary " %>
