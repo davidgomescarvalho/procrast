@@ -1,16 +1,15 @@
-<h1 class="title-project-h1">All Projects</h1>
-<div class="new_container">
-  <ul>
-    <% if @projects.empty? %>
-      <p>No projects found, start a project !</p>
-    <% else %>
-      <% @projects.each do |project| %>
-        <li><%= link_to project.title, project_path(project) %></li>
-        <%= link_to 'Delete', project_path(project), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
-      <% end %>
-    <% end %>
+<div class="container-title">
+  <h1 class="title-project-h1">All Projects</h1>
+</div>
+
+<div class="container">
+  <ul id="container-ul">
+        <% if @projects.empty? %>
+          <p>No projects found, start a project !</p>
+        <% else %>
+          <% @projects.each do |project| %>
+            <li><%= link_to project.title, project_path(project) %></li>
+          <% end %>
+        <% end %>
   </ul>
-
- <%= link_to 'New Project', new_project_path %>
-
 </div>
