@@ -8,6 +8,7 @@
 <p><strong>Start date:</strong> <%= @project.start_time %></p>
 <p><strong>End date: </strong> <%= @project.end_time %></p>
 
+<div class="container">
 <% if @project.tasks.any? %>
   <ul>
     <% @project.tasks.each do |task| %>
@@ -20,6 +21,8 @@
   <% else %>
     <p>No tasks found for this project.</p>
   <% end %>
+</div>
+
   <div class="container-task m-auto" data-controller="toggle">
 
     <button data-action="click->toggle#toggleElement">Add task</button>

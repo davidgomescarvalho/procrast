@@ -1,11 +1,10 @@
 .container-task{
 background-color:#F9E900;
-width: 95%;
 margin: 1em;
 color: #0A1045;
 font-size: large;
-}
-.container-task ul {
-  list-style-type: none;
-  padding-left: 0;
+font-weight: bold;
+padding: 1em;
+border-radius: 10px;
+box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
