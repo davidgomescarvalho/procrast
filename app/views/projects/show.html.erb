@@ -1,36 +1,42 @@
-<h1 class="title-project-h1"><%= @project.title %></h1>
+<h1 class="title-project-h1 my-3 mx-3"><%= @project.title %></h1>
+<div class="container">
+    <p><strong>Start date:</strong> <%= @project.start_time %></p>
 
-<p><strong>Start date:</strong> <%= @project.start_time %></p>
-
-<p><strong>End date: </strong> <%= @project.end_time %></p>
-
-<% if @project.tasks.any? %>
-<div class="container-fluid">
-  <h2>Tasks:</h2>
-  <ul>
-    <% @project.tasks.each do |task| %>
-      <li><%= task.title %> | <%= task.start_date%> - <%= task.end_date %></li>
-      <%= link_to 'Delete', project_task_path(@project, task), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
-      <%= link_to 'Edit', edit_project_task_path(@project, task) %>
-    <% end %>
-  </ul>
-<% else %>
-  <p>No tasks found for this project.</p>
-<% end %>
+    <p><strong>End date: </strong> <%= @project.end_time %></p>
 </div>
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<% if @project.tasks.any? %>
 
-<div data-controller="toggle">
+<div class="container-title">
+    <h2>Tasks:</h2>
+</div>
+    <ul>
+      <% @project.tasks.each do |task| %>
+      <div class="container-task mb-3">
+        <li><%= task.title %> | <%= task.start_date%> - <%= task.end_date %></li>
+        <%= link_to 'Delete', project_task_path(@project, task), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+        <%= link_to 'Edit', edit_project_task_path(@project, task) %>
+    </div>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No tasks found for this project.</p>
+  <% end %>
 
-  <button data-action="click->toggle#toggleElement">Add task</button>
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Back', projects_path %>
+  <div class="container-task m-auto" data-controller="toggle">
 
-  <div data-toggle-target="togglableElement" class="d-none">
-    <%= simple_form_for([@project, @task]) do |f| %>
-      <%= f.input :title %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-      <%= f.button :submit, 'Create Task' %>
-    <% end %>
+    <button data-action="click->toggle#toggleElement">Add task</button>
+
+    <div data-toggle-target="togglableElement" class="d-none">
+      <%= simple_form_for([@project, @task]) do |f| %>
+      <div class="container py-2">
+        <%= f.input :title %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.button :submit, 'Create Task' %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
