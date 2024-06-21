@@ -12,28 +12,16 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+  <div class="container py-2">
     <%= f.input :title, label: "Title" %>
-  </div>
-
-  <div class="field">
-
     <%= f.input :start_time, as: :string, input_html: { data: { controller: "datepicker" } }, label: "Start Date" %>
-  </div>
-
-  <div class="field">
     <%= f.input :end_time, as: :string, input_html: { data: { controller: "datepicker" } }, label: "End Date" %>
-
-  </div>
-
-  <div class="field">
   <%= f.input :status, label: "Status", collection: ["Not started","In progress","Completed"] %>
-  </div>
 
-  <div class="actions">
+  <div class="actions btn btn-success m-auto">
     <%= f.button :submit, "Update Project" %>
-  </div>
-<% end %>
 
-<%= link_to 'Back', projects_path %>
+  </div>
+  <%= link_to 'Back', projects_path, class:"btn btn-warning" %>
+<% end %>
+</div>
