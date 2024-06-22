@@ -23,7 +23,6 @@ ul {
   list-style-type: none;
 }
 
-
 .navbar {
   position: fixed;
   bottom: 1rem;
@@ -56,7 +55,7 @@ ul {
   transform: translateX(-50%) translateY(-0.5rem);
   opacity: 0;
   pointer-events: none;
-  color: #4D1934;
+  color: #4d1934;
   background: #f9e900;
   padding: 0.75rem;
   transition: 250ms ease all;
@@ -65,7 +64,8 @@ ul {
 .navbar__link:hover {
   color: #fff;
 }
-.navbar:not(:hover) .navbar__link:focus span, .navbar__link:hover span {
+.navbar:not(:hover) .navbar__link:focus span,
+.navbar__link:hover span {
   opacity: 1;
   transform: translateX(-50%) translateY(-1rem);
 }
