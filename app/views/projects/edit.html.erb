@@ -23,4 +23,5 @@
 
   </div>
   <%= link_to 'Back', projects_path, class:"btn btn-warning" %>
+  <%= link_to "Delete", project_path(@project), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 <% end %>
