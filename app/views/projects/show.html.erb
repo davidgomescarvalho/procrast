@@ -1,36 +1,44 @@
-<h1 class="title-task-h1"><%= @project.title %></h1>
+<div class="container-title">
+  <h1 class="title-project-h1"><%= @project.title %></h1>
+</div>
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Back', projects_path %>
 
 <p><strong>Start date:</strong> <%= @project.start_time %></p>
-
 <p><strong>End date: </strong> <%= @project.end_time %></p>
 
+<div class="container">
 <% if @project.tasks.any? %>
-<div class="container-fluid">
-  <h2>Tasks:</h2>
   <ul>
     <% @project.tasks.each do |task| %>
+    <div class="container-task">
       <li><%= task.title %> | <%= task.start_date%> - <%= task.end_date %></li>
-      <%= link_to 'Delete', project_task_path(@project, task), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
       <%= link_to 'Edit', edit_project_task_path(@project, task) %>
-    <% end %>
-  </ul>
-<% else %>
-  <p>No tasks found for this project.</p>
-<% end %>
+    </div>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No tasks found for this project.</p>
+  <% end %>
 </div>
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
 
-<div data-controller="toggle">
+  <div class="container-task m-auto" data-controller="toggle">
 
-  <button data-action="click->toggle#toggleElement">Add task</button>
+    <button data-action="click->toggle#toggleElement">Add task</button>
 
-  <div data-toggle-target="togglableElement" class="d-none">
-    <%= simple_form_for([@project, @task]) do |f| %>
-      <%= f.input :title %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-      <%= f.button :submit, 'Create Task' %>
-    <% end %>
+    <div data-toggle-target="togglableElement" class="d-none">
+      <%= simple_form_for([@project, @task]) do |f| %>
+
+      <div class="container py-2">
+
+        <%= f.input :title %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.button :submit, 'Create Task' %>
+
+        </div>
+
+      <% end %>
+    </div>
   </div>
 </div>

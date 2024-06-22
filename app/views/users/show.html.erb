@@ -1,13 +1,14 @@
-<div class="container">
-  <h1 class="header text-center">Profile</h1>
-  <div class="logout text-center">
-    <% if user_signed_in? %>
-        <%= link_to 'Logout', destroy_user_session_path, data: { "turbo-method": :delete } %>
-    <% else %>
-      <span>logout</span>
-    <% end %>
-  </div>
+<div class="container-title">
+  <h1 class="title-project-h1">My Profile</h1>
 </div>
+<div class="logout text-center">
+  <% if user_signed_in? %>
+      <%= link_to 'Logout', destroy_user_session_path, data: { "turbo-method": :delete } %>
+  <% else %>
+    <span>logout</span>
+  <% end %>
+</div>
+
 <div class="container mt-2">
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
@@ -56,7 +57,7 @@
     </div>
 
 
-  <div class="row justify-content-center mt-2 rounded">
+  <div class="row justify-content-center mt-2 rounded trophy-container">
     <div class="col-md-8 col-lg-6">
         <div class="card">
                   <div class="card-body">

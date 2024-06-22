@@ -33,7 +33,7 @@ ul {
   border-radius: 10px;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.03);
   height: 84px;
-  width: calc(100vw - 4rem);
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,6 +47,7 @@ ul {
   width: 3.5rem;
   color: #00c2d1;
   transition: 250ms ease all;
+  text-decoration: none;
 }
 .navbar__link span {
   position: absolute;

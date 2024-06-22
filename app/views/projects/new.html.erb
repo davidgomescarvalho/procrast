@@ -1,3 +1,7 @@
+<div class="container-title">
+  <h1 class="title-project-h1">Start a new Project</h1>
+</div>
+
 <%= simple_form_for @project do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
@@ -9,8 +13,8 @@
       </ul>
     </div>
   <% end %>
-  <div class="container-sm new_container">
-    <h1 class="title-project-h1>New Project</h1>
+
+  <div class="container">
     <div class="field">
       <%= f.input :title, label: "Title" %>
     </div>
@@ -30,11 +34,6 @@
     <div class="actions">
       <%= f.button :submit, "Create Project", class: "btn btn-primary" %>
     </div>
-
-    <div class="link-to">
-      <%= link_to 'Back', projects_path, class: "btn btn-secondary"%>
-    </div>
-
   </div>
 <% end %>
 
