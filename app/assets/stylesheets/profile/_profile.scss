@@ -17,22 +17,35 @@ body {
   color: #333;
 }
 
-// .stat h5 {
-//   font-size: 1em;
-//   color: #555;
-// }
-
-// .stat p {
-//   font-size: 1.2em;
-//   color: $yellow-procrast;
-//   margin: 0;
-// }
-
 .stat-tiles {
   display: flex;
-  color: $blue-procrast;
-  justify-content: space-between;
-  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #333;
+  text-shadow: #333 1px 1px 2px;
+  border-radius: 50%; /* Assurez-vous que c'est un cercle */
+  width: 70px; /* Ajustez selon vos besoins */
+  height: 70px; /* Ajustez selon vos besoins */
+  text-align: center;
+  color: white
+}
+
+.stat-tiles-yellow {
   background-color: $yellow-procrast;
-  padding: 2em;
+}
+
+.stat-tiles-orange {
+  background-color: $orange-procrast;
+}
+
+.stat-tiles-blue-light {
+  background-color: $blue-light-procrast;
+}
+
+.stat-tiles-blue {
+  background-color: $blue-procrast;
+}
+
+.stat-tiles p {
+  margin: 0; /* Enlevez les marges pour le centrage parfait */
 }

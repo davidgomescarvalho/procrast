@@ -3,35 +3,35 @@
           <li class="navbar__item">
             <% if current_user %>
               <%= link_to root_path(current_user), class: "navbar__link" do %>
-              <i class="fa-solid fa-house fa-xl"></i><span>Home</span>
+              <i class="fa-solid fa-house fa-2x"></i><span>Home</span>
               <% end %>
             <% end %>
           </li>
           <li class="navbar__item">
             <% if current_user %>
               <%= link_to calendar_project_path(current_user), class: "navbar__link" do %>
-              <i class="fa-regular fa-calendar fa-xl"></i><span>Calendar</span>
+              <i class="fa-regular fa-calendar fa-2x"></i><span>Calendar</span>
               <% end %>
             <% end %>
           </li>
           <li class="navbar__item">
             <% if current_user %>
               <%= link_to  new_project_path(current_user), class: "navbar__link" do %>
-              <i class="fa-solid fa-circle-plus fa-2xl"></i><span>New Project</span>
+              <i class="fa-solid fa-circle-plus fa-3x" style="color: #F9E900;"></i><span>New Project</span>
               <% end %>
             <% end %>
           </li>
           <li class="navbar__item">
             <% if current_user %>
               <%= link_to projects_path(current_user), class: "navbar__link" do %>
-              <i class="fa-solid fa-rectangle-list fa-xl"></i><span> My Projects</span>
+              <i class="fa-solid fa-rectangle-list fa-2x"></i><span> My Projects</span>
               <% end %>
             <% end %>
           </li>
           <li class="navbar__item">
             <% if current_user %>
               <%= link_to user_path(current_user), class: "navbar__link" do %>
-              <i class="fa-solid fa-user fa-xl"></i><span>Profile</span>
+              <i class="fa-solid fa-user fa-2x"></i><span>Profile</span>
               <% end %>
             <% end %>
           </li>
