@@ -1,1 +1,13 @@
+<div class="container-title">
+    <h1 class="title-project-h1">Trophy Details</h1>
+</div>
 
+<div class="container-trophy">
+    <%=  image_tag @trophy.image, :class =>"trophy-img-show" %>
+    <div class="info-trophy">
+        <h2><%= @trophy.name %></h2>
+        <p><%= @trophy.description %></p>
+    </div>
+</div>
+
+<%= link_to 'Back', trophies_path, class: 'btn-back' %>
