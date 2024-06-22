@@ -25,18 +25,20 @@ ul {
 
 .navbar {
   position: fixed;
-  bottom: 1rem;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   background: #0a1045;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.03);
   height: 84px;
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .navbar__link {
   position: relative;
   display: flex;
@@ -47,7 +49,9 @@ ul {
   color: #00c2d1;
   transition: 250ms ease all;
   text-decoration: none;
+  padding: 2.2em;
 }
+
 .navbar__link span {
   position: absolute;
   bottom: 100%;
@@ -61,9 +65,11 @@ ul {
   transition: 250ms ease all;
   border-radius: 17.5px;
 }
+
 .navbar__link:hover {
   color: #fff;
 }
+
 .navbar:not(:hover) .navbar__link:focus span,
 .navbar__link:hover span {
   opacity: 1;
@@ -71,13 +77,16 @@ ul {
 }
 .navbar__menu {
   display: flex;
+  padding-left: 0;
 }
+
 .navbar__item {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
+
 .navbar__item:last-child:before {
   content: "";
   position: absolute;

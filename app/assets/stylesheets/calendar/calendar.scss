@@ -1,8 +1,7 @@
-.simple-calendar {
+/* .simple-calendar {
   .calendar-container {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
   }
   .day-number {
     text-align: center;
@@ -17,15 +16,45 @@
     color: rgb(195, 38, 38);
     text-decoration: none;
   }
+
+  .calendar-heading {
+    text-align: center;
+  }
 }
 .calendar-container td {
-  border: solid 1px #E0E0E0 ;
-  background-color: aqua;
+  border: solid 1px #b9b7b7 ;
+  background-color: #F9F9F9;
 
 }
 
 .calendar-container h4 {
-  background-color: bisque;
   margin-bottom: 0;
   padding: 8px;
+}
+ */
+ .simple-calendar {
+  .day {}
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {}
+  .past {
+  }
+  .future {}
+
+  .start-date {}
+
+  .prev-month {
+  }
+  .next-month { }
+  .current-month {}
+
+  .has-events {
+  }
 }

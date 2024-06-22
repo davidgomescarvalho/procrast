@@ -1,3 +1,4 @@
+
 .container-cards {
   display: flex;
   margin: 0 auto;
@@ -10,6 +11,7 @@
   align-items: center;
   margin: 0 auto;
   grid-gap: 1rem;
+
 }
 
 .card-trophy {
@@ -24,7 +26,7 @@
   height: 140px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #F9E900;
+  background-color: #f9e900;
 }
 
 .card-link:hover {
@@ -68,5 +70,6 @@ font-style: normal;
 font-weight: 700;
 line-height: 100%;
 margin-top: 5px;
+
 }
 
