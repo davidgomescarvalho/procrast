@@ -79,3 +79,4 @@ end
 gem 'faker'
 gem "cloudinary"
 gem "simple_calendar"
+gem 'rails-i18n'
