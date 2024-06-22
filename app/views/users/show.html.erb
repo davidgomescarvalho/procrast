@@ -19,24 +19,32 @@
     <% end %>
     <h2 class="profile-name"><%= @user.first_name %> <%= image_tag "#{@user.country}.png", size: "30x30" %></h2>
     <h5 class="profile-username"> @<%= @user.username %></h5>
-  </div>
 
-  <div class="row justify-content-center">
-    <div class="col-3 col-md-3">
-      <h5 class="fw-bold profile-stats">XP Points</h5>
-      <p class="stat-tiles"><%= @user.total_points %></p>
-    </div>
-    <div class="col-3 col-md-3">
-      <h5 class="fw-bold profile-stats">Projects Completed</h5>
-      <p class="stat-tiles"><%= current_user.projects.count %> </p>
-    </div>
-    <div class="col-3 col-md-3">
-      <h5 class="fw-bold profile-stats">Trophies</h5>
-      <p class="stat-tiles"><%= current_user.trophies.count%></p>
-    </div>
-    <div class="col-3 col-md-3">
-      <h5 class="fw-bold profile-stats">Level</h5>
-      <p class="stat-tiles"><%= current_user.player_level %></p>
+    <div class="row mt-5 mb-5">
+      <div class="col-3 col-md-3">
+        <h5 class="fw-bold profile-stats">XP Points</h5>
+        <div class="stat-tiles stat-tiles-orange">
+          <p><%= @user.total_points %></p>
+        </div>
+      </div>
+      <div class="col-3 col-md-3">
+        <h5 class="fw-bold profile-stats">Projects</h5>
+        <div class="stat-tiles stat-tiles-blue-light">
+          <p><%= current_user.projects.count %> </p>
+        </div>
+      </div>
+      <div class="col-3 col-md-3">
+        <h5 class="fw-bold profile-stats">Trophies</h5>
+        <div class="stat-tiles stat-tiles-yellow">
+          <p><%= current_user.trophies.count%></p>
+        </div>
+      </div>
+      <div class="col-3 col-md-3">
+        <h5 class="fw-bold profile-stats">Level</h5>
+        <div class="stat-tiles stat-tiles-blue">
+          <p><%= current_user.player_level %></p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -63,4 +71,5 @@
       </div>
     </div>
   </div>
+
 </div>
