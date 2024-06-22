@@ -1,28 +1,23 @@
 .simple-calendar {
-  .calendar-heading {
-    background-color: aquamarine;
+  .calendar-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
   }
-  th {
-    background-color: chocolate;
+  .day-number {
+    text-align: center;
+    font-size: 1em;
   }
-
-  .wday-0 {}
-  .wday-1 {}
-  .wday-2 {}
-  .wday-3 {}
-  .wday-4 {}
-  .wday-5 {}
-  .wday-6 {}
-
-  .today {}
-  .past {}
-  .future {}
-
-  .start-date {}
-
-  .prev-month {}
-  .next-month { }
-  .current-month {}
-
-  .has-events {}
+  .calendar-event {
+    width:auto;
+    padding: 0;
+  }
+  .project-link {
+    color: rgb(195, 38, 38);
+    text-decoration: none;
+  }
+}
+.calendar-container td {
+  border: solid 1px #E0E0E0 ;
+  background-color: aqua;
 }
