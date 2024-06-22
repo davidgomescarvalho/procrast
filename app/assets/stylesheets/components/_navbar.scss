@@ -38,6 +38,7 @@ ul {
   justify-content: center;
   align-items: center;
 }
+
 .navbar__link {
   position: relative;
   display: flex;
@@ -50,6 +51,7 @@ ul {
   text-decoration: none;
   padding: 2.2em;
 }
+
 .navbar__link span {
   position: absolute;
   bottom: 100%;
@@ -63,9 +65,11 @@ ul {
   transition: 250ms ease all;
   border-radius: 17.5px;
 }
+
 .navbar__link:hover {
   color: #fff;
 }
+
 .navbar:not(:hover) .navbar__link:focus span,
 .navbar__link:hover span {
   opacity: 1;
@@ -75,12 +79,14 @@ ul {
   display: flex;
   padding-left: 0;
 }
+
 .navbar__item {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
+
 .navbar__item:last-child:before {
   content: "";
   position: absolute;

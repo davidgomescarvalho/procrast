@@ -1,21 +1,15 @@
 .container {
   width: 90%;
   background-color: rgb(255, 255, 255);
-  margin-top: 1em;
   box-shadow: 1px 1px 2px rgba(5, 10, 35, 0.2);
   border-radius: 8px;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-left: 0;
-  padding-right: 0;
   margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 .container-title {
   margin: 2em;
 }
-
-
 
 #container-ul {
   display: flex;
@@ -70,7 +64,6 @@ color: white;
 font-size: large;
 }
 
-
 #container-ul li:nth-child(4) {
 background-color: #00C2D1;
 }
@@ -79,7 +72,6 @@ background-color: #00C2D1;
 color: white;
 font-size: large;
 }
-
 
 #container-ul li:nth-child(5) {
 background-color: #6A041D;
@@ -102,8 +94,4 @@ font-size: large;
 
 #container-ul li:nth-child(7) {
 background-color: #F9E900;
-}
-
-.project-container {
-  /* Your styles for the project container here */
 }
