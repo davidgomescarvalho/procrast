@@ -175,11 +175,6 @@ avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user1.avatar.attach(io: avatar, filename: "#{user1.first_name}.jpg", content_type: 'image/jpg')
 user1.save!
 
-
-
-
-
-
 # Create a user
 user2 = User.create!(
   email: "wassim@coder.com",
@@ -272,11 +267,6 @@ Task.create!(
 avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user2.avatar.attach(io: avatar, filename: "#{user2.first_name}.jpg", content_type: 'image/jpg')
 user2.save!
-
-
-
-
-
 
 # Create a user
 user3 = User.create!(

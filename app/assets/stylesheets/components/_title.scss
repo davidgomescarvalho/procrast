@@ -13,7 +13,6 @@
   padding: 16px;
 }
 
-
 .title-task-h1 {
   font-size: 1.5em;
   text-transform: uppercase;
@@ -29,4 +28,27 @@
   line-height: 150%;
   border-radius: 10px 10px 10px 10px;
   padding: 16px 16px 16px 16px;
+}
+
+.profile-name {
+  color: $blue-procrast;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.profile-username {
+  color: $blue-light-procrast;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.profile-stats {
+  font-family: Poppins;
+  font-size: 14px;
 }
