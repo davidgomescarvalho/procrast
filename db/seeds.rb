@@ -103,73 +103,73 @@ user1 = User.create!(
 
 # Create a project
 
-project1 = Project.create!(
-  title: "Learn how to play the guitar",
-  start_time: "2024-07-01",
-  end_time: "2024-07-10",
-  status: status.sample,
-  completed: false,
-  user: user1
-)
+# project1 = Project.create!(
+#   title: "Learn how to play the guitar",
+#   start_time: "2024-07-01",
+#   end_time: "2024-07-10",
+#   status: status.sample,
+#   completed: false,
+#   user: user1
+# )
 
-Task.create!(
-  title: "Learn the basic chords",
-  start_date: "2024-07-01",
-  end_date: "2024-07-01",
-  project: project1
-)
-Task.create!(
-  title: "Learn the basic scales",
-  start_date: "2024-07-02",
-  end_date: "2024-07-02",
-  project: project1
-)
-Task.create!(
-  title: "Learn the basic songs",
-  start_date: "2024-07-03",
-  end_date: "2024-07-05",
-  project: project1
-)
-Task.create!(
-  title: "Practice",
-  start_date: "2024-07-07",
-  end_date: "2024-07-10",
-  project: project1
-)
+# Task.create!(
+#   title: "Learn the basic chords",
+#   start_date: "2024-07-01",
+#   end_date: "2024-07-01",
+#   project: project1
+# )
+# Task.create!(
+#   title: "Learn the basic scales",
+#   start_date: "2024-07-02",
+#   end_date: "2024-07-02",
+#   project: project1
+# )
+# Task.create!(
+#   title: "Learn the basic songs",
+#   start_date: "2024-07-03",
+#   end_date: "2024-07-05",
+#   project: project1
+# )
+# Task.create!(
+#   title: "Practice",
+#   start_date: "2024-07-07",
+#   end_date: "2024-07-10",
+#   project: project1
+# )
 
-# Create a project
+# # Create a project
 
-project2 = Project.create!(
-  title: "Paint a picture",
-  start_time: "2024-07-15",
-  end_time: "2024-07-17",
-  status: status.sample,
-  completed: false,
-  user: user1
-)
+# project2 = Project.create!(
+#   title: "Paint a picture",
+#   start_time: "2024-07-15",
+#   end_time: "2024-07-17",
+#   status: status.sample,
+#   completed: false,
+#   user: user1
+# )
 
-# Create tasks
+# # Create tasks
 
-Task.create!(
-  title: "Choose a subject",
-  start_date: "2024-07-15",
-  end_date: "2024-07-15",
-  project: project2
-)
+# Task.create!(
+#   title: "Choose a subject",
+#   start_date: "2024-07-15",
+#   end_date: "2024-07-15",
+#   project: project2
+# )
 
-Task.create!(
-  title: "Buy supplies",
-  start_date: "2024-07-16",
-  end_date: "2024-07-16",
-  project: project2
-)
+# Task.create!(
+#   title: "Buy supplies",
+#   start_date: "2024-07-16",
+#   end_date: "2024-07-16",
+#   project: project2
+# )
 
-Task.create!(
-  title: "Paint",
-  start_date: "2024-07-17",
-  end_date: "2024-07-17",
-  project: project2
-)
+# Task.create!(
+#   title: "Paint",
+#   start_date: "2024-07-17",
+#   end_date: "2024-07-17",
+#   project: project2
+# )
 
 avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user1.avatar.attach(io: avatar, filename: "#{user1.first_name}.jpg", content_type: 'image/jpg')
@@ -193,81 +193,81 @@ user2 = User.create!(
 
 # Create a project
 
-project1 = Project.create!(
-  title: "Learn how to code",
-  start_time: "2024-07-14",
-  end_time: "2024-07-24",
-  status: status.sample,
-  completed: false,
-  user: user2
-)
+# project1 = Project.create!(
+#   title: "Learn how to code",
+#   start_time: "2024-07-14",
+#   end_time: "2024-07-24",
+#   status: status.sample,
+#   completed: false,
+#   user: user2
+# )
 
-Task.create!(
-  title: "Learn the basics of HTML",
-  start_date: "2024-07-14",
-  end_date: "2024-07-14" ,
-  project: project1
-)
+# Task.create!(
+#   title: "Learn the basics of HTML",
+#   start_date: "2024-07-14",
+#   end_date: "2024-07-14" ,
+#   project: project1
+# )
 
-Task.create!(
-  title: "Learn the basics of CSS",
-  start_date: "2024-07-15",
-  end_date: "2024-07-15" ,
-  project: project1
-)
+# Task.create!(
+#   title: "Learn the basics of CSS",
+#   start_date: "2024-07-15",
+#   end_date: "2024-07-15" ,
+#   project: project1
+# )
 
-Task.create!(
-  title: "Learn the basics of JavaScript",
-  start_date: "2024-07-16" ,
-  end_date: "2024-07-18" ,
-  project: project1
-)
+# Task.create!(
+#   title: "Learn the basics of JavaScript",
+#   start_date: "2024-07-16" ,
+#   end_date: "2024-07-18" ,
+#   project: project1
+# )
 
-Task.create!(
-  title: "Practice",
-  start_date: "2024-07-19",
-  end_date: "2024-07-24",
-  project: project1
-)
+# Task.create!(
+#   title: "Practice",
+#   start_date: "2024-07-19",
+#   end_date: "2024-07-24",
+#   project: project1
+# )
 
-# create a project
+# # create a project
 
-project2 = Project.create!(
-  title: "Cook some bread",
-  start_time: "2024-07-28",
-  end_time: "2024-07-29",
-  status: status.sample,
-  completed: false,
-  user: user2
-)
+# project2 = Project.create!(
+#   title: "Cook some bread",
+#   start_time: "2024-07-28",
+#   end_time: "2024-07-29",
+#   status: status.sample,
+#   completed: false,
+#   user: user2
+# )
 
-Task.create!(
-  title: "Buy ingredients",
-  start_date: "2024-07-28",
-  end_date: "2024-07-28",
-  project: project2
-)
+# Task.create!(
+#   title: "Buy ingredients",
+#   start_date: "2024-07-28",
+#   end_date: "2024-07-28",
+#   project: project2
+# )
 
-Task.create!(
-  title: "Prepare the dough",
-  start_date: "2024-07-28",
-  end_date: "2024-07-28",
-  project: project2
-)
+# Task.create!(
+#   title: "Prepare the dough",
+#   start_date: "2024-07-28",
+#   end_date: "2024-07-28",
+#   project: project2
+# )
 
-Task.create!(
-  title: "Bake",
-  start_date: "2024-07-29",
-  end_date: "2024-07-29",
-  project: project2
-)
+# Task.create!(
+#   title: "Bake",
+#   start_date: "2024-07-29",
+#   end_date: "2024-07-29",
+#   project: project2
+# )
 
-Task.create!(
-  title: "Eat",
-  start_date: "2024-07-29",
-  end_date: "2024-07-29",
-  project: project2
-)
+# Task.create!(
+#   title: "Eat",
+#   start_date: "2024-07-29",
+#   end_date: "2024-07-29",
+#   project: project2
+# )
 
 avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
 user2.avatar.attach(io: avatar, filename: "#{user2.first_name}.jpg", content_type: 'image/jpg')
@@ -291,60 +291,60 @@ user3 = User.create!(
 
 # Create a project
 
-Project.create!(
-  title: "Clean my room",
-  start_time: "2024-07-01",
-  end_time: "2024-07-01",
-  status: status.sample,
-  completed: false,
-  user: user3
-)
+# Project.create!(
+#   title: "Clean my room",
+#   start_time: "2024-07-01",
+#   end_time: "2024-07-01",
+#   status: status.sample,
+#   completed: false,
+#   user: user3
+# )
 
-project2 = Project.create!(
-  title: "Take photos at the park",
-  start_time: "2024-07-05",
-  end_time: "2024-07-05",
-  status: status.sample,
-  completed: false,
-  user: user3
-)
+# project2 = Project.create!(
+#   title: "Take photos at the park",
+#   start_time: "2024-07-05",
+#   end_time: "2024-07-05",
+#   status: status.sample,
+#   completed: false,
+#   user: user3
+# )
 
-Task.create!(
-  title: "Choose a park",
-  start_date: "2024-07-05",
-  end_date: "2024-07-05",
-  project: project2
-)
+# Task.create!(
+#   title: "Choose a park",
+#   start_date: "2024-07-05",
+#   end_date: "2024-07-05",
+#   project: project2
+# )
 
-Task.create!(
-  title: "Take photos",
-  start_date: "2024-07-05",
-  end_date: "2024-07-05",
-  project: project2
-)
+# Task.create!(
+#   title: "Take photos",
+#   start_date: "2024-07-05",
+#   end_date: "2024-07-05",
+#   project: project2
+# )
 
-project3 = Project.create!(
-  title: "Go to the gym",
-  start_time: "2024-07-15",
-  end_time: "2024-07-20",
-  status: status.sample,
-  completed: false,
-  user: user3
-)
+# project3 = Project.create!(
+#   title: "Go to the gym",
+#   start_time: "2024-07-15",
+#   end_time: "2024-07-20",
+#   status: status.sample,
+#   completed: false,
+#   user: user3
+# )
 
-Task.create!(
-  title: "Choose a gym",
-  start_date: "2024-07-15",
-  end_date: "2024-07-15",
-  project: project3
-)
+# Task.create!(
+#   title: "Choose a gym",
+#   start_date: "2024-07-15",
+#   end_date: "2024-07-15",
+#   project: project3
+# )
 
-Task.create!(
-  title: "Go to the gym",
-  start_date: "2024-07-16",
-  end_date: "2024-07-20",
-  project: project3
-)
+# Task.create!(
+#   title: "Go to the gym",
+#   start_date: "2024-07-16",
+#   end_date: "2024-07-20",
+#   project: project3
+# )
 
 User.all.each do |user|
   Project.create!(
@@ -354,6 +354,73 @@ User.all.each do |user|
     status: status.sample,
     completed: false,
     user: user
+  )
+  project1 = Project.create!(
+    title: "Learn how to play the guitar",
+    start_time: "2024-07-01",
+    end_time: "2024-07-10",
+    status: status.sample,
+    completed: false,
+    user: user
+  )
+
+  Task.create!(
+    title: "Learn the basic chords",
+    start_date: "2024-07-01",
+    end_date: "2024-07-01",
+    project: project1
+  )
+  Task.create!(
+    title: "Learn the basic scales",
+    start_date: "2024-07-02",
+    end_date: "2024-07-02",
+    project: project1
+  )
+  Task.create!(
+    title: "Learn the basic songs",
+    start_date: "2024-07-03",
+    end_date: "2024-07-05",
+    project: project1
+  )
+  Task.create!(
+    title: "Practice",
+    start_date: "2024-07-07",
+    end_date: "2024-07-10",
+    project: project1
+  )
+
+  # Create a project
+
+  project2 = Project.create!(
+    title: "Paint a picture",
+    start_time: "2024-07-15",
+    end_time: "2024-07-17",
+    status: status.sample,
+    completed: false,
+    user: user
+  )
+
+  # Create tasks
+
+  Task.create!(
+    title: "Choose a subject",
+    start_date: "2024-07-15",
+    end_date: "2024-07-15",
+    project: project2
+  )
+
+  Task.create!(
+    title: "Buy supplies",
+    start_date: "2024-07-16",
+    end_date: "2024-07-16",
+    project: project2
+  )
+
+  Task.create!(
+    title: "Paint",
+    start_date: "2024-07-17",
+    end_date: "2024-07-17",
+    project: project2
   )
 end
 
