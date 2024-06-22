@@ -46,30 +46,28 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="row justify-content-center mt-2 rounded trophy-container">
-    <div class="col-md-8 col-lg-6">
-      <div class="card">
-        <div class="card-body">
-          <h3 class="card-title text-center mb-4">Trophies</h3>
-          <div class="row g-2">
-            <%=   image_tag "#{@user.player_level}.png" %>
-            <p>Level: <%= current_user.player_level %> </p>
-            <% @recent_trophies.each do |trophy| %>
-              <div class="col-4 col-sm-3 col-md-2">
-                <%=  image_tag(trophy.image, :class =>"trophy-img") %>
-                <%= trophy.name.humanize %>
-              </div>
-            <% end %>
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-        </div>
+    <div class="row my-2 mx-2">
+      <h1 class="title-task-h1">Trophies</h1>
+      <div class="justify-content-center mt-2 mb-2">
+        <%= image_tag "#{@user.player_level}.png", style:"width:150px;" %>
+      </div>
+      <p>Level: <%= current_user.player_level %> </p>
+      <div class="progress mt-2 mb-2">
+        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <div class="mt-2 mb-2">
+        <% @recent_trophies.each do |trophy| %>
+          <%= image_tag(trophy.image, :class =>"trophy-img") %>
+          <%= trophy.name.humanize %>
+        <% end %>
+      </div>
+      <div>
         <%= link_to "See all your trophies", trophies_path %>
       </div>
+
     </div>
+
   </div>
 
 </div>
