@@ -20,7 +20,7 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 20px;
   margin: 2px;
   width: 140px;
   height: 140px;
@@ -29,10 +29,36 @@
   background-color: #f9e900;
 }
 
-.card-link:hover {
-  background-color: #dacb04;
-  transition: 0.3s;
-  opacity: 1;
+.card-trophy:nth-child(1) {
+  background-color: #0A1045;
+}
+
+.card-trophy:nth-child(2) {
+  background-color: #f97800;
+}
+
+.card-trophy:nth-child(3) {
+  background-color: #F6AF65;
+}
+
+.card-trophy:nth-child(4) {
+  background-color: #00C2D1;
+}
+
+.card-trophy:nth-child(5) {
+  background-color: #6A041D;
+}
+
+.card-trophy:nth-child(6) {
+  background-color: #f9e900;
+}
+
+.card-trophy:nth-child(7) {
+  background-color: #0A1045;
+}
+
+.card-trophy:nth-child(8) {
+  background-color: #f9007c;
 }
 
 .card-link{
@@ -47,6 +73,7 @@
   font-size: 1em;
   color: #ffffff;
   margin: 0 auto;
+  text-align: center;
 }
 
 .trophy-img {
