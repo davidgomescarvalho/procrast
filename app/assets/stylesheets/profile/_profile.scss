@@ -29,10 +29,10 @@ body {
 // }
 
 .stat-tiles {
-  display: flex;
   color: $blue-procrast;
   justify-content: space-between;
-  border-radius: 100px;
+  border-radius: 100%;
   background-color: $yellow-procrast;
-  padding: 2em;
+  text-align: center;
+  padding: 24px 24px 24px 24px;
 }

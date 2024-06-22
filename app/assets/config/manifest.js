@@ -3,7 +3,7 @@
 
 // Link to CSS stylesheets
 //= link_directory ../stylesheets .css
-//= link application.css
+//= link application.scss
 
 // Link to JavaScript files
 //= link_tree ../../javascript .js
