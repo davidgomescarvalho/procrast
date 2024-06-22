@@ -1,0 +1,46 @@
+.container-card{
+  display: grid;
+  grid-template-columns:  repeat(2, 1fr);
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+
+}
+
+.card-trophy {
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+  width: 140px;
+  height: 140px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #F9E900;
+}
+
+.trophy-img {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  justify-content: center;
+}
+
+.trophy-name {
+color: var(--Color-_Base-_White);
+font-family: Poppins;
+font-size: 12px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%;
+}
+
+.trophy-description {
+  font-size: 1em;
+  color: #ffffff;
+  margin: 0;
+}

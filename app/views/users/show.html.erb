@@ -1,83 +1,66 @@
 <div class="container-title">
   <h1 class="title-project-h1">My Profile</h1>
 </div>
+
 <div class="logout text-center">
   <% if user_signed_in? %>
-      <%= link_to 'Logout', destroy_user_session_path, data: { "turbo-method": :delete } %>
+    <%= link_to 'Logout', destroy_user_session_path, data: { "turbo-method": :delete } %>
   <% else %>
     <span>logout</span>
   <% end %>
 </div>
 
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6">
-            <div class="card text-center">
-                <div class="card-body">
-                    <div class="profile">
-                            <p>
-                        <% if @user.avatar.attached? %>
-                          <%= image_tag @user.avatar, size: "200x200", class: "rounded-circle shadow-4" %>
-                        <% else %>
-                          <p>No avatar uploaded</p>
-                        <% end %>
-                      </p>
-                        <h2 class="card-title"><%= @user.first_name %> <%= image_tag "#{@user.country}.png", size: "30x30" %></h2>
-                        <h5> @<%= @user.username %></h5>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-6 col-md-4">
-                            <div class="stat">
-                                <h5 class="fw-bold">XP Points</h5>
-                                <p><%= @user.total_points %></p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4">
-                            <div class="stat">
-                                <h5 class="fw-bold">Projects Completed</h5>
-                                <p><%= current_user.projects.count %> </p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4">
-                            <div class="stat mt-3 mt-md-0">
-                                <h5 class="fw-bold">Trophies</h5>
-                                <p><%= current_user.trophies.count%></p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4">
-                            <div class="stat mt-3 mt-md-0">
-                                <h5 class="fw-bold">Level</h5>
-                                <p><%= current_user.player_level %></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="profile text-center">
+    <% if @user.avatar.attached? %>
+      <%= image_tag @user.avatar, class: "rounded-circle shadow-4 avatar" %>
+    <% else %>
+      <p>No avatar uploaded</p>
+    <% end %>
+    <h2 class="profile-name"><%= @user.first_name %> <%= image_tag "#{@user.country}.png", size: "30x30" %></h2>
+    <h5 class="profile-username"> @<%= @user.username %></h5>
+  </div>
 
+  <div class="row justify-content-center">
+    <div class="col-3 col-md-3">
+      <h5 class="fw-bold profile-stats">XP Points</h5>
+      <p class="stat-tiles"><%= @user.total_points %></p>
+    </div>
+    <div class="col-3 col-md-3">
+      <h5 class="fw-bold profile-stats">Projects Completed</h5>
+      <p class="stat-tiles"><%= current_user.projects.count %> </p>
+    </div>
+    <div class="col-3 col-md-3">
+      <h5 class="fw-bold profile-stats">Trophies</h5>
+      <p class="stat-tiles"><%= current_user.trophies.count%></p>
+    </div>
+    <div class="col-3 col-md-3">
+      <h5 class="fw-bold profile-stats">Level</h5>
+      <p class="stat-tiles"><%= current_user.player_level %></p>
+    </div>
+  </div>
 
   <div class="row justify-content-center mt-2 rounded trophy-container">
     <div class="col-md-8 col-lg-6">
-        <div class="card">
-                  <div class="card-body">
-                      <h3 class="card-title text-center mb-4">Trophies</h3>
-                      <div class="row g-2">
-                      <%=   image_tag "#{@user.player_level}.png" %>
-                      <p>Level: <%= current_user.player_level %> </p>
-                            <% @recent_trophies.each do |trophy| %>
-                              <div class="col-4 col-sm-3 col-md-2">
-                               <%=  image_tag(trophy.image, :class =>"trophy-img") %>
-                                <%= trophy.name.humanize %>
-                              </div>
-                            <% end %>
-                            <div class="progress">
-                              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-           </div>
-        <%= link_to "See all your trophies", trophies_path %>
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title text-center mb-4">Trophies</h3>
+          <div class="row g-2">
+            <%=   image_tag "#{@user.player_level}.png" %>
+            <p>Level: <%= current_user.player_level %> </p>
+            <% @recent_trophies.each do |trophy| %>
+              <div class="col-4 col-sm-3 col-md-2">
+                <%=  image_tag(trophy.image, :class =>"trophy-img") %>
+                <%= trophy.name.humanize %>
+              </div>
+            <% end %>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
         </div>
+        <%= link_to "See all your trophies", trophies_path %>
+      </div>
     </div>
   </div>
 </div>
