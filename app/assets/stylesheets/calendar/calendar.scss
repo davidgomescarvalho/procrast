@@ -24,5 +24,11 @@
   .next-month { }
   .current-month {}
 
-  .has-events {}
+  .has-events {
+    background-color: #f70000;
+
+  }
+  .has-events:hover {
+    background-color: #ffffff;
+  }
 }
