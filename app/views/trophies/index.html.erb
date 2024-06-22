@@ -1,12 +1,17 @@
-<h1 class="title-project-h1">Trophies</h1>
+<div class="container-title">
+  <h1 class="title-project-h1">Trophies</h1>
+</div>
 
-<div class="container-card col-sm-6">
-            <% current_user.trophies.each do |trophy| %>
-             <div class="card-trophy">
-                  <%=  image_tag(trophy.image, :class =>"trophy-img") %>
-                <h5 class="trophy-name"><%= trophy.name.humanize %></h5>
-                <p class="trophy-description">...</p>
-
-            </div>
-          <% end %>
+<div class="container-cards">
+  <div class="container-card">
+              <% current_user.trophies.each do |trophy| %>
+              <div class="card-trophy">
+                    <%=  image_tag(trophy.image, :class =>"trophy-img") %>
+                    <div class="card-info">
+                      <h5 class="trophy-name"><%= trophy.name.humanize %></h5>
+                      <p class="trophy-description">...</p>
+                    </div>
+              </div>
+            <% end %>
+  </div>
 </div>

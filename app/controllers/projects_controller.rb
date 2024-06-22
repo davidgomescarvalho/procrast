@@ -31,7 +31,7 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update(project_params)
-      redirect_to user_project_path(current_user, @project), notice: 'Your Project was successfully updated.'
+      redirect_to project_path(@project), notice: 'Your Project was successfully updated.'
     else
       flash[:alert] = @project.errors.full_messages.join(', ')
       render :edit, status: :unprocessable_entity
