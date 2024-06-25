@@ -20,7 +20,11 @@
         <% else %>
         <span></span>
         <% end %>
-    <%= yield %>
+        <div>
+          <%= yield %>
+          <div id="space-for-navbar">
+          </div>
+        </div>
     <%= render "shared/flashes"%>
   </body>
 </html>
