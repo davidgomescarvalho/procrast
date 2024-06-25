@@ -1,19 +1,21 @@
-  <div class="container-home">
-<div class="banner mx-9">
+<div class="container-home">
+  <div class="banner mx-9">
     <%= cl_image_tag("procrast_title_or4wap", alt: "procrast", class: "img-responsive") %>
     <%= cl_image_tag("logo_p_bmgfmy", alt: "logo-procrast", class: "img-responsive-logo") %>
-  <div class="info">
-    <h1>"Procrastination is the thief of time"</h1>
-    <span class="carrousel-home" data-controller="typed" data-typed-sentences-value="[]" ></span>
-  </div>
-    <a class="btn btn-warning" href="/projects/new">Start Now</a>
+    <div class="info">
+      <h1>"Procrastination is the thief of time"</h1>
+      <span class="carrousel-home" data-controller="typed" data-typed-sentences-value="[]" ></span>
+    </div>
+    <div class="mt-4">
+      <a class="btn-procrast-home" href="/projects/new">Start Now&emsp;&emsp;&emsp;<i class="fa-solid fa-circle-chevron-right"></i></a>
+    </div>
   </div>
 </div>
 <% if user_signed_in?%>
-    <span></span>
+  <span></span>
 <% else %>
-<div class="container-login">
-  <%= link_to 'Login', new_user_session_path, class: "login-button" %>
-  <%= link_to 'Sign Up', new_user_registration_path, class: "login-button"%>
-</div>
+  <div class="container-login">
+    <%= link_to 'Login', new_user_session_path, class: "login-button" %>
+    <%= link_to 'Sign Up', new_user_registration_path, class: "login-button"%>
+  </div>
 <% end %>
