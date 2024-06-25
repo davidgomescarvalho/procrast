@@ -1,14 +1,21 @@
 <div class="container-title">
-  <h1 class="title-project-h1"><%= @project.title %></h1>
+  <h1 class="title-project-h1"><%= @project.title %>
+  <%= link_to edit_project_path(@project), class: "edit-project" do %>
+    <i class="fa-solid fa-ellipsis"></i>
+  <% end %>
+  </h1>
 </div>
-  <%= link_to 'Edit', edit_project_path(@project) %> |
-  <%= link_to 'Back', projects_path %>
+<div class="container-back">
+  <%= link_to projects_path do %>
+    <i class="fa-solid fa-backward"></i>
+  <% end %>
+</div>
 <div class="container-date">
   <div class="start-date">
-    <i class="fa-solid fa-play"></i> <%= @project.start_time %></p>
+    <i class="fa-solid fa-play"></i> <%= @project.start_time %>
   </div>
   <div class="end-date">
-    <i class="fa-solid fa-flag-checkered"></i> <%= @project.end_time %></p>
+    <i class="fa-solid fa-flag-checkered"></i> <%= @project.end_time %>
   </div>
 </div>
 

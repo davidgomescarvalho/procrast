@@ -16,6 +16,13 @@
   margin: 0 auto;
 }
 
+.edit-project {
+  display: flex;
+  justify-content: end;
+  text-decoration: none;
+  color: #6A041D;
+}
+
 .container-task{
   width: 90%;
   background-color:#F9E900;
@@ -38,7 +45,6 @@
   font-weight: bold;
   margin: 12px;
   padding: 1em;
-  padding-bottom: 0;
   border-radius: 10px;
 }
 .end-date {
@@ -47,7 +53,6 @@
   font-weight: bold;
   margin: 12px;
   padding: 1em;
-  padding-bottom: 0;
   border-radius: 10px;
 }
 
