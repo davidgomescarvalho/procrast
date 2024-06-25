@@ -1,11 +1,23 @@
 <div class="container-title">
-  <h1 class="title-project-h1"><%= @project.title %></h1>
+  <h1 class="title-project-h1"><%= @project.title %>
+  <%= link_to edit_project_path(@project), class: "edit-project" do %>
+    <i class="fa-solid fa-ellipsis"></i>
+  <% end %>
+  </h1>
 </div>
-  <%= link_to 'Edit', edit_project_path(@project) %> |
-  <%= link_to 'Back', projects_path %>
-
-<p><strong>Start date:</strong> <%= @project.start_time %></p>
-<p><strong>End date: </strong> <%= @project.end_time %></p>
+<div class="container-back">
+  <%= link_to projects_path do %>
+    <i class="fa-solid fa-backward"></i>
+  <% end %>
+</div>
+<div class="container-date">
+  <div class="start-date">
+    <i class="fa-solid fa-play"></i> <%= @project.start_time %>
+  </div>
+  <div class="end-date">
+    <i class="fa-solid fa-flag-checkered"></i> <%= @project.end_time %>
+  </div>
+</div>
 
 <div class="container">
 <% if @project.tasks.any? %>
@@ -22,9 +34,10 @@
   <% end %>
 </div>
 
-  <div class="container-task m-auto" data-controller="toggle">
-
-    <button data-action="click->toggle#toggleElement">Add task</button>
+  <div class="container-task" data-controller="toggle">
+    <div class="button-task">
+      <button data-action="click->toggle#toggleElement"><i class="fa-solid fa-square-plus"></i></button>
+    </div>
 
     <div data-toggle-target="togglableElement" class="d-none">
       <%= simple_form_for([@project, @task]) do |f| %>
@@ -32,8 +45,8 @@
       <div class="container py-2">
 
         <%= f.input :title %>
-        <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } }, label: "Start Date"  %>
-        <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } }, label: "End Date" %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
         <%= f.button :submit, 'Create Task' %>
 
         </div>
