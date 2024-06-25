@@ -37,6 +37,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 500;
 }
 
 .navbar__link {
@@ -100,4 +101,8 @@ ul {
   background: #f9e900;
   border-radius: 17.5px;
   transition: 250ms cubic-bezier(1, 0.2, 0.1, 1.2) all;
+}
+
+#space-for-navbar {
+  height: 84px;
 }
