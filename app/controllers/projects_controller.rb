@@ -57,15 +57,15 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:title, :status, :end_time, :start_time)
   end
 
-  def notice
-    projects = Project.where(user: current_user)
-    case projects.count
-    when 0
-      'You have no projects.'
-    when 1
-      'You have one project.'
-    else
-      "You have #{projects.count} projects."
-    end
-  end
+  # def notice
+  #   projects = Project.where(user: current_user)
+  #   case projects.count
+  #   when 0
+  #     'You have no projects.'
+  #   when 1
+  #     'You have one project.'
+  #   else
+  #     "You have #{projects.count} projects."
+  #   end
+  # end
 end

@@ -45,8 +45,8 @@
       <div class="container py-2">
 
         <%= f.input :title %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
+        <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } }, label: "Start Date" %>
+        <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } }, label: "End Date" %>
         <%= f.button :submit, 'Create Task' %>
 
         </div>

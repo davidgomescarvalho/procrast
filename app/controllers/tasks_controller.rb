@@ -18,9 +18,7 @@ class TasksController < ApplicationController
     @task.project = @project
 
     if @task.save
-
-      flash[:notice] = 'Task was successfully created.'
-      redirect_to project_path(@project)
+      redirect_to project_path(@project), notice: 'Task was successfully created.'
     else
       render :new
     end
