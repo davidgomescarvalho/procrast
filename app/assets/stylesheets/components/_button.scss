@@ -1,0 +1,29 @@
+.btn-procrast{
+  background-color: $blue-procrast;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-procrast:hover{
+  background-color: $blue-light-procrast;
+}
+
+.btn-procrast:active{
+  transform: scale(0.50);
+}
+
+.btn-procrast-home{
+  background-color: $yellow-procrast;
+  color: $blue-procrast;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
