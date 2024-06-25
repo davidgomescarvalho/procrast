@@ -5,10 +5,6 @@
   <% end %>
   </h1>
 </div>
-<div class="container-back">
-  <%= link_to projects_path do %>
-    <i class="fa-solid fa-backward"></i>
-  <% end %>
 </div>
 <div class="container-date">
   <div class="start-date">
@@ -19,24 +15,26 @@
   </div>
 </div>
 
-<div class="container">
+
 <% if @project.tasks.any? %>
   <ul>
     <% @project.tasks.each do |task| %>
     <div class="container-task">
-      <li><%= task.title %> | <%= task.start_date%> - <%= task.end_date %></li>
-      <%= link_to 'Edit', edit_project_task_path(@project, task) %>
+      <li><%= task.title %> | <%= task.start_date%></li>
+      <%= link_to edit_project_task_path(@project, task) do %>
+        <i class="fa-solid fa-ellipsis"></i>
+      <% end %>
     </div>
       <% end %>
     </ul>
   <% else %>
     <p>No tasks found for this project.</p>
   <% end %>
-</div>
+
 
   <div class="container-task" data-controller="toggle">
     <div class="button-task">
-      <button data-action="click->toggle#toggleElement"><i class="fa-solid fa-square-plus"></i></button>
+      <button data-action="click->toggle#toggleElement" class="button-task">Add a Task</button>
     </div>
 
     <div data-toggle-target="togglableElement" class="d-none">
