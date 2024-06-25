@@ -5,10 +5,6 @@
   <% end %>
   </h1>
 </div>
-<div class="container-back">
-  <%= link_to projects_path do %>
-    <i class="fa-solid fa-backward"></i>
-  <% end %>
 </div>
 <div class="container-date">
   <div class="start-date">
@@ -36,7 +32,7 @@
 
   <div class="container-task" data-controller="toggle">
     <div class="button-task">
-      <button data-action="click->toggle#toggleElement"><i class="fa-solid fa-square-plus"></i></button>
+      <button data-action="click->toggle#toggleElement" class="button-task">Add a Task</button>
     </div>
 
     <div data-toggle-target="togglableElement" class="d-none">
