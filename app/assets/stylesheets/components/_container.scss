@@ -28,6 +28,28 @@
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
+.container-date {
+  display: flex;
+  justify-content: center;
+}
+.start-date {
+  background-color: #00C2D1;
+  color: white;
+  font-weight: bold;
+  margin: 12px;
+  padding: 1em;
+  padding-bottom: 0;
+  border-radius: 10px;
+}
+.end-date {
+  background-color: #6A041D;
+  color: white;
+  font-weight: bold;
+  margin: 12px;
+  padding: 1em;
+  padding-bottom: 0;
+  border-radius: 10px;
+}
 
 #container-ul {
   display: flex;
