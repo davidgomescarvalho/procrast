@@ -2,8 +2,8 @@
 //= link_tree ../images
 
 // Link to CSS stylesheets
-//= link_directory ../stylesheets .css
 //= link application.scss
+//= link_directory ../stylesheets .css
 
 // Link to JavaScript files
 //= link_tree ../../javascript .js
