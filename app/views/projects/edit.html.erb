@@ -21,7 +21,7 @@
     <%= f.input :status, label: "Status", collection: ["Not started","In progress","Completed"] %>
 
     <div class="m-auto">
-      <%= f.button :submit, "Update Project", class:"button-submit"  %>
+      <%= f.button :submit, "Update Project", class:"button-submit" %>
       <%= link_to 'Back', projects_path, class:"button-back" %>
       <%= link_to "Delete", project_path(@project), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "button-delete" %>
     </div>
