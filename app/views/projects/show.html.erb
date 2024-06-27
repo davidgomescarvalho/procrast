@@ -1,11 +1,15 @@
 <div class="container-title">
   <h1 class="title-project-h1"><%= @project.title %>
-  <%= link_to edit_project_path(@project), class: "edit-project" do %>
+    <%= link_to edit_project_path(@project), class: "edit-project" do %>
     <i class="fa-solid fa-ellipsis"></i>
-  <% end %>
+    <% end %>
   </h1>
 </div>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
+
 <div class="container-date">
   <div class="start-date">
     <i class="fa-solid fa-play"></i> <%= @project.start_time %>
@@ -17,11 +21,11 @@
 
 
 <% if @project.tasks.any? %>
-  <ul>
+  <ul class="listed-tasks">
     <% @project.tasks.each do |task| %>
     <div class="container-task">
       <li><%= task.title %> | <%= task.start_date%></li>
-      <%= link_to edit_project_task_path(@project, task) do %>
+      <%= link_to edit_project_task_path(@project, task), style: "color: black;" do %>
         <i class="fa-solid fa-ellipsis"></i>
       <% end %>
     </div>
@@ -32,7 +36,7 @@
   <% end %>
 
 
-  <div class="container-task" data-controller="toggle">
+  <div class="container-task-add" data-controller="toggle">
     <div class="button-task">
       <button data-action="click->toggle#toggleElement" class="button-task">Add a Task</button>
     </div>
