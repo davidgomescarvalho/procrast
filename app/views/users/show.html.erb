@@ -20,7 +20,7 @@
     <h2 class="profile-name"><%= @user.first_name %> <%= image_tag "#{@user.country}.png", size: "30x30" %></h2>
     <h5 class="profile-username"> @<%= @user.username %></h5>
 
-    <div class="row mt-5 mb-5">
+    <div class="row my-4">
       <div class="col-3 col-md-3">
         <h5 class="fw-bold profile-stats">XP Points</h5>
         <div class="stat-tiles stat-tiles-orange">
@@ -48,28 +48,31 @@
     </div>
 
     <div class="row my-2 mx-2">
-      <h1 class="title-task-h1">Trophies</h1>
+      <h1 class="title-task-h1">Level</h1>
       <div class="justify-content-center mt-2 mb-2">
         <%= image_tag "#{@user.player_level}.png", style:"width:150px;" %>
       </div>
-      <p>Level: <%= current_user.player_level %> </p>
-      <div class="progress mt-2 mb-2">
-        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+      <div class="level">
+        <p>Level: <%= current_user.player_level %> </p>
+        <div class="progress my-3">
+          <div class="progress-bar progress-bar-striped" role="progressbar" style="width:89%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
       </div>
+      <h1 class="title-task-h1">Trophies</h1>
       <div class="trophy-container">
         <% @recent_trophies.each do |trophy| %>
         <div class="trophy-card-profile">
             <%= image_tag(trophy.image, :class =>"trophy-img") %>
             <p><%= trophy.name.humanize %></p>
+            <div class="progress my-3">
+              <div class="progress-bar progress-bar-striped" role="progressbar" style="width:70%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">70%</div>
+            </div>
         </div>
         <% end %>
       </div>
       <div>
-        <%= link_to "See all your trophies", trophies_path %>
+        <%= link_to "See all your trophies", trophies_path, class:"btn btn-primary my-2" %>
       </div>
-
     </div>
-
   </div>
-
 </div>
