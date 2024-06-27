@@ -20,10 +20,11 @@
     <%= f.input :end_time, as: :string, input_html: { data: { controller: "datepicker" } }, label: "End Date" %>
     <%= f.input :status, label: "Status", collection: ["Not started","In progress","Completed"] %>
 
-    <div class="actions btn btn-success m-auto">
-      <%= f.button :submit, "Update Project" %>
+    <div class="m-auto">
+      <%= f.button :submit, "Update Project", class:"button-submit"  %>
+      <%= link_to 'Back', projects_path, class:"button-back" %>
+      <%= link_to "Delete", project_path(@project), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "button-delete" %>
     </div>
-    <%= link_to 'Back', projects_path, class:"btn btn-warning" %>
-    <%= link_to "Delete", project_path(@project), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
   <% end %>
 </div>
