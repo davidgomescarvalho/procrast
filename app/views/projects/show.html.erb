@@ -17,7 +17,7 @@
 
 
 <% if @project.tasks.any? %>
-  <ul>
+  <ul class="listed-tasks">
     <% @project.tasks.each do |task| %>
     <div class="container-task">
       <li><%= task.title %> | <%= task.start_date%></li>
