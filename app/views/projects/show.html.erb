@@ -1,11 +1,15 @@
 <div class="container-title">
   <h1 class="title-project-h1"><%= @project.title %>
-  <%= link_to edit_project_path(@project), class: "edit-project" do %>
+    <%= link_to edit_project_path(@project), class: "edit-project" do %>
     <i class="fa-solid fa-ellipsis"></i>
-  <% end %>
+    <% end %>
   </h1>
 </div>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
+
 <div class="container-date">
   <div class="start-date">
     <i class="fa-solid fa-play"></i> <%= @project.start_time %>
