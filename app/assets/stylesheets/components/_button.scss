@@ -42,3 +42,99 @@
   font-weight: 800;
   font-family: poppins;
 }
+
+.button-update {
+  text-align: center;
+  background-color: $blue-procrast;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-family: poppins;
+}
+
+.button-update:hover {
+  background-color: $blue-light-procrast;
+}
+
+.button-delete {
+  text-align: center;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-family: poppins;
+}
+
+.button-delete:hover {
+  background-color: #a00037;
+}
+
+.button-create {
+  text-align: center;
+  background-color: $blue-procrast;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-family: poppins;
+}
+
+.button-create:hover {
+  background-color: $blue-light-procrast;
+}
+
+.button-back {
+  text-align: center;
+  background-color: #6a041d;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-family: poppins;
+}
+
+.button-back:hover {
+  background-color: #a00037;
+}
+
+.button-submit {
+  text-align: center;
+  background-color: $blue-procrast;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-family: poppins;
+}
+
+.button-submit:hover {
+  background-color: $blue-light-procrast;
+}
+
+.button-edit {
+  text-align: center;
+  background-color: $blue-procrast;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-family: poppins;
+}
+
+.button-edit:hover {
+  background-color: $blue-light-procrast;
+}
