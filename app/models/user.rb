@@ -27,10 +27,8 @@ class User < ApplicationRecord
       "Bronze"
     when 100..300
       "Silver"
-    when 300..500
-      "Gold"
     else
-      "Platinum"
+      "Gold"
     end
   end
 end
