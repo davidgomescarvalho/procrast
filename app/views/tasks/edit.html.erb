@@ -1,20 +1,19 @@
-<h1 class="title-task-h1">Modify <%= @task.title %> </h1>
+<div class="container-title">
+  <h1 class="title-task-h1">Modify <%= @task.title %> </h1>
+</div>
+
 <%= simple_form_for @task do |f| %>
- <div class="field">
+
+  <div class="container py-4">
     <%= f.input :title, label: "Title" %>
-  </div>
+    <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } }, label: "Start Date" %>
+    <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } }, label: "End Date"  %>
 
-  <div class="field">
-    <%= f.input :start_date, as: :date, label: "Start Date" %>
-  </div>
-
-  <div class="field">
-    <%= f.input :end_date, as: :date, label: "End Date" %>
-  </div>
-
-  <div class="actions">
-    <%= f.button :submit, "Update Project" %>
+    <div class="actions">
+      <%= f.button :submit, "Update Project" %>
+    </div>
   </div>
 <% end %>
+
 <%= link_to 'Back', project_path(@task.project) %>
 <%= link_to 'Delete', project_task_path(@task), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
