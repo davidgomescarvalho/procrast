@@ -16,12 +16,13 @@
     <%= f.input :title, label: "Title" %>
     <%= f.input :start_time, as: :string, input_html: { data: { controller: "datepicker" } }, label: "Start Date" %>
     <%= f.input :end_time, as: :string, input_html: { data: { controller: "datepicker" } }, label: "End Date" %>
-  <%= f.input :status, label: "Status", collection: ["Not started","In progress","Completed"] %>
+    <%= f.input :status, label: "Status", collection: ["Not started","In progress","Completed"] %>
 
-  <div class="actions btn btn-success m-auto">
+    <div class="actions btn btn-success m-auto">
     <%= f.button :submit, "Update Project" %>
 
+    </div>
+    <%= link_to 'Back', projects_path, class:"btn btn-warning" %>
+    <%= link_to "Delete", project_path(@project), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   </div>
-  <%= link_to 'Back', projects_path, class:"btn btn-warning" %>
-  <%= link_to "Delete", project_path(@project), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-<% end %>
+  <% end %>
