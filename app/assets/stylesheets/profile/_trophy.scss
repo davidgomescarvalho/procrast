@@ -1,26 +1,26 @@
 .container-trophy{
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     display: flex;
+    padding: 10px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
 }
 
 .container-trophy h2{
     font-size: 2em;
-    color: #ffffff;
-    margin: 0 auto;
+    color: $blue-procrast;
+    margin: 10px;
+    text-align: center;
 }
 
 .container-trophy img{
     height: 160px;
     max-width: 160px;
     object-fit: cover;
-    border-radius: 50%;
     position: relative;
     top: 0;
 }
@@ -29,6 +29,9 @@
     font-size: 1.5em;
     color: #ffffff;
     margin: 0 auto;
+    text-align: center;
+    color: $blue-procrast;
+
 }
 
 .info-trophy{
@@ -37,11 +40,11 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
-    margin: 2px;
+    margin: 20px;
     width: 100%;
     height: 100%;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: $blue-procrast;
+    background-color: #ffffff;
 
 }
