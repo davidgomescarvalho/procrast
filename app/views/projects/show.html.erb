@@ -20,27 +20,37 @@
 </div>
 
 <% if @project.tasks.any? %>
+<div data-controller="done">
   <ul class="listed-tasks">
     <% @project.tasks.each do |task| %>
-      <div class="container-task">
-        <li><%= task.title %> | <%= task.start_date%></li>
-        <%= link_to edit_project_task_path(@project, task), style: "color: black;" do %>
-          <i class="fa-solid fa-ellipsis"></i>
-        <% end %>
-      </div>
-    <% end %>
-  </ul>
-<% else %>
-  <p>No tasks found for this project.</p>
-<% end %>
 
-<div class="container-task-add" data-controller="toggle">
-  <div class="button-task">
-    <button data-action="click->toggle#toggleElement" class="button-task">Add a Task</button>
-  </div>
+    <div class="container-task">
+      <li><%= task.title %> | <%= task.start_date%></li>
+      <%= link_to edit_task_path(task), style: "color: black;" do %>
+        <i class="fa-solid fa-ellipsis"></i>
+      <% end %>
+      <%= simple_form_for task do |f| %>
+        <%= f.input :done, as: :boolean, label: false, input_html: { data: {
+          done_target: "check",
+          action: "done#toggle"}}%>
+      <% end %>
+    </div>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No tasks found for this project.</p>
+  <% end %>
+</div>
 
-  <div data-toggle-target="togglableElement" class="d-none">
-    <%= simple_form_for([@project, @task]) do |f| %>
+
+  <div class="container-task-add" data-controller="toggle">
+    <div class="button-task">
+      <button data-action="click->toggle#toggleElement" class="button-task">Add a Task</button>
+    </div>
+
+    <div data-toggle-target="togglableElement" class="d-none">
+      <%= simple_form_for([@project, @task]) do |f| %>
+
 
       <div class="container py-2">
 

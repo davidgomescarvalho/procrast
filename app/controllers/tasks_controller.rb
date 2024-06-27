@@ -36,19 +36,20 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-
-    if @task.update(task_params)
-      flash[:notice] = 'Task was successfully updated.'
-      redirect_to project_path(@task.project)
-    else
-      render :edit
+    respond_to do |format|
+      if @task.update(task_params)
+        format.html { redirect_to project_path(@task.project), notice: 'Task was successfully updated.' }
+        format.json { render json: {status: :ok, location: @task}  }
+      else
+        render :edit
+      end
     end
   end
 
   private
 
   def task_params
-    params.require(:task).permit(:title, :start_date, :end_date)
+    params.require(:task).permit(:title, :start_date, :end_date, :done)
   end
 
   def set_project
