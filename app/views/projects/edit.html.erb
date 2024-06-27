@@ -1,5 +1,6 @@
-<h1 class="title-project-h1">New Project</h1>
-
+<div class="container-title">
+  <h1 class="title-project-h1">New Project</h1>
+</div>
 
 <%= simple_form_for @project do |f| %>
   <% if @project.errors.any? %>
@@ -12,17 +13,18 @@
       </ul>
     </div>
   <% end %>
-  <div class="container py-2">
+
+  <div class="container py-4">
     <%= f.input :title, label: "Title" %>
     <%= f.input :start_time, as: :string, input_html: { data: { controller: "datepicker" } }, label: "Start Date" %>
     <%= f.input :end_time, as: :string, input_html: { data: { controller: "datepicker" } }, label: "End Date" %>
     <%= f.input :status, label: "Status", collection: ["Not started","In progress","Completed"] %>
 
-    <div class="actions btn btn-success m-auto">
-    <%= f.button :submit, "Update Project" %>
-
+    <div class="m-auto">
+      <%= f.button :submit, "Update Project", class:"button-submit"  %>
+      <%= link_to 'Back', projects_path, class:"button-back" %>
+      <%= link_to "Delete", project_path(@project), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "button-delete" %>
     </div>
-    <%= link_to 'Back', projects_path, class:"btn btn-warning" %>
-    <%= link_to "Delete", project_path(@project), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-  </div>
+
   <% end %>
+</div>

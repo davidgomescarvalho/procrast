@@ -2,12 +2,13 @@
     <h1 class="title-project-h1">Trophy Details</h1>
 </div>
 
-<div class="container-trophy">
+
+<div class="container-trophy <%=@trophy.name.downcase.gsub(" ", "-")%>-background">
     <%=  image_tag @trophy.image, :class =>"trophy-img-show" %>
     <div class="info-trophy">
-        <h2><%= @trophy.name %></h2>
+        <h2>"<%= @trophy.name %>"</h2>
+
         <p><%= @trophy.description %></p>
     </div>
-</div>
-
 <%= link_to 'Back', trophies_path, class: 'btn-back' %>
+</div>

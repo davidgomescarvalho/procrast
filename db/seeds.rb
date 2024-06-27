@@ -28,11 +28,11 @@ trophy2 = Trophy.create!(
   name: "Just getting started",
   description: "You've just started your journey!"
 )
-image = URI.open("https://game-icons.net/images/project_papper.png")
+image = URI.open("https://images.vexels.com/content/205873/preview/alarm-clock-stroke-icon-alarm-clock-f1e917.png")
 trophy2.image.attach(io: image, filename: "#{trophy2.name}.png", content_type: 'image/png')
 
 trophy3 = Trophy.create!(
-  name: "You're on a roll!",
+  name: "Getting the hang of it",
   description: "You've completed 5 projects!"
 )
 image = URI.open("https://cdn12.picryl.com/photo/2016/12/31/medal-trophy-achievement-4260eb-1024.png")
@@ -42,25 +42,25 @@ trophy4 = Trophy.create!(
   name: "Reaching the stars",
   description: "You've completed 10 projects!"
 )
-image = URI.open("https://3dbay.io/files/preview/961x961/11696528407dmrww8ggykz1ftjzrcojoonhsbca6nlbdp35ogsl4ukuzfpbrhwsbkvhb5pi0trmzsgo2aayxw33asayfwgkxaho4fvqslmh6aai.png")
+image = URI.open("https://cdn-icons-png.flaticon.com/512/1734/1734167.png")
 trophy4.image.attach(io: image, filename: "#{trophy4.name}.png", content_type: 'image/png')
 
 trophy5 = Trophy.create!(
   name: "Rolling on tasks",
   description: "You've completed 10 tasks"
 )
-image = URI.open("https://cdn-icons-png.freepik.com/256/8743/8743940.png?ga=GA1.1.1098352156.1718818190&semt=ais_hybrid")
+image = File.open(Rails.root.join("app", "assets", "images", "trophies", "rollers.png"))
 trophy5.image.attach(io: image, filename: "#{trophy5.name}.png", content_type: 'image/png')
 
 trophy6 = Trophy.create!(
-  name: "Can't stop won't stop",
+  name: "Completionist",
   description: "You've completed your first project!"
 )
-image = URI.open("https://game-icons.net/images/project_papper.png")
+image = URI.open("https://cdn-icons-png.flaticon.com/512/4721/4721040.png")
 trophy6.image.attach(io: image, filename: "#{trophy6.name}.png", content_type: 'image/png')
 
 trophy7 = Trophy.create!(
-  name: "I'm on fire!",
+  name: "The Weekender",
   description: "You've completed a week-long project!"
 )
 
@@ -68,11 +68,11 @@ image = URI.open("https://cdn-icons-png.freepik.com/256/14883/14883510.png")
 trophy7.image.attach(io: image, filename: "#{trophy7.name}.png", content_type: 'image/png')
 
 trophy8 = Trophy.create!(
-  name: "The king of projects",
+  name: "The King of projects",
   description: "You've completed a month-long project!"
 )
 
-image = URI.open("https://3dbay.io/files/preview/961x961/11696528407dmrww8ggykz1ftjzrcojoonhsbca6nlbdp35ogsl4ukuzfpbrhwsbkvhb5pi0trmzsgo2aayxw33asayfwgkxaho4fvqslmh6aai.png")
+image = URI.open("https://cdn4.iconfinder.com/data/icons/seo-internet-marketing-4-2/256/High-Quality_Content-512.png")
 trophy8.image.attach(io: image, filename: "#{trophy8.name}.png", content_type: 'image/png')
 
 
