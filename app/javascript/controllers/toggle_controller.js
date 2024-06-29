@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
 
-  static targets = [ "togglableElement", "anchor","anchorbis", "form", "list" ]
+  static targets = [ "togglableElement", "anchor", "form", "list" ]
 
   toggleElement() {
     this.togglableElementTarget.classList.toggle('d-none')
