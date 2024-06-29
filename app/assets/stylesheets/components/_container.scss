@@ -15,6 +15,13 @@
   width: 90%;
   margin: 0 auto;
 }
+.container-calendar {
+  width: 90%;
+  margin: 0 auto;
+  border: solid 2px black;
+  border-radius: 10px;
+  margin-bottom: 2em;
+}
 
 .edit-project {
   display: flex;
@@ -27,6 +34,20 @@
   margin: 0 auto;
   border-radius: 10px;
   margin-bottom: 1em;
+}
+
+.container-completed {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  background-color: #1edd88;
+  margin: 1em;
+  color: white;
+  font-size: large;
+  font-weight: bold;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .container-task{

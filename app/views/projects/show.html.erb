@@ -9,11 +9,11 @@
 <div data-controller="done">
 
   <div class="progress">
-    <div id="bar" data-done-target="bar" class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    <div id="bar" data-done-target="bar" class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" style="width: 0% " aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
 
     <% if @project.completed? %>
-      <div class="container-completed">
+      <div id="completed-button" data-done-target="completed-button">
         <button>
           <i class="fa-solid fa-check"></i>
           <span>Completed</span>
@@ -39,7 +39,7 @@
             <i class="fa-solid fa-ellipsis"></i>
           <% end %>
           <%= simple_form_for task do |f| %>
-            <%= f.input :done, as: :boolean, label: false, input_html: { data: { done_target: "check", action: "done#toggle" } } %>
+            <%= f.input :done, as: :boolean, label: false, class: "inputcheck", input_html: { data: { done_target: "check", action: "done#toggle" } } %>
           <% end %>
         </div>
       <% end %>

@@ -1,4 +1,4 @@
-/* .simple-calendar {
+ .simple-calendar {
   .calendar-container {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -15,12 +15,31 @@
   .project-link {
     color: rgb(195, 38, 38);
     text-decoration: none;
+    background-color: aquamarine;
+    border-radius: 50%;
   }
 
   .calendar-heading {
-    text-align: center;
+    display: flex;
+   justify-content: center;
+    align-items: center;
+   height: 3em;
+   background-color: #64FCD9;
   }
-}
+  .calendar-heading span {
+    font-weight: bold;
+    color: #F6AF65;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .calendar-heading a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
 .calendar-container td {
   border: solid 1px #b9b7b7 ;
   background-color: #F9F9F9;
@@ -31,7 +50,7 @@
   margin-bottom: 0;
   padding: 8px;
 }
- */
+}
  .simple-calendar {
   .day {}
 
@@ -48,7 +67,8 @@
   }
   .future {}
 
-  .start-date {}
+  .start-date {
+  }
 
   .prev-month {
   }
@@ -56,5 +76,6 @@
   .current-month {}
 
   .has-events {
+
   }
 }
