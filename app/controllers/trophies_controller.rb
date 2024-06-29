@@ -3,6 +3,7 @@ class TrophiesController < ApplicationController
 
   def index
     @trophies = Trophy.all
+    @trophiesDSC = @trophies.all.order(created_at: :desc)
   end
 
   def show

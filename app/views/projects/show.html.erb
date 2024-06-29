@@ -6,11 +6,12 @@
   </h1>
 </div>
 
-<div data-controller="done">
+
 
   <div class="progress">
     <div id="bar" data-done-target="bar" class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" style="width: <%= @project.completion_percentage %>%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
+
 
   <div id="completed-button" data-done-target="completedButton" class="<%= @project.completed? ? "" : "d-none" %>">
     <button>
@@ -19,51 +20,39 @@
     </button>
   </div>
 
-  <div class="container-date">
-    <div class="start-date">
-      <i class="fa-solid fa-play"></i> <%= @project.start_time %>
+    <div class="container-date" >
+      <div class="start-date">
+        <i class="fa-solid fa-play"></i> <%= @project.start_time %>
+      </div>
+      <div class="end-date">
+        <i class="fa-solid fa-flag-checkered"></i> <%= @project.end_time %>
+      </div>
     </div>
-    <div class="end-date">
-      <i class="fa-solid fa-flag-checkered"></i> <%= @project.end_time %>
-    </div>
+
+
+    <% if @project.tasks.any? %>
+      <ul class="listed-tasks" data-toggle-target="list">
+        <% @project.tasks.order(:id).each do |task| %>
+          <%= render "tasks/task", task: task  %>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No tasks found for this project.</p>
+    <% end %>
   </div>
-
-  <% if @project.tasks.any? %>
-    <ul class="listed-tasks">
-      <% @project.tasks.order(:id).each do |task| %>
-        <div class="container-task">
-          <li><%= task.title %> | <%= task.start_date%></li>
-          <%= link_to edit_task_path(task), style: "color: black;" do %>
-            <i class="fa-solid fa-ellipsis"></i>
-          <% end %>
-          <%= simple_form_for task do |f| %>
-            <%= f.input :done, as: :boolean, label: false, class: "inputcheck", input_html: { data: { done_target: "check", action: "done#toggle" } } %>
-          <% end %>
-        </div>
-      <% end %>
-    </ul>
-  <% else %>
-    <p>No tasks found for this project.</p>
-  <% end %>
-</div>
+  <div data-toggle-target="anchorbis"></div>
 
 
-  <div class="container-task-add" data-controller="toggle">
+
+  <div class="container-task-add" >
     <div class="button-task">
       <button data-action="click->toggle#toggleElement" class="button-task">Add a Task</button>
     </div>
 
     <div data-toggle-target="togglableElement" class="d-none">
-      <%= simple_form_for([@project, @task]) do |f| %>
-        <div class="container py-2">
-
-          <%= f.input :title %>
-          <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } }, label: "Start Date" %>
-          <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } }, label: "End Date" %>
-          <%= f.button :submit, 'Create Task', class: "button-create" %>
-
-        </div>
-      <% end %>
+     <%= render "tasks/form", task: @task %>
     </div>
+    <div data-toggle-target="anchor"></div>
   </div>
 </div>
+
