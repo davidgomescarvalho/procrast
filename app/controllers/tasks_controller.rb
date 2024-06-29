@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_project, only: :create
+  before_action :set_project, only: [:create, :new]
 
   def index
     @tasks = Task.all
@@ -17,10 +17,15 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.project = @project
 
-    if @task.save
-      redirect_to project_path(@project), notice: 'Task was successfully created.'
-    else
-      render :new
+    respond_to do |format|
+      if @task.save
+        format.html { redirect_to project_path(@project) }
+        format.json # Follows the classic Rails flow and look for a create.json view
+      else
+        p "coucou"
+        format.html { render "tasks/new", status: :unprocessable_entity }
+        format.json # Follows the classic Rails flow and look for a create.json view
+      end
     end
   end
 

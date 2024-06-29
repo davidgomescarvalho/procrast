@@ -1,0 +1,8 @@
+<%= simple_form_for([@project, task], data: {action:"submit->toggle#scroll", toggle_target:"form"}) do |f| %>
+    <div class="container py-2">
+        <%= f.input :title  %>
+        <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } }, label: "Start Date" %>
+        <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } }, label: "End Date" %>
+        <%= f.button :submit, 'Create Task', class: "button-create" %>
+    </div>
+<% end %>
