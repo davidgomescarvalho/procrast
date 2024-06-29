@@ -7,7 +7,7 @@
 </div>
 
 
-
+<div data-controller="done">
   <div class="progress">
     <div id="bar" data-done-target="bar" class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" style="width: <%= @project.completion_percentage %>%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
@@ -40,9 +40,6 @@
       <p>No tasks found for this project.</p>
     <% end %>
   </div>
-  <div data-toggle-target="anchorbis"></div>
-
-
 
   <div class="container-task-add" >
     <div class="button-task">
@@ -55,4 +52,3 @@
     <div data-toggle-target="anchor"></div>
   </div>
 </div>
-
