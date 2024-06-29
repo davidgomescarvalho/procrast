@@ -39,7 +39,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.update(task_params)
         format.html { redirect_to project_path(@task.project), notice: 'Task was successfully updated.' }
-        format.json { render json: {status: :ok, location: @task}  }
+        format.json { render json: { completion_percentage: @task.project.completion_percentage }  }
       else
         render :edit
       end

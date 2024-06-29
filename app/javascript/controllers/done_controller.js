@@ -1,17 +1,16 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = [ "check" ]
-  connect() {
-    console.log("Hello from done_controller.js")
-  }
-  toggle() {
-    this.checkTarget.classList.toggle("done")
-    console.log("checked!")
-    const form  = this.checkTarget.closest("form")
-    const formData = new FormData(
-      form
-    )
+  static targets = [ "check", "bar" ]
+
+  toggle(event) {
+
+    const checkbox = event.target
+
+    checkbox.classList.toggle("done")
+    const form  = checkbox.closest("form")
+
+    const formData = new FormData(form)
     const options = {
       method: "PATCH",
       body: formData,
@@ -22,7 +21,13 @@ export default class extends Controller {
     fetch( form.action, options)
       .then(response => response.json())
       .then((data) => {
-        console.log(data)
+        this.barTarget.style = `width: ${data.completion_percentage}%;`
+
+        if (data.completion_percentage === 100) {
+          this.buttontTarget.classList.add("d-none")
+        } else {
+          this.buttontTarget.classList.remove("d-none")
+        }
       })
   }
 }

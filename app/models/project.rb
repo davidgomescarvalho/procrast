@@ -15,6 +15,13 @@ class Project < ApplicationRecord
 
   after_destroy :update_user_points_minus
 
+  def completion_percentage
+    (tasks.where(done: true).count.fdiv(tasks.count) * 100).round(2)
+  end
+
+  def completed?
+    completion_percentage == 100
+  end
 
   private
 
