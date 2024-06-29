@@ -4,7 +4,7 @@
 
 <div class="container-cards">
   <div class="container-card">
-              <% current_user.trophies.each do |trophy| %>
+              <% @trophiesDSC.each do |trophy| %>
               <div class="card-trophy">
                     <%=  image_tag(trophy.image, :class =>"trophy-img") %>
                     <div class="card-info">

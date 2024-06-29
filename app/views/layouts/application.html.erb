@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Procrast</title>
+    <title>Procrast-Everybody procrastinates, you just need to know how to do it better ! </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -22,9 +22,9 @@
         <% end %>
         <div>
           <%= yield %>
+            <%= render "shared/flashes"%>
           <div id="space-for-navbar">
           </div>
         </div>
-    <%= render "shared/flashes"%>
   </body>
 </html>
