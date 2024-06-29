@@ -2,7 +2,7 @@ class TrophiesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @trophies = Trophy.all
+    @trophies = Trophy.all.where.not(name: "Wagonner")
     @trophiesDSC = @trophies.all.order(created_at: :desc)
   end
 
