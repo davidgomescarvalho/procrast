@@ -14,50 +14,51 @@ puts "Seeding the database..."
 puts "Creating users..."
 
 
-status = ["Not started", "In progress"]
-
 trophy1 = Trophy.create!(
-  name: "First Project",
-  description: "You've created your first project!",
-)
-image = URI.open("https://cdn-icons-png.freepik.com/512/3311/3311367.png")
-trophy1.image.attach(io: image, filename: "#{trophy1.name}.png", content_type: 'image/png')
-
-
-trophy2 = Trophy.create!(
   name: "Just getting started",
   description: "You've just started your journey!"
 )
 image = URI.open("https://images.vexels.com/content/205873/preview/alarm-clock-stroke-icon-alarm-clock-f1e917.png")
+trophy1.image.attach(io: image, filename: "#{trophy1.name}.png", content_type: 'image/png')
+
+
+trophy2 = Trophy.create!(
+  name: "First Project",
+  description: "You've created your first project!",
+)
+image = URI.open("https://cdn-icons-png.freepik.com/512/3311/3311367.png")
 trophy2.image.attach(io: image, filename: "#{trophy2.name}.png", content_type: 'image/png')
 
+
 trophy3 = Trophy.create!(
-  name: "Getting the hang of it",
-  description: "You've completed 5 projects!"
-)
-image = URI.open("https://cdn12.picryl.com/photo/2016/12/31/medal-trophy-achievement-4260eb-1024.png")
-trophy3.image.attach(io: image, filename: "#{trophy3.name}.png", content_type: 'image/png')
-
-trophy4 = Trophy.create!(
-  name: "Reaching the stars",
-  description: "You've completed 10 projects!"
-)
-image = URI.open("https://cdn-icons-png.flaticon.com/512/1734/1734167.png")
-trophy4.image.attach(io: image, filename: "#{trophy4.name}.png", content_type: 'image/png')
-
-trophy5 = Trophy.create!(
-  name: "Rolling on tasks",
-  description: "You've completed 10 tasks"
-)
-image = File.open(Rails.root.join("app", "assets", "images", "trophies", "rollers.png"))
-trophy5.image.attach(io: image, filename: "#{trophy5.name}.png", content_type: 'image/png')
-
-trophy6 = Trophy.create!(
   name: "Completionist",
   description: "You've completed your first project!"
 )
 image = URI.open("https://cdn-icons-png.flaticon.com/512/4721/4721040.png")
+trophy3.image.attach(io: image, filename: "#{trophy3.name}.png", content_type: 'image/png')
+
+trophy4 = Trophy.create!(
+  name: "Getting the hang of it",
+  description: "You've completed 5 projects!"
+)
+image = URI.open("https://cdn12.picryl.com/photo/2016/12/31/medal-trophy-achievement-4260eb-1024.png")
+trophy4.image.attach(io: image, filename: "#{trophy4.name}.png", content_type: 'image/png')
+
+trophy5 = Trophy.create!(
+  name: "Reaching the stars",
+  description: "You've completed 10 projects!"
+)
+image = URI.open("https://cdn-icons-png.flaticon.com/512/1734/1734167.png")
+trophy5.image.attach(io: image, filename: "#{trophy5.name}.png", content_type: 'image/png')
+
+
+trophy6 = Trophy.create!(
+  name: "Rolling on tasks",
+  description: "You've completed 10 tasks"
+)
+image = File.open(Rails.root.join("app", "assets", "images", "trophies", "rollers.png"))
 trophy6.image.attach(io: image, filename: "#{trophy6.name}.png", content_type: 'image/png')
+
 
 trophy7 = Trophy.create!(
   name: "The Weekender",
