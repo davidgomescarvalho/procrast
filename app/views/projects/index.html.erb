@@ -5,7 +5,7 @@
 <div class="container">
   <ul id="container-ul">
         <% if @projects.empty? %>
-          <p>No projects found, start a project !</p>
+          <p class="text-center my-2">No projects found, start a project !</p>
         <% else %>
           <% @projects.each do |project| %>
             <li><%= link_to project.title, project_path(project) %></li>

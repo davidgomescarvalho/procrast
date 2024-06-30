@@ -38,9 +38,14 @@
         <% end %>
       </ul>
     <% else %>
-      <p>No tasks found for this project.</p>
-      <ul class="listed-tasks" data-toggle-target="list">
-      </ul>
+        <% if @project.tasks.empty? %>
+              <p class="text-center">No tasks found for this project.</p>
+            <% else %>
+             <ul class="listed-tasks" data-toggle-target="list">
+            </ul>
+        <% end %>
+          <ul class="listed-tasks" data-toggle-target="list">
+          </ul>
     <% end %>
 </div>
 

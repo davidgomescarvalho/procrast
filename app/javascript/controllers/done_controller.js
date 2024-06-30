@@ -7,7 +7,7 @@ export default class extends Controller {
   toggle(event) {
     const checkbox = event.target
     let id = document.querySelector(".progress").getAttribute("data-project-id")
-    
+
     checkbox.classList.toggle("done")
     const form  = checkbox.closest("form")
 
