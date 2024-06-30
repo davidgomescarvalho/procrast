@@ -29,44 +29,54 @@
   border: #0A1045 2px solid;
 }
 
-.card-trophy:nth-child(9),
+.card-trophy:nth-child(10),
+.the-ultimate-background {
+  background-color: #ffffff;
+}
+.card-trophy:nth-child(8),
 .first-project-background {
   background-color: #84179a;
 }
 
-.card-trophy:nth-child(4),
+.card-trophy:nth-child(7),
 .just-getting-started-background {
   background-color: #f97800;
 }
 
-.card-trophy:nth-child(5),
+.card-trophy:nth-child(6),
 .getting-the-hang-of-it-background {
   background-color: #F6AF65;
 }
 
-.card-trophy:nth-child(6),
+.card-trophy:nth-child(5),
 .reaching-the-stars-background {
   background-color: #00C2D1;
 }
 
-.card-trophy:nth-child(7),
+.card-trophy:nth-child(4),
 .rolling-on-tasks-background {
   background-color: #6A041D;
 }
 
-.card-trophy:nth-child(8),
+.card-trophy:nth-child(3),
 .completionist-background {
   background-color: #f9e900;
 }
 
-.card-trophy:nth-child(1),
+.card-trophy:nth-child(2),
 .the-weekender-background {
   background-color: #0A1045;
 }
 
-.card-trophy:nth-child(2),
+.card-trophy:nth-child(1),
 .the-king-of-projects-background {
   background-color: #f9007c;
+}
+
+
+.card-trophy:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s;
 }
 
 .card-link{
@@ -80,8 +90,8 @@
 .trophy-description {
   font-size: 1em;
   color: #ffffff;
-  margin: 0 auto;
   text-align: center;
+  margin-top: 10px;
 }
 
 .trophy-img {
@@ -91,8 +101,8 @@
   flex-shrink: 0;
   align-items:center ;
   position: relative;
-  top: 2px;
-  margin-top: 5px;
+  top: 10px;
+  margin-top: 10px;
 }
 
 .trophy-name {
@@ -104,6 +114,7 @@ text-align: center;
 font-style: normal;
 font-weight: 700;
 line-height: 100%;
-margin-top: 5px;
+top: 14px;
+margin:0 auto;
 
 }
