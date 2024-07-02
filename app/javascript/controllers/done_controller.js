@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = [ "check", "bar", "completedButton" ]
-  static values = { project: String }
+  static values = { project: String, projectId: Number }
 
   toggle(event) {
     const checkbox = event.target
@@ -24,45 +24,47 @@ export default class extends Controller {
       .then(response => response.json())
       .then((data) => {
         this.barTarget.style = `width: ${data.completion_percentage}%;`
-
+        this.completedButtonTarget.classList.toggle("d-none", data.completion_percentage !== 100)
         if (data.completion_percentage === 100) {
-          const swalWithBootstrapButtons = Swal.mixin({
-            customClass: {
-              confirmButton: "btn btn-success",
-              cancelButton: "btn btn-danger"
-            },
-            buttonsStyling: false
-          });
-          swalWithBootstrapButtons.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonText: "<a data-turbo-method='delete' href='/projects/" + id  + "'>'Yes, delete it!'</a>" ,
-            cancelButtonText: "No, cancel!",
-            reverseButtons: true
-          }).then((result) => {
-            if (result.isConfirmed) {
-              swalWithBootstrapButtons.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
-                icon: "success"
-              });
-            } else if (
-              /* Read more about handling dismissals below */
-              result.dismiss === Swal.DismissReason.cancel
-            ) {
-              swalWithBootstrapButtons.fire({
-                title: "Cancelled",
-                text: "Your imaginary file is safe :)",
-                icon: "error"
-              });
-            }
-          });
+
         }
       })
 
   }
-
+  triggerModal() {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger"
+      },
+      buttonsStyling: false
+    });
+    swalWithBootstrapButtons.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "<a data-turbo-method='delete' href='/projects/" + this.projectIdValue  + "' class='text-decoration-none text-black'>'Yes, delete it!'</a>" ,
+      cancelButtonText: "No, cancel!",
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        swalWithBootstrapButtons.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success"
+        });
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire({
+          title: "Cancelled",
+          text: "Your imaginary file is safe :)",
+          icon: "error"
+        });
+      }
+    });
+  }
 
 }
