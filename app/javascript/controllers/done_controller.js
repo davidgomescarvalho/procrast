@@ -26,7 +26,6 @@ export default class extends Controller {
         this.barTarget.style = `width: ${data.completion_percentage}%;`
         this.completedButtonTarget.classList.toggle("d-none", data.completion_percentage !== 100)
         if (data.completion_percentage === 100) {
-
         }
       })
 
