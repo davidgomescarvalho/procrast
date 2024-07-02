@@ -34,12 +34,12 @@ export default class extends Controller {
             buttonsStyling: false
           });
           swalWithBootstrapButtons.fire({
-            title: "Are you sure?",
+            title: "Are you sure to archive this project?",
             text: "You won't be able to revert this!",
             icon: "warning",
             showCancelButton: true,
-            confirmButtonText: "<a data-turbo-method='delete' href='/projects/" + id  + "'>'Yes, delete it!'</a>" ,
-            cancelButtonText: "No, cancel!",
+            confirmButtonText: "<a data-turbo-method='delete' href='/projects/" + id  + "'>'Yes, i'm done !'</a>" ,
+            cancelButtonText: "No, not yet!",
             reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
@@ -54,7 +54,7 @@ export default class extends Controller {
             ) {
               swalWithBootstrapButtons.fire({
                 title: "Cancelled",
-                text: "Your imaginary file is safe :)",
+                text: "Your project is safe :)",
                 icon: "error"
               });
             }
