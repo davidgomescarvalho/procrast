@@ -1,5 +1,6 @@
 // Link to image assets
 //= link_tree ../images
+//= link manifest.json
 
 // Link to CSS stylesheets
 //= link application.scss
