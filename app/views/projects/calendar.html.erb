@@ -1,5 +1,5 @@
 <div class="container-title">
-  <h1 class="title-project-h1">Your Project Calendar</h1>
+  <h1 class="title-project-h1">My Calendar</h1>
 </div>
 <div class="container-calendar">
   <div class="calendar-container">
@@ -24,5 +24,8 @@
 </div>
 
 <div class="d-flex justify-content-center">
-  <%= link_to "You have #{@projects.count} project this month!", projects_path, class: "btn btn-primary" %>
+  <%= link_to projects_path, class: "calendar-button" do %>
+    <i class="fa-solid fa-seedling"></i>
+    <%= "You have #{@projects.count} projects this month" %>
+  <% end %>
 </div>
