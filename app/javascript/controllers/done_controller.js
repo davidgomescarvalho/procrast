@@ -58,7 +58,7 @@ export default class extends Controller {
       ) {
         swalWithBootstrapButtons.fire({
           title: "Cancelled",
-          text: "Your imaginary file is safe :)",
+          text: "Your project is still in progress :)",
           icon: "error"
         });
       }
