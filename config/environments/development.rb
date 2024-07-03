@@ -76,7 +76,5 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
 
   config.hosts.clear
-  config.hosts << "brave-cats-sing.loca.lt"
-  config.hosts << "brave-cats-sing.loca.lt"
-  config.hosts << "127.0.0.1:3000"
+
 end
