@@ -1,17 +1,107 @@
 <DOCTYPE>
 <head>
   <title>Procrast-Everybody procrastinates, you just need to know how to do it better ! </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="icon" type="image/png" href="<%= asset_path('logo.png') %>">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js">
+  <link rel="stylesheet" href="../app/assets/stylesheets/application.scss">
+  <style>
+  .rails-default-error-page {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  .rails-default-error-page div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  .rails-default-error-page h1 {
+    font-size: 3em;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+
+  .rails-default-error-page a {
+    text-decoration: none;
+    font-size: 1em;
+    padding: 0.5em 1em;
+    margin: 1em;
+    background-color: #730E15;
+    color: white;
+    border: 2px solid #730E15;
+    border-radius: 0.3em;
+    cursor: pointer;
+  }
+
+  .hit-the-floor {
+  animation: change_colors 6s infinite;
+  color: white;
+  font-size: 15vw;
+  font-weight: bold;
+  font-family: Helvetica;
+  text-shadow:
+    0 .005em 0 rgba(0, 0, 0, .2),
+    0 .005em 0 currentColor,
+
+    0 .01em 0 rgba(0, 0, 0, .25),
+    0 .01em 0 currentColor,
+
+    0 .015em 0 rgba(0, 0, 0, .3),
+    0 .015em 0 currentColor,
+
+    0 .02em 0 rgba(0, 0, 0, .35),
+    0 .02em 0 currentColor,
+
+    0 .025em 0 rgba(0, 0, 0, .4),
+    0 .025em 0 currentColor,
+
+    0 .03em .005em rgba(0, 0, 0, .1),
+    0 0 .025em rgba(0, 0, 0, .1),
+    0 .005em .015em rgba(0, 0, 0, .3),
+    0 .015em .025em rgba(0, 0, 0, .2),
+    0 .025em .05em rgba(0, 0, 0, .25),
+    0 .05em .05em rgba(0, 0, 0, .2),
+    0 .1em .1em rgba(0, 0, 0, .15);
+}
+
+@keyframes change_colors {
+	0% { color: #5150ea; }
+  12% { color: #f24155; }
+  25% { color: #ef4b7d; }
+  37% { color: #fd4a82; }
+  50% { color: #fc7f63; }
+  62% { color: #6665ed; }
+  75% { color: #62ccfe; }
+  87% { color: #ac39df; }
+  100% { color: #aa66f7; }
+}
+
+body {
+  background-color: #f1f1f1;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+</style>
+
 </head>
 <html>
-  <body>
-    <div class="d-flex mx-auto my-auto">
-      <h1>D'oh !</h1>
+  <body class="rails-default-error-page">
+    <div class="hit-the-floor">D'oh</div>
+    <h2>404 Not Found</h2>
       <img src="./img/404-focus-homer-simpson.gif" alt="Error 404" class="mx-auto"  width="100%">
-      <h2>404 Not Found</h2>
       <p>Sorry, an error has occured, Requested page not found!</p>
+      <a href="/">Back to Home</a>
+      <a href="/projects">Back to Projects</a>
     </div>
   </body>
 </html>
