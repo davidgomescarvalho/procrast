@@ -99,7 +99,7 @@ user1 = User.create!(
   first_name: "David",
   last_name: "Gomes Carvalho",
   country: "Portugal",
-  total_points: rand(0..500)
+  total_points: 295
 )
 
 avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
@@ -114,7 +114,7 @@ user2 = User.create!(
   first_name: "Wassim",
   last_name: "Badreddine ",
   country: "France",
-  total_points: rand(0..500)
+  total_points: 295
 )
 
 
@@ -130,7 +130,7 @@ user3 = User.create!(
   first_name: "Hugo",
   last_name: "Ferrier",
   country: "France",
-  total_points: rand(0..500)
+  total_points: 295
 )
 
 User.all.each do |user|
