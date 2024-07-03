@@ -1,4 +1,4 @@
-<div class="container-task">
+<div class="container-task" data-controller="toggle">
   <li><%= task.title %> | <%= task.start_date%></li>
     <%= simple_form_for task do |f| %>
       <%= f.input :done, as: :boolean, label: false, input_html: { data: { done_target: "check", action: "done#toggle" } } %>
