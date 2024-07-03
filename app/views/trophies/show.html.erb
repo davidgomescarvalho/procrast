@@ -13,5 +13,7 @@
           <div class="progress-bar progress-bar-striped" role="progressbar" style="width:89%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
     </div>
-<%= link_to 'Back', trophies_path, class: 'btn-back' %>
+<%= link_to trophies_path, class: 'btn-back' do %>
+  <i class="fa-solid fa-circle-chevron-left fa-xl"></i>
+<% end %>
 </div>
