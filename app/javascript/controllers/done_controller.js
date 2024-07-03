@@ -39,12 +39,11 @@ export default class extends Controller {
       buttonsStyling: false
     });
     swalWithBootstrapButtons.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
+      title: "Have you completed your Project?",
+      icon: "success",
       showCancelButton: true,
-      confirmButtonText: "<a data-turbo-method='delete' href='/projects/" + this.projectIdValue  + "' class='text-decoration-none text-black'>'Yes, delete it!'</a>" ,
-      cancelButtonText: "No, cancel!",
+      confirmButtonText: "<a data-turbo-method='delete' href='/projects/" + this.projectIdValue  + "' class='text-decoration-none text-black'>Yes!</a>" ,
+      cancelButtonText: "No!",
       reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {
