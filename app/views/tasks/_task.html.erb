@@ -1,9 +1,9 @@
 <div class="container-task">
-    <li><%= task.title %> | <%= task.start_date%></li>
-    <%= link_to edit_task_path(task), style: "color: black;" do %>
-        <i class="fa-solid fa-ellipsis"></i>
-    <% end %>
+  <li><%= task.title %> | <%= task.start_date%></li>
     <%= simple_form_for task do |f| %>
-        <%= f.input :done, as: :boolean, label: false, input_html: { data: { done_target: "check", action: "done#toggle" } } %>
+      <%= f.input :done, as: :boolean, label: false, input_html: { data: { done_target: "check", action: "done#toggle" } } %>
+    <% end %>
+    <%= link_to edit_task_path(task), style: "color: white;" do %>
+      <i class="fa-solid fa-ellipsis"></i>
     <% end %>
 </div>

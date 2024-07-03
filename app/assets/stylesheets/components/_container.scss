@@ -36,21 +36,9 @@
   margin-bottom: 1em;
 }
 
-#completed-button {
-  display: flex;
-  justify-content: center;
-  width: 90%;
-  background-color: #1edd88;
-  margin: 1em;
-  color: white;
-  font-size: large;
-  font-weight: bold;
-  padding: 1em;
-  border-radius: 10px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
 .container-task{
+  display: flex;
+  justify-content: space-between;
   width: 90%;
   background-color:#F9E900;
   margin: 1em;
