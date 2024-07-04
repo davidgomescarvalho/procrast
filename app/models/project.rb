@@ -9,7 +9,7 @@ class Project < ApplicationRecord
   validates :end_time, presence: true
   validates :status, presence: true
 
-  after_save :completed?
+  after_touch :set_completed
 
   def completion_percentage
     (tasks.where(done: true).count.fdiv(tasks.count) * 100).round(2)
@@ -17,10 +17,14 @@ class Project < ApplicationRecord
 
   def completed?
     completion_percentage == 100
+  end
+
+  def set_completed
+    return unless completed? || status == "completed"
+
     self.status = "completed"
-    if self.status == "completed"
-      user.increment!(:total_points, 50)
-    end
+    user.increment!(:total_points, 50)
+    save
   end
 
   def self.status
