@@ -1,9 +1,18 @@
 <div class="container-task" data-controller="toggle">
-  <li><%= task.title %> | <%= task.start_date%></li>
+  <div class="task-header">
+    <div class="task-title"><%= task.title %></div>
+    <div class="task-date"><%= task.start_date.strftime("%d - %B")%></div>
+  </div>
+  <div class="task-actions">
     <%= simple_form_for task do |f| %>
-      <%= f.input :done, as: :boolean, label: false, input_html: { data: { done_target: "check", action: "done#toggle" } } %>
+      <div class="task-done">
+        <%= f.input :done, as: :boolean, label: false, input_html: { data: { done_target: "check", action: "done#toggle" } } %>
+      </div>
     <% end %>
-    <%= link_to edit_task_path(task), style: "color: white;" do %>
-      <i class="fa-solid fa-ellipsis"></i>
-    <% end %>
+    <div class="task-edit">
+      <%= link_to edit_task_path(task), style: "color: white;" do %>
+        <i class="fa-solid fa-ellipsis"></i>
+      <% end %>
+    </div>
+  </div>
 </div>
