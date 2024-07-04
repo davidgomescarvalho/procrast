@@ -145,29 +145,29 @@ User.all.each do |user|
 
   Task.create!(
     title: "Préparer le pitch",
-    start_date: "2024-07-02",
-    end_date: "2024-07-02",
+    start_date: "02-07-2024",
+    end_date: "02-07-2024",
     project: project_presentation
   )
 
   Task.create!(
     title: "Polir l'app",
-    start_date: "2024-07-15",
-    end_date: "2024-07-24",
+    start_date: "15-07-2024",
+    end_date: "24-07-2024",
     project: project_presentation
   )
 
   Task.create!(
     title: "Pleurer",
-    start_date: "2024-07-25",
-    end_date: "2024-07-25",
+    start_date: "25-07-2024",
+    end_date: "25-07-2024",
     project: project_presentation
   )
 
   Task.create!(
     title: "Présenter l'app",
-    start_date: "2024-07-26",
-    end_date: "2024-07-26",
+    start_date: "26-07-2024",
+    end_date: "26-07-2024",
     project: project_presentation
   )
 
@@ -177,8 +177,8 @@ User.all.each do |user|
 
   project2 = Project.create!(
     title: "Peindre un portrait de Boris",
-    start_time: "2024-07-15",
-    end_time: "2024-07-17",
+    start_time: "15-07-2024",
+    end_time: "17-07-2024",
     status: status.sample,
     completed: false,
     user: user
@@ -188,22 +188,22 @@ User.all.each do |user|
 
   Task.create!(
     title: "Acheter des fournitures",
-    start_date: "2024-07-15",
-    end_date: "2024-07-15",
+    start_date: "15-07-2024",
+    end_date: "15-07-2024",
     project: project2
   )
 
   Task.create!(
     title: "Acheter un cadre",
-    start_date: "2024-07-16",
-    end_date: "2024-07-16",
+    start_date: "16-07-2024",
+    end_date: "16-07-2024",
     project: project2
   )
 
   Task.create!(
     title: "Peindre le fond",
-    start_date: "2024-07-17",
-    end_date: "2024-07-17",
+    start_date: "17-07-2024",
+    end_date: "17-07-2024",
     project: project2
   )
 
