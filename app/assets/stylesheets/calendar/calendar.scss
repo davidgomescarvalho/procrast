@@ -74,7 +74,9 @@
   .wday-5 {}
   .wday-6 {}
 
-  .today {}
+  .today {
+    border-radius: 0;
+  }
   .past {
   }
   .future {}
