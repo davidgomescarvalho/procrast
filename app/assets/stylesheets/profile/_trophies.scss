@@ -1,17 +1,15 @@
-
 .container-cards {
   display: flex;
   margin: 0 auto;
 }
 
-.container-card{
+.container-card {
   display: grid;
-  grid-template-columns:  repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   justify-content: space-evenly;
   align-items: center;
   margin: 0 auto;
   grid-gap: 1rem;
-
 }
 
 .card-trophy {
@@ -26,61 +24,61 @@
   height: 140px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: #0A1045 2px solid;
+  border: #0a1045 2px solid;
 }
 
 .card-trophy:nth-child(9),
-.wagonner-background {
+.just-getting-started-background {
   background-color: #d00000;
 }
+
 .card-trophy:nth-child(8),
-.just-getting-started-background {
+.first-project-background {
   background-color: #84179a;
 }
 
 .card-trophy:nth-child(7),
-.first-project-background {
+.completionist-background {
   background-color: #f97800;
 }
 
 .card-trophy:nth-child(6),
-.completionist-background {
+.getting-the-hang-of-it-background {
   background-color: #7b65f6;
 }
 
 .card-trophy:nth-child(5),
-.getting-the-hang-of-it-background {
+.reaching-the-stars-background {
   background-color: #f9e900;
 }
 
 .card-trophy:nth-child(4),
-.reaching-the-stars-background {
+.rolling-on-tasks-background {
   background-color: #f9b700;
 }
 
 .card-trophy:nth-child(3),
-.rolling-on-tasks-background {
+.the-weekender-background {
   background-color: #3dba03;
 }
 
 .card-trophy:nth-child(2),
-.the-weekender-background {
+.the-king-of-projects-background {
   background-color: #14278f;
 }
 
 .card-trophy:nth-child(1),
-.the-king-of-projects-background {
-  background-color: #f9007c;
+.wagonner-background {
+  background-color: #e60f05;
 }
-
 
 .card-trophy:hover {
   transform: scale(1.1);
   transition: transform 0.5s;
 }
 
-.card-link{
-  position:absolute;
+.card-link {
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
@@ -99,22 +97,21 @@
   width: 80px;
   height: 80px;
   flex-shrink: 0;
-  align-items:center ;
+  align-items: center;
   position: relative;
   top: 10px;
   margin-top: 10px;
 }
 
 .trophy-name {
-color: var(--Color-_Base-_White, #FFF);
-font-family: Poppins;
-font-size: 12px;
-position: relative;
-text-align: center;
-font-style: normal;
-font-weight: 700;
-line-height: 100%;
-top: 14px;
-margin:0 auto;
-
+  color: var(--Color-_Base-_White, #fff);
+  font-family: Poppins;
+  font-size: 12px;
+  position: relative;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  top: 14px;
+  margin: 0 auto;
 }

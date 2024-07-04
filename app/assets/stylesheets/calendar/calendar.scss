@@ -1,4 +1,4 @@
- .simple-calendar {
+.simple-calendar {
   border-radius: 10px;
   overflow: hidden;
 
@@ -12,7 +12,7 @@
     margin-bottom: 0;
   }
   thead {
-    border-bottom: solid 2px black;;
+    border-bottom: solid 2px black;
   }
   .day-number {
     text-align: center;
@@ -20,7 +20,7 @@
   }
 
   .calendar-event {
-    width:auto;
+    width: auto;
     padding: 0;
   }
   .project-link {
@@ -33,12 +33,12 @@
     justify-content: center;
     align-items: center;
     height: 3em;
-    background-color: #64FCD9;
+    background-color: #64fcd9;
     border-bottom: solid 2px black;
   }
   .calendar-heading span {
     font-weight: bold;
-    color: #F6AF65;
+    color: #f6af65;
     padding-left: 1em;
     padding-right: 1em;
   }
@@ -50,44 +50,53 @@
     padding-right: 1em;
   }
 
-.calendar-container td {
-  border: solid 1px #b9b7b7 ;
-  background-color: #F9F9F9;
+  .calendar-container td {
+    border: solid 1px #b9b7b7;
+    background-color: #f9f9f9;
+  }
 
+  .calendar-container h4 {
+    margin-bottom: 0;
+    padding: 8px;
+  }
 }
-
-.calendar-container h4 {
-  margin-bottom: 0;
-  padding: 8px;
-}
-}
- .simple-calendar {
+.simple-calendar {
   .day {
     border: gray solid 1px;
   }
 
-  .wday-0 {}
-  .wday-1 {}
-  .wday-2 {}
-  .wday-3 {}
-  .wday-4 {}
-  .wday-5 {}
-  .wday-6 {}
+  .wday-0 {
+  }
+  .wday-1 {
+  }
+  .wday-2 {
+  }
+  .wday-3 {
+  }
+  .wday-4 {
+  }
+  .wday-5 {
+  }
+  .wday-6 {
+  }
 
   .today {
     border-radius: 0;
   }
   .past {
   }
-  .future {}
+  .future {
+  }
 
   .start-date {
   }
 
   .prev-month {
   }
-  .next-month { }
-  .current-month {}
+  .next-month {
+  }
+  .current-month {
+  }
 
   .has-events {
     background-color: aqua;
