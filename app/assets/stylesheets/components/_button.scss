@@ -61,6 +61,7 @@
   color: white;
   font-weight: 500;
   font-family: poppins;
+  margin-right: 7.5em;
 }
 
 .button-update:hover {
@@ -109,6 +110,7 @@
   color: white;
   font-weight: 500;
   font-family: poppins;
+  margin-right: 1em;
 }
 
 .button-back:hover {
@@ -198,7 +200,7 @@
   border-radius: 10px;
   padding: 1em;
   margin: 1em;
-  border: solid black 2px;
+  border: solid black 1px;
 }
 
 .btn-back {
@@ -221,4 +223,9 @@
 
 .progress {
   border: solid 1px black;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-start;
 }
