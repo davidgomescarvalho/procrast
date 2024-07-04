@@ -38,6 +38,7 @@
   font-size: 1em;
   cursor: pointer;
   transition: background-color 0.3s;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
 }
 
 .button-task {
@@ -47,7 +48,7 @@
   color: white;
   font-weight: 800;
   font-family: poppins;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) ;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .button-update {
@@ -60,6 +61,7 @@
   color: white;
   font-weight: 500;
   font-family: poppins;
+  margin-right: 7.5em;
 }
 
 .button-update:hover {
@@ -108,6 +110,7 @@
   color: white;
   font-weight: 500;
   font-family: poppins;
+  margin-right: 1em;
 }
 
 .button-back:hover {
@@ -124,6 +127,7 @@
   color: white;
   font-weight: 500;
   font-family: poppins;
+  margin-right: 4em;
 }
 
 .button-submit:hover {
@@ -163,8 +167,8 @@
 .completed-button {
   background-color: #1edd88;
   color: white;
-  font-weight: bold;
   border: none;
+  font-weight: bold;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) ;
 }
 
@@ -197,5 +201,32 @@
   border-radius: 10px;
   padding: 1em;
   margin: 1em;
-  border: solid black 2px;
+  border: solid black 1px;
+}
+
+.btn-back {
+  color: white;
+  border-radius: 50%;
+  font-size: 1em;
+  cursor: pointer;
+  margin: 1em;
+}
+
+.loading-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.loading-date i {
+  margin: 3px;
+}
+
+.progress {
+  border: solid 1px black;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-start;
 }
