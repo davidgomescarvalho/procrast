@@ -36,7 +36,7 @@
   display: flex;
   justify-content: end;
   text-decoration: none;
-  color: #6A041D;
+  color: #6a041d;
 }
 .progress {
   width: 90%;
@@ -45,13 +45,13 @@
   margin-bottom: 1em;
 }
 
-.container-task{
+.container-task {
   display: flex;
   justify-content: space-between;
   width: 90%;
-  background-color:#F9E900;
+  background-color: #f9e900;
   margin: 1em;
-  color: #0A1045;
+  color: #0a1045;
   font-size: large;
   font-weight: bold;
   padding: 1em;
@@ -61,7 +61,7 @@
 
 .container-task-add {
   width: 90%;
-  background-color:#00c2d1;
+  background-color: #00c2d1;
   margin: 1em;
   font-size: large;
   font-weight: bold;
@@ -80,22 +80,22 @@
   justify-content: center;
 }
 .start-date {
-  background-color: #00C2D1;
+  background-color: #00c2d1;
   color: white;
   font-weight: bold;
   margin: 12px;
   padding: 0.5em;
   border-radius: 10px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) ;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 .end-date {
-  background-color: #6A041D;
+  background-color: #6a041d;
   color: white;
   font-weight: bold;
   margin: 12px;
   padding: 0.5em;
   border-radius: 10px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) ;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .task-date {
@@ -126,60 +126,59 @@
 }
 
 #container-ul li:nth-child(1) {
-background-color: #0A1045;
+  background-color: #0a1045;
 }
 
-#container-ul li:nth-child(1) a{
-color: white;
-font-size: large;
+#container-ul li:nth-child(1) a {
+  color: white;
+  font-size: large;
 }
 
 #container-ul li:nth-child(2) {
-background-color: #F9E900;
+  background-color: #f9e900;
 }
 
-#container-ul li:nth-child(2) a{
-color: #0A1045;
-font-size: large;
+#container-ul li:nth-child(2) a {
+  color: #0a1045;
+  font-size: large;
 }
 
 #container-ul li:nth-child(3) {
-background-color: #F6AF65;
+  background-color: #f6af65;
 }
 
-#container-ul li:nth-child(3) a{
-color: white;
-font-size: large;
+#container-ul li:nth-child(3) a {
+  color: white;
+  font-size: large;
 }
 
 #container-ul li:nth-child(4) {
-background-color: #00C2D1;
+  background-color: #00c2d1;
 }
 
-#container-ul li:nth-child(4) a{
-color: white;
-font-size: large;
+#container-ul li:nth-child(4) a {
+  color: white;
+  font-size: large;
 }
 
 #container-ul li:nth-child(5) {
-background-color: #6A041D;
-
+  background-color: #6a041d;
 }
 
-#container-ul li:nth-child(5) a{
-color: #F9E900;
-font-size: large;
+#container-ul li:nth-child(5) a {
+  color: #f9e900;
+  font-size: large;
 }
 
 #container-ul li:nth-child(6) {
-  background-color: #0A1045;
+  background-color: #0a1045;
 }
 
-#container-ul li:nth-child(6) a{
+#container-ul li:nth-child(6) a {
   color: white;
   font-size: large;
 }
 
 #container-ul li:nth-child(7) {
-background-color: #F9E900;
+  background-color: #f9e900;
 }

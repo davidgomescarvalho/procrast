@@ -86,9 +86,6 @@ image = URI.open("https://raw.githubusercontent.com/lewagon/fullstack-images/mas
 trophy9.image.attach(io: image, filename: "#{trophy9.name}.png", content_type: 'image/png')
 
 
-
-
-
 status = ["In Progress", "Not Started"]
 
 # Create a user
@@ -221,6 +218,7 @@ User.all.each do |user|
   user.trophies << trophy6
   user.trophies << trophy7
   user.trophies << trophy8
+  user.trophies << trophy9
 end
 
 puts "Created #{User.count} users with #{Project.count} projects, #{Task.count} tasks and #{Trophy.count} trophies !"

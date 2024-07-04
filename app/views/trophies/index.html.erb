@@ -4,15 +4,15 @@
 
 <div class="container-cards">
   <div class="container-card">
-              <% @trophiesDSC.each do |trophy| %>
-              <div class="card-trophy">
-                    <%=  image_tag(trophy.image, :class =>"trophy-img") %>
-                    <div class="card-info">
-                      <h5 class="trophy-name"><%= trophy.name.humanize %></h5>
-                      <p class="trophy-description">...</p>
-                    </div>
-                     <%= link_to '', trophy_path(trophy), class: 'card-link'  %>
-              </div>
-            <% end %>
+    <% @trophiesDSC.each do |trophy| %>
+      <div class="card-trophy">
+        <%=  image_tag(trophy.image, :class =>"trophy-img") %>
+        <div class="card-info">
+          <h5 class="trophy-name"><%= trophy.name.humanize %></h5>
+          <p class="trophy-description">...</p>
+        </div>
+        <%= link_to '', trophy_path(trophy), class: 'card-link'  %>
+      </div>
+    <% end %>
   </div>
 </div>

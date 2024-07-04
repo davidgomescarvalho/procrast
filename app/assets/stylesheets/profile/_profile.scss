@@ -27,7 +27,7 @@ body {
   width: 70px; /* Ajustez selon vos besoins */
   height: 70px; /* Ajustez selon vos besoins */
   text-align: center;
-  color: white
+  color: white;
 }
 
 .stat-tiles-yellow {
@@ -50,9 +50,9 @@ body {
   margin: 0; /* Enlevez les marges pour le centrage parfait */
 }
 
-.trophy-container{
+.trophy-container {
   display: grid;
-  grid-template-columns:  repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
