@@ -7,8 +7,8 @@
 </div>
 
 
-
-<div data-controller="done" data-done-project-id-value="<%=@project.id %>">
+<div data-controller="toggle">
+  <div data-controller="done" data-done-project-id-value="<%=@project.id %>">
 
     <div class="progress" data-project-id="<%=@project.id %>">
       <div id="bar" data-done-target="bar" class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" style="width: <%= @project.completion_percentage %>%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -23,10 +23,10 @@
 
     <div class="container-date" >
       <div class="start-date">
-        <i class="fa-solid fa-play"></i> <%= @project.start_time %>
+        <i class="fa-solid fa-play"></i> <%= l@project.start_time %>
       </div>
       <div class="end-date">
-        <i class="fa-solid fa-flag-checkered"></i> <%= @project.end_time %>
+        <i class="fa-solid fa-flag-checkered"></i> <%= l@project.end_time %>
       </div>
     </div>
 
@@ -39,16 +39,16 @@
       </ul>
     <% else %>
         <% if @project.tasks.empty? %>
-              <p class="text-center">No tasks found for this project.</p>
+              <span></span>
             <% else %>
-             <ul class="listed-tasks" data-toggle-target="list">
-            </ul>
+              <ul class="listed-tasks" data-toggle-target="list">
+              </ul>
         <% end %>
           <ul class="listed-tasks" data-toggle-target="list">
           </ul>
     <% end %>
 
-    <div class="container-task-add" data-controller="toggle">
+    <div class="container-task-add">
       <div class="button-task">
         <button data-action="click->toggle#toggleElement" class="button-task">Add a Task</button>
       </div>
@@ -58,4 +58,5 @@
         </div>
       <div data-toggle-target="anchor"></div>
     </div>
+  </div>
 </div>

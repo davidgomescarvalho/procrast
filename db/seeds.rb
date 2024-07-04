@@ -136,8 +136,8 @@ user3 = User.create!(
 User.all.each do |user|
   project_presentation = Project.create!(
     title: "Présenter son app à la fin du bootcamp",
-    start_time: "2024-07-01",
-    end_time: "2024-07-06",
+    start_time: "01-07-2024",
+    end_time: "06-07-2024",
     status: status.sample,
     completed: false,
     user: user

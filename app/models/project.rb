@@ -9,11 +9,7 @@ class Project < ApplicationRecord
   validates :end_time, presence: true
   validates :status, presence: true
 
-
-  after_create :update_user_points_plus
-  after_create :project_completed
-
-  after_destroy :update_user_points_minus
+  after_save :completed?
 
   def completion_percentage
     (tasks.where(done: true).count.fdiv(tasks.count) * 100).round(2)
@@ -21,22 +17,13 @@ class Project < ApplicationRecord
 
   def completed?
     completion_percentage == 100
-  end
-
-  private
-
-  def project_completed
-    case status
-    when "completed"
-      user.increment!(:total_points, 20)
+    self.status = "completed"
+    if self.status == "completed"
+      user.increment!(:total_points, 50)
     end
   end
 
-  def update_user_points_plus
-    user.increment!(:total_points, 10)
-  end
-
-  def update_user_points_minus
-    user.decrement!(:total_points, 10)
+  def self.status
+    ["not started", "in progress", "completed"]
   end
 end

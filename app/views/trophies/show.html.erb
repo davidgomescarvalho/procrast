@@ -9,9 +9,19 @@
         <h2>"<%= @trophy.name %>"</h2>
 
         <p><%= @trophy.description %></p>
-        <div class="progress my-3">
-          <div class="progress-bar progress-bar-striped" role="progressbar" style="width:89%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
+        <% if @trophy.name == "The king of projects" %>
+          <div class="progress my-3">
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:70%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        <% elsif @trophy.name == "The weekender" %>
+          <div class="progress my-3">
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:90%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        <% else%>
+          <div class="progress my-3">
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+       <%  end %>
     </div>
 <%= link_to 'Back', trophies_path, class: 'btn-back' %>
 </div>
