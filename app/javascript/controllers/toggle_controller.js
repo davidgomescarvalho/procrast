@@ -11,7 +11,6 @@ export default class extends Controller {
 
   scroll(event) {
     event.preventDefault()
-    console.log(this.formTarget.action)
 
     fetch(this.formTarget.action, {
       method: "POST",

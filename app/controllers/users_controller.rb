@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show]
 
   def show
-    @recent_trophies = @user.trophies.order(created_at: :desc).limit(3)
+    @recent_trophies = Trophy.all.order(created_at: :desc).limit(3)
   end
 
   private

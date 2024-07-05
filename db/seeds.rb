@@ -86,8 +86,6 @@ image = URI.open("https://raw.githubusercontent.com/lewagon/fullstack-images/mas
 trophy9.image.attach(io: image, filename: "#{trophy9.name}.png", content_type: 'image/png')
 
 
-status = ["In Progress", "Not Started"]
-
 # Create a user
 user1 = User.create!(
   email: "davidgomescarvalho@gmail.com",
@@ -132,10 +130,10 @@ user3 = User.create!(
 
 User.all.each do |user|
   project_presentation = Project.create!(
-    title: "Présenter son app à la fin du bootcamp",
+    title: "Présenter son app",
     start_time: "01-07-2024",
     end_time: "06-07-2024",
-    status: status.sample,
+    status: "In progress",
     completed: false,
     user: user
   )
@@ -176,7 +174,7 @@ User.all.each do |user|
     title: "Peindre un portrait de Boris",
     start_time: "15-07-2024",
     end_time: "17-07-2024",
-    status: status.sample,
+    status: "In progress",
     completed: false,
     user: user
     )
