@@ -5,7 +5,7 @@
 <div class="container-cards">
   <div class="container-card">
     <% @trophiesDSC.each do |trophy| %>
-      <div class="card-trophy">
+      <div class="card-trophy-<%=trophy.name.downcase.gsub(" ", "-")%> ">
         <%=  image_tag(trophy.image, :class =>"trophy-img") %>
         <div class="card-info">
           <h5 class="trophy-name"><%= trophy.name.humanize %></h5>

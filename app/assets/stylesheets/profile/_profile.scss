@@ -68,13 +68,52 @@ body {
   justify-content: center;
 }
 
-.trophy-card-profile p {
+.trophy-card-profile-wagonner p {
   font-size: 1em;
   text-align: center;
   margin-top: 11px;
 }
 
-.trophy-card-profile {
+.trophy-card-profile-the-king-of-projects p {
+  font-size: 1em;
+  text-align: center;
+  margin-top: 11px;
+}
+
+.trophy-card-profile-completionist p {
+  font-size: 1em;
+  text-align: center;
+  margin-top: 11px;
+}
+
+.trophy-card-profile-getting-the-hang-of-it p {
+  font-size: 1em;
+  text-align: center;
+  margin-top: 11px;
+}
+
+.trophy-card-profile-the-weekender p {
+  font-size: 1em;
+  text-align: center;
+  margin-top: 11px;
+}
+
+.trophy-card-profile-wagonner {
+  flex: 1;
+  width: 89.8334px;
+  height: 181px;
+  position: relative;
+  display: none;
+}
+
+.trophy-card-profile-the-king-of-projects {
+  flex: 1;
+  width: 89.8334px;
+  height: 181px;
+  position: relative;
+}
+
+.trophy-card-profile-the-weekender {
   flex: 1;
   width: 89.8334px;
   height: 181px;

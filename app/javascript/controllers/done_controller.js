@@ -42,7 +42,7 @@ export default class extends Controller {
       title: "Have you completed your Project?",
       icon: "success",
       showCancelButton: true,
-      confirmButtonText: "<a data-turbo-method='delete' href='/projects/" + this.projectIdValue  + "' class='text-decoration-none text-black'>Yes!</a>" ,
+      confirmButtonText: "<a data-turbo-method='delete' href='/projects/" + this.projectIdValue  + "'class='text-decoration-none text-black'>Yes!</a>" ,
       cancelButtonText: "No!",
       reverseButtons: true
     }).then((result) => {
