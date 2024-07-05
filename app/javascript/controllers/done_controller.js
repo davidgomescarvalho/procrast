@@ -47,15 +47,21 @@ export default class extends Controller {
       reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {
+        confetti({
+          particleCount: 200,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+
         Swal.fire({
           title: "Great work!",
           text: "You just won a new Trophy! 🏆",
           imageUrl: "https://uikit.lewagon.com/assets/logo-b3807c5a8a56ea45dfd790015bc4e88acab54ba679ed343230a4cb9ac0b53dba.png",
           imageWidth: 200,
           imageHeight: 200,
-          imageAlt: "Custom image",
-          confirmButtonText: "<a data-turbo-method='delete' href='/projects/" + this.projectIdValue  + "' class='text-decoration-none text-black'>Great</a>"
-      })
+          imageAlt: "Wagon Logo",
+          confirmButtonText: "<a data-turbo-method='delete' href='/projects/" + this.projectIdValue  + "' class='text-decoration-none text-black'>Great</a>",
+        });
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         swalWithBootstrapButtons.fire({
           title: "Cancelled",
@@ -65,5 +71,4 @@ export default class extends Controller {
       }
     });
   }
-
 }
