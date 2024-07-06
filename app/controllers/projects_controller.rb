@@ -40,7 +40,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project.destroy
-    redirect_to projects_path, notice: 'Your Project was successfully deleted.'
+    redirect_to trophies_path(completed: true), notice: 'Your Project was successfully deleted.'
   end
 
   def calendar
