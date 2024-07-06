@@ -5,7 +5,7 @@ import Typed from 'typed.js';
 export default class extends Controller {
   // static values = { sentences: Array }
   connect() {
-    const options = { strings: ["Change your life by turning your procrastination into creation !", "Create a project now !"," “ Anything that can be done another day can be done today”" ], typeSpeed: 40, loop: true, showCursor: true, cursorChar: '|', backSpeed: 40, backDelay: 1000, startDelay: 1000}
+    const options = { strings: ["Procrastination is the thief of time !", "Create a project now !","Don't push for tomorrow, do it today" ], typeSpeed: 40, loop: true, showCursor: true, cursorChar: '|', backSpeed: 40, backDelay: 1000, startDelay: 1000}
     this.typed = new Typed(this.element, options);
   }
 }

@@ -1,14 +1,15 @@
 <div class="container-home">
   <div class="banner mx-9">
-    <%= cl_image_tag("procrast_title_or4wap", alt: "procrast", class: "img-responsive") %>
-
-    <%= cl_image_tag("logo_p_bmgfmy", alt: "logo-procrast", class: "img-responsive-logo") %>
+    <%= image_tag("home/procrast_title.png", alt: "procrast", class: "img-responsive") %>
+    <%= image_tag("home/logo_p.png", alt: "procrast", class: "img-logo") %>
     <div class="info">
-      <h1>"Procrastination is the thief of time"</h1>
+      <h1>Turn your procrastination into creation</h1>
       <span class="carrousel-home" data-controller="typed" data-typed-sentences-value="[]" ></span>
     </div>
     <div class="mt-4">
-      <a class="btn-procrast-home" href="/projects/new">Start Now&emsp;&emsp;&emsp;<i class="fa-solid fa-circle-chevron-right"></i></a>
+      <%= link_to new_project_path, class:"btn-procrast-home" do  %>
+        Start Now&emsp;&emsp;&emsp;<i class="fa-solid fa-circle-chevron-right"></i>
+      <% end %>
     </div>
   </div>
 </div>
