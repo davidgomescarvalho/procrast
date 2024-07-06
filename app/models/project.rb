@@ -1,4 +1,5 @@
 class Project < ApplicationRecord
+  attr_accessor :color
   belongs_to :user
   has_many :tasks, dependent: :destroy
   # must_not_overlap with other projects
@@ -29,5 +30,9 @@ class Project < ApplicationRecord
 
   def self.status
     ["not started", "in progress", "completed"]
+  end
+
+  def self.colors
+    %w[#0a1045 #f9e900 #f6af65 #00c2d1 #6a041d #0a1045 #f9e900]
   end
 end
