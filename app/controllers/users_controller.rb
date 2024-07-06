@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show]
 
   def show
-    @recent_trophies = Trophy.all.order(created_at: :desc).limit(3)
+    @trophies = Trophy.where.not(name: "Wagonner")
+    @recent_trophies = @trophies.all.order(created_at: :desc).limit(3)
   end
 
   private

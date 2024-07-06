@@ -70,7 +70,7 @@
 
         <% @recent_trophies.each do |trophy| %>
         <div class="trophy-card-profile-<%= trophy.name.downcase.gsub(" ", "-")%>">
-            <%= image_tag(trophy.image, class: "trophy-img") %>
+            <%= image_tag(trophy.image, :class =>"trophy-img") %>
             <p><%= trophy.name.humanize %></p>
             <div class="progress">
               <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width:100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
