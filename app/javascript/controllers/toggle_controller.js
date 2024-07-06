@@ -11,7 +11,6 @@ export default class extends Controller {
 
   scroll(event) {
     event.preventDefault()
-    console.log(this.formTarget.action)
 
     fetch(this.formTarget.action, {
       method: "POST",
@@ -21,6 +20,7 @@ export default class extends Controller {
       .then(response => response.json())
       .then((data) => {
         if (data.inserted_item) {
+          this.togglableElementTarget.classList.toggle('d-none')
           // beforeend could also be dynamic with Stimulus values
           this.listTarget.insertAdjacentHTML("beforeend", data.inserted_item)
         }

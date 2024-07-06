@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
-    @projects = current_user.projects
+    @projects = current_user.projects.order(start_time: :asc)
   end
 
   def show
@@ -44,7 +44,12 @@ class ProjectsController < ApplicationController
   end
 
   def calendar
-    @projects = current_user.projects.to_a
+    user_projects = current_user.projects.order(start_time: :asc)
+    user_projects.each_with_index do |project, index|
+      color = Project.colors[index % user_projects.count]
+      project.color = color
+    end
+    @projects = user_projects
   end
 
   private

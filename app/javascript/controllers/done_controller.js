@@ -42,20 +42,27 @@ export default class extends Controller {
       title: "Have you completed your Project?",
       icon: "success",
       showCancelButton: true,
-      confirmButtonText: "<a data-turbo-method='delete' href='/projects/" + this.projectIdValue  + "' class='text-decoration-none text-black'>Yes!</a>" ,
+      confirmButtonText: "<a class='text-decoration-none text-black'>Yes!</a>",
       cancelButtonText: "No!",
       reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {
-        swalWithBootstrapButtons.fire({
-          title: "Deleted!",
-          text: "Your file has been deleted.",
-          icon: "success"
+        confetti({
+          particleCount: 200,
+          spread: 70,
+          origin: { y: 0.6 }
         });
-      } else if (
-        /* Read more about handling dismissals below */
-        result.dismiss === Swal.DismissReason.cancel
-      ) {
+
+        Swal.fire({
+          title: "Great work!",
+          text: "You just won a new Trophy! 🏆",
+          imageUrl: "https://uikit.lewagon.com/assets/logo-b3807c5a8a56ea45dfd790015bc4e88acab54ba679ed343230a4cb9ac0b53dba.png",
+          imageWidth: 200,
+          imageHeight: 200,
+          imageAlt: "Wagon Logo",
+          confirmButtonText: "<a data-turbo-method='delete' href='/projects/" + this.projectIdValue  + "' class='text-decoration-none text-black'>Great</a>",
+        });
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
         swalWithBootstrapButtons.fire({
           title: "Cancelled",
           text: "Your project is still in progress :)",
@@ -64,5 +71,4 @@ export default class extends Controller {
       }
     });
   }
-
 }
