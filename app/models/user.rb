@@ -25,7 +25,7 @@ class User < ApplicationRecord
     case total_points
     when 0..100
       "Bronze"
-    when 100..500
+    when 100..300
       "Silver"
     else
       "Gold"

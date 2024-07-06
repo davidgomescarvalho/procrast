@@ -25,7 +25,6 @@
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: #0a1045 2px solid;
-  display: none;
 }
 
 .card-trophy-completionist {
@@ -148,47 +147,47 @@
   border: #0a1045 2px solid;
 }
 
-.card-trophy-just-getting-started:nth-child(9),
+.card-trophy-just-getting-started,
 .just-getting-started-background {
   background-color: #d00000;
 }
 
-.card-trophy-first-project:nth-child(8),
+.card-trophy-first-project,
 .first-project-background {
   background-color: #84179a;
 }
 
-.card-trophy-completionist:nth-child(7),
+.card-trophy-completionist,
 .completionist-background {
   background-color: #f97800;
 }
 
-.card-trophy-getting-the-hang-of-it:nth-child(6),
+.card-trophy-getting-the-hang-of-it,
 .getting-the-hang-of-it-background {
   background-color: #7b65f6;
 }
 
-.card-trophy-reaching-the-stars:nth-child(5),
+.card-trophy-reaching-the-stars,
 .reaching-the-stars-background {
   background-color: #f9e900;
 }
 
-.card-trophy-rolling-on-tasks:nth-child(4),
+.card-trophy-rolling-on-tasks,
 .rolling-on-tasks-background {
   background-color: #f9b700;
 }
 
-.card-trophy-the-weekender:nth-child(3),
+.card-trophy-the-weekender,
 .the-weekender-background {
   background-color: #3dba03;
 }
 
-.card-trophy-the-king-of-projects:nth-child(2),
+.card-trophy-the-king-of-projects,
 .the-king-of-projects-background {
   background-color: #14278f;
 }
 
-.card-trophy-wagonner:nth-child(1),
+.card-trophy-wagonner,
 .wagonner-background {
   background-color: #e60f05;
 }
