@@ -97,8 +97,11 @@ user1 = User.create!(
   total_points: 295
 )
 
-avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
+avatar = File.open(Rails.root.join("app", "assets", "images", "home", "profile-david.JPG"))
 user1.avatar.attach(io: avatar, filename: "#{user1.first_name}.jpg", content_type: 'image/jpg')
+
+# avatar = URI.open(Faker::Avatar.image(size: "500x500", format: "jpg"))
+# user1.avatar.attach(io: avatar, filename: "#{user1.first_name}.jpg", content_type: 'image/jpg')
 user1.save!
 
 # Create a user
@@ -147,22 +150,22 @@ User.all.each do |user|
 
   Task.create!(
     title: "Polir l'app",
-    start_date: "15-07-2024",
-    end_date: "24-07-2024",
+    start_date: "04-07-2024",
+    end_date: "04-07-2024",
     project: project_presentation
   )
 
   Task.create!(
-    title: "Pleurer",
-    start_date: "25-07-2024",
-    end_date: "25-07-2024",
+    title: "Pleurer un peu",
+    start_date: "06-07-2024",
+    end_date: "06-07-2024",
     project: project_presentation
   )
 
   Task.create!(
     title: "Présenter l'app",
-    start_date: "26-07-2024",
-    end_date: "26-07-2024",
+    start_date: "06-07-2024",
+    end_date: "06-07-2024",
     project: project_presentation
   )
 
@@ -173,7 +176,7 @@ User.all.each do |user|
   project2 = Project.create!(
     title: "Peindre un portrait de Boris",
     start_time: "15-07-2024",
-    end_time: "17-07-2024",
+    end_time: "21-07-2024",
     status: "In progress",
     completed: false,
     user: user
@@ -196,7 +199,7 @@ User.all.each do |user|
   )
 
   Task.create!(
-    title: "Peindre le fond",
+    title: "Acheter un chevalet",
     start_date: "17-07-2024",
     end_date: "17-07-2024",
     project: project2

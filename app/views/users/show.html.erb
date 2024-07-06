@@ -13,7 +13,7 @@
 <div class="container">
   <div class="profile text-center">
     <% if @user.avatar.attached? %>
-      <%= image_tag @user.avatar, class: "rounded-circle shadow-4 avatar" %>
+      <%= image_tag @user.avatar, class: "rounded-circle shadow-4 avatar", style:"border: solid 1px black;" %>
     <% else %>
       <p>No avatar uploaded</p>
     <% end %>
