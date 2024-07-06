@@ -6,17 +6,15 @@
     <%= month_calendar(events: @projects) do |date, projects_on_date| %>
       <div class="calendar-day">
         <% if projects_on_date.any? %>
-          <% projects_on_date.each do |project| %>
-            <h4 class="day-number">
+          <% projects_on_date.each_with_index do |project| %>
+            <p class="text-center p-0 m-0" style="background-color: <%= project.color %>;">
               <%= link_to date.day, project_path(project), class: "project-link" %>
-            </h4>
-            <div class="calendar-event">
-              <%= link_to project_path(project), class: "project-link" do %>
-              <% end %>
-            </div>
+            </p>
           <% end %>
         <% else %>
-          <h4 class="day-number"><%= date.day %></h4>
+          <p class="text-center p-0 m-0">
+            <%= date.day %>
+          </p>
         <% end %>
       </div>
     <% end %>

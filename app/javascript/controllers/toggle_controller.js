@@ -20,6 +20,7 @@ export default class extends Controller {
       .then(response => response.json())
       .then((data) => {
         if (data.inserted_item) {
+          this.togglableElementTarget.classList.toggle('d-none')
           // beforeend could also be dynamic with Stimulus values
           this.listTarget.insertAdjacentHTML("beforeend", data.inserted_item)
         }
