@@ -7,6 +7,28 @@
   margin-top: 1em;
 }
 
+.container-log {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.form-actions .full-width {
+  justify-content: center;
+  padding: 0;
+}
+
 .index {
   width: 90%;
   border-radius: 8px;
